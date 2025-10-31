@@ -14,6 +14,7 @@ const Navigation = () => {
     { to: "/protocol", label: "Sanjiva Protocol" },
     { to: "/testimonials", label: "Testimonials" },
     { to: "/blog", label: "Blog" },
+    { to: "/faq", label: "FAQ" },
     { to: "/contact", label: "Contact" },
   ];
 

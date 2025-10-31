@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -23,6 +23,7 @@ const Footer = () => {
               <li><Link to="/protocol" className="text-muted-foreground hover:text-primary transition-colors">Sanjiva Protocol</Link></li>
               <li><Link to="/testimonials" className="text-muted-foreground hover:text-primary transition-colors">Success Stories</Link></li>
               <li><Link to="/blog" className="text-muted-foreground hover:text-primary transition-colors">Health Blog</Link></li>
+              <li><Link to="/faq" className="text-muted-foreground hover:text-primary transition-colors">FAQ</Link></li>
             </ul>
           </div>
 
@@ -66,9 +67,66 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} Dr. Prasanna Boddupally Homeopathy Clinic. All rights reserved.</p>
-          <p className="mt-2">Languages: English | Telugu | Hindi</p>
+        <div className="border-t border-border mt-8 pt-8">
+          {/* Social Media Links */}
+          <div className="flex justify-center gap-4 mb-6">
+            <a 
+              href="https://facebook.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all"
+              aria-label="Facebook"
+            >
+              <Facebook className="w-5 h-5" />
+            </a>
+            <a 
+              href="https://instagram.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a 
+              href="https://youtube.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all"
+              aria-label="YouTube"
+            >
+              <Youtube className="w-5 h-5" />
+            </a>
+            <a 
+              href="https://linkedin.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="w-5 h-5" />
+            </a>
+          </div>
+
+          {/* Legal Links */}
+          <div className="flex flex-wrap justify-center gap-4 mb-4 text-sm">
+            <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">
+              Privacy Policy
+            </Link>
+            <span className="text-muted-foreground">•</span>
+            <Link to="/terms" className="text-muted-foreground hover:text-primary transition-colors">
+              Terms & Conditions
+            </Link>
+            <span className="text-muted-foreground">•</span>
+            <Link to="/disclaimer" className="text-muted-foreground hover:text-primary transition-colors">
+              Medical Disclaimer
+            </Link>
+          </div>
+
+          <div className="text-center text-sm text-muted-foreground">
+            <p>© {new Date().getFullYear()} Dr. Prasanna Boddupally Homeopathy Clinic. All rights reserved.</p>
+            <p className="mt-2">Languages: English | Telugu | Hindi</p>
+          </div>
         </div>
       </div>
     </footer>

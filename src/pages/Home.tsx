@@ -2,10 +2,34 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Heart, Clock, Users, Shield, Sparkles, MessageCircle, ArrowRight, CheckCircle2, Award, Leaf, Phone, Star, TrendingUp } from "lucide-react";
+import SEO from "@/components/SEO";
 import heroImage from "@/assets/hero-modern.jpg";
 import doctorImage from "@/assets/doctor-prasanna.jpg";
 import treatmentImage from "@/assets/treatment-natural.jpg";
 const Home = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr. Prasanna Boddupally",
+    "image": "https://drprasanna.lovable.app/doctor-prasanna.jpg",
+    "description": "Expert homeopathy physician specializing in chronic conditions, thyroid disorders, PCOD, and natural healing.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hyderabad",
+      "addressRegion": "Telangana",
+      "addressCountry": "IN"
+    },
+    "medicalSpecialty": ["Homeopathy", "Alternative Medicine"],
+    "priceRange": "₹₹",
+    "telephone": "+91-9876543210",
+    "url": "https://drprasanna.lovable.app",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "500"
+    }
+  };
+
   const conditions = [{
     category: "Women's Health",
     items: ["PCOD", "Infertility", "Thyroid"]
@@ -73,6 +97,13 @@ const Home = () => {
     condition: "Migraine"
   }];
   return <div className="min-h-screen">
+      <SEO 
+        title="Dr. Prasanna Boddupally - Expert Homeopathy Physician in Hyderabad"
+        description="Experience natural healing with Dr. Prasanna's Sanjiva Protocol. Specialized treatment for thyroid, PCOD, skin disorders, arthritis & chronic conditions. 15+ years experience."
+        keywords="homeopathy doctor Hyderabad, Dr. Prasanna Boddupally, thyroid treatment homeopathy, PCOD homeopathy, chronic disease, natural healing, Sanjiva Protocol"
+        canonicalUrl="https://drprasanna.lovable.app"
+        structuredData={structuredData}
+      />
       {/* Hero Section - Modern & Animated */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary-light/20 via-background to-secondary/30">
         {/* Animated Background Elements */}
