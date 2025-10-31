@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Heart, Clock, Users, Shield, Sparkles, MessageCircle, ArrowRight, CheckCircle2 } from "lucide-react";
-import heroImage from "@/assets/hero-bg.jpg";
+import { Heart, Clock, Users, Shield, Sparkles, MessageCircle, ArrowRight, CheckCircle2, Award, Leaf } from "lucide-react";
+import heroImage from "@/assets/hero-homeopathy.jpg";
 import doctorImage from "@/assets/doctor-prasanna.jpg";
+import treatmentImage from "@/assets/treatment-natural.jpg";
 const Home = () => {
   const conditions = [{
     category: "Women's Health",
@@ -73,23 +74,63 @@ const Home = () => {
   }];
   return <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[600px] flex items-center justify-center text-center bg-cover bg-center" style={{
-      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${heroImage})`
-    }}>
-        <div className="container mx-auto px-4 z-10 animate-fade-in">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Healing Through Simplicity — <br />The Sanjiva Protocol Way
-          </h1>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Natural, long-lasting homeopathic care trusted by thousands of patients
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-primary hover:bg-primary-dark text-primary-foreground shadow-soft">
-              <Link to="/contact">Book Appointment</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="bg-white/10 text-white border-white/30 hover:bg-white/20 backdrop-blur-sm">
-              <Link to="/testimonials">Watch Success Stories</Link>
-            </Button>
+      <section className="relative min-h-[700px] flex items-center justify-center bg-gradient-subtle overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src={heroImage} alt="Natural Homeopathy" className="w-full h-full object-cover opacity-90" />
+        </div>
+        <div className="container mx-auto px-4 z-10 relative">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="text-left space-y-6 animate-fade-in">
+              <div className="inline-flex items-center gap-2 bg-primary-light px-4 py-2 rounded-full">
+                <Leaf className="w-4 h-4 text-primary" />
+                <span className="text-primary font-semibold text-sm">Safe, Effective, Reliable</span>
+              </div>
+              <h1 className="text-5xl md:text-6xl font-bold text-foreground leading-tight">
+                Sanjivani Homeopathy
+              </h1>
+              <p className="text-2xl md:text-3xl text-primary font-semibold italic">
+                Safe. Effective. Reliable.
+              </p>
+              <p className="text-lg text-muted-foreground max-w-xl">
+                Choose homeopathy for treatments that work gently on the body, ensuring safe and effective results without side effects. Natural healing for lasting wellness.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button asChild size="lg" className="bg-gradient-hero hover:shadow-glow text-white">
+                  <Link to="/contact">Book Appointment</Link>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary-light">
+                  <a href="https://wa.me/918179942297" target="_blank" rel="noopener noreferrer">
+                    WhatsApp Us
+                  </a>
+                </Button>
+              </div>
+            </div>
+            <div className="hidden md:block animate-slide-up">
+              <img src={treatmentImage} alt="Homeopathy Treatment" className="rounded-2xl shadow-soft" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Signals */}
+      <section className="py-12 bg-gradient-natural text-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div className="flex flex-col items-center gap-2">
+              <Users className="w-12 h-12" />
+              <p className="text-3xl font-bold">5000+</p>
+              <p className="text-white/90">Happy Patients</p>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <Award className="w-12 h-12" />
+              <p className="text-3xl font-bold">Certified</p>
+              <p className="text-white/90">Medicine & Treatment</p>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <Shield className="w-12 h-12" />
+              <p className="text-3xl font-bold">100%</p>
+              <p className="text-white/90">Result Oriented</p>
+            </div>
           </div>
         </div>
       </section>
@@ -136,18 +177,20 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Conditions We Treat */}
-      <section className="py-20">
+      {/* Conditions We Treat - A to Z */}
+      <section className="py-20 bg-gradient-cream">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Conditions We Treat
+              We Treat A-Z Problems with Homeopathy
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Expert homeopathic treatment for chronic conditions with proven results
+              Comprehensive homeopathic treatment for all conditions from Acne to Vitiligo
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          {/* Featured Treatments */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {conditions.map((condition, index) => <Card key={index} className="p-6 hover:shadow-soft transition-all duration-300 hover:-translate-y-1 border-border bg-card">
                 <h3 className="font-bold text-lg mb-3 text-primary">{condition.category}</h3>
                 <ul className="space-y-2">
@@ -158,9 +201,61 @@ const Home = () => {
                 </ul>
               </Card>)}
           </div>
+
+          {/* A-Z Quick List */}
+          <div className="bg-white rounded-2xl shadow-card p-8 max-w-5xl mx-auto">
+            <h3 className="text-2xl font-bold text-center text-foreground mb-8">Complete Treatment List</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm">
+              <div>
+                <h4 className="font-bold text-primary mb-3">A-D</h4>
+                <ul className="space-y-1 text-muted-foreground">
+                  <li>• Acne & Allergies</li>
+                  <li>• Asthma & Arthritis</li>
+                  <li>• Blood Pressure</li>
+                  <li>• Cholesterol</li>
+                  <li>• Diabetes</li>
+                  <li>• Depression</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-bold text-primary mb-3">E-K</h4>
+                <ul className="space-y-1 text-muted-foreground">
+                  <li>• Eczema</li>
+                  <li>• Gout & Glaucoma</li>
+                  <li>• Hair Fall</li>
+                  <li>• Hypothyroid</li>
+                  <li>• Infertility</li>
+                  <li>• Kidney Stones</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-bold text-primary mb-3">L-P</h4>
+                <ul className="space-y-1 text-muted-foreground">
+                  <li>• Migraine</li>
+                  <li>• Obesity</li>
+                  <li>• PCOD & PCOS</li>
+                  <li>• Piles</li>
+                  <li>• Psoriasis</li>
+                  <li>• Paralysis</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-bold text-primary mb-3">R-Z</h4>
+                <ul className="space-y-1 text-muted-foreground">
+                  <li>• Rheumatoid Arthritis</li>
+                  <li>• Sinusitis</li>
+                  <li>• Thyroid Disorders</li>
+                  <li>• Tonsillitis</li>
+                  <li>• Vitiligo</li>
+                  <li>• & Many More...</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
           <div className="text-center mt-8">
             <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary-light">
-              <Link to="/treatments">View All Treatments <ArrowRight className="ml-2 w-4 h-4" /></Link>
+              <Link to="/treatments">View Detailed Treatment Information <ArrowRight className="ml-2 w-4 h-4" /></Link>
             </Button>
           </div>
         </div>
@@ -251,21 +346,26 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-hero text-white">
+      <section className="py-20 bg-gradient-natural text-white">
         <div className="container mx-auto px-4 text-center">
+          <div className="inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full mb-6">
+            <Award className="w-5 h-5" />
+            <span className="font-semibold">Certified with 100% Result Oriented Treatment</span>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Take the First Step Toward Natural Healing
+            Need Help? Book an Appointment with One Call
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Book your consultation today and experience the Sanjiva Protocol difference
+            Experience natural healing with our proven Sanjiva Protocol
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90">
+            <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 shadow-glow">
               <Link to="/contact">Book Appointment Now</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10 backdrop-blur-sm">
               <a href="https://wa.me/918179942297" target="_blank" rel="noopener noreferrer">
-                WhatsApp Us
+                <MessageCircle className="mr-2 w-5 h-5" />
+                WhatsApp: +91-81799 42297
               </a>
             </Button>
           </div>
