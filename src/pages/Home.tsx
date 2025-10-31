@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Heart, Clock, Users, Shield, Sparkles, MessageCircle, ArrowRight, CheckCircle2, Award, Leaf } from "lucide-react";
+import { Heart, Clock, Users, Shield, Sparkles, MessageCircle, ArrowRight, CheckCircle2, Award, Leaf, Phone, Star, TrendingUp } from "lucide-react";
 import heroImage from "@/assets/hero-homeopathy.jpg";
 import doctorImage from "@/assets/doctor-prasanna.jpg";
 import treatmentImage from "@/assets/treatment-natural.jpg";
@@ -73,65 +73,152 @@ const Home = () => {
     condition: "Migraine"
   }];
   return <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative min-h-[700px] flex items-center justify-center bg-gradient-subtle overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img src={heroImage} alt="Natural Homeopathy" className="w-full h-full object-cover opacity-90" />
+      {/* Hero Section - Modern & Animated */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary-light/20 via-background to-secondary/30">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float" />
+          <div className="absolute bottom-20 right-10 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-float-delayed" />
+          <div className="absolute top-1/2 left-1/3 w-96 h-96 bg-primary-glow/5 rounded-full blur-3xl animate-pulse" />
         </div>
+
+        {/* Floating Leaf Icons */}
+        <div className="absolute inset-0 pointer-events-none">
+          <Leaf className="absolute top-1/4 left-[15%] w-8 h-8 text-primary/20 animate-float" />
+          <Leaf className="absolute top-1/3 right-[20%] w-6 h-6 text-primary/15 animate-float-delayed" />
+          <Sparkles className="absolute bottom-1/4 left-[25%] w-10 h-10 text-primary/10 animate-float" />
+          <Heart className="absolute top-1/2 right-[15%] w-7 h-7 text-primary/20 animate-float-delayed" />
+        </div>
+
         <div className="container mx-auto px-4 z-10 relative">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="text-left space-y-6 animate-fade-in">
-              <div className="inline-flex items-center gap-2 bg-primary-light px-4 py-2 rounded-full">
-                <Leaf className="w-4 h-4 text-primary" />
-                <span className="text-primary font-semibold text-sm">Safe, Effective, Reliable</span>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="space-y-8 animate-fade-in">
+              {/* Badge */}
+              <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-soft border border-primary/20 hover:shadow-glow transition-all duration-300">
+                <div className="flex items-center gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+                  ))}
+                </div>
+                <span className="text-sm font-semibold text-foreground">Trusted by 5000+ Patients</span>
               </div>
-              <h1 className="text-5xl md:text-6xl font-bold text-foreground leading-tight">
-                Sanjivani Homeopathy
-              </h1>
-              <p className="text-2xl md:text-3xl text-primary font-semibold italic">
-                Safe. Effective. Reliable.
-              </p>
-              <p className="text-lg text-muted-foreground max-w-xl">
-                Choose homeopathy for treatments that work gently on the body, ensuring safe and effective results without side effects. Natural healing for lasting wellness.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" className="bg-gradient-hero hover:shadow-glow text-white">
-                  <Link to="/contact">Book Appointment</Link>
+
+              {/* Main Heading with Gradient */}
+              <div className="space-y-4">
+                <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+                  <span className="bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent">
+                    Natural Healing
+                  </span>
+                  <br />
+                  <span className="text-foreground">That Works</span>
+                </h1>
+                <p className="text-xl md:text-2xl text-muted-foreground font-medium">
+                  Experience safe, effective homeopathy with{" "}
+                  <span className="text-primary font-bold">zero side effects</span>
+                </p>
+              </div>
+
+              {/* Features List */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { icon: <Shield className="w-5 h-5" />, text: "100% Natural" },
+                  { icon: <Heart className="w-5 h-5" />, text: "Root Cause Treatment" },
+                  { icon: <Award className="w-5 h-5" />, text: "10+ Years Experience" },
+                  { icon: <TrendingUp className="w-5 h-5" />, text: "90% Success Rate" }
+                ].map((feature, idx) => (
+                  <div key={idx} className="flex items-center gap-3 bg-white/60 backdrop-blur-sm px-4 py-3 rounded-xl border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1">
+                    <div className="text-primary">{feature.icon}</div>
+                    <span className="font-semibold text-foreground">{feature.text}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Button asChild size="lg" className="bg-gradient-hero hover:shadow-glow text-white text-lg px-8 py-6 animate-pulse-glow">
+                  <Link to="/contact">
+                    <span className="flex items-center gap-2">
+                      Book Appointment
+                      <ArrowRight className="w-5 h-5" />
+                    </span>
+                  </Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary-light">
-                  <a href="https://wa.me/918179942297" target="_blank" rel="noopener noreferrer">
-                    WhatsApp Us
+                <Button asChild size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-white text-lg px-8 py-6 backdrop-blur-sm bg-white/80">
+                  <a href="tel:+918179942297" className="flex items-center gap-2">
+                    <Phone className="w-5 h-5" />
+                    Call Now
                   </a>
                 </Button>
               </div>
+
+              {/* Quick Contact */}
+              <div className="flex items-center gap-4 pt-2">
+                <div className="flex -space-x-2">
+                  {[1, 2, 3].map((i) => (
+                    <div key={i} className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-primary-glow border-2 border-white" />
+                  ))}
+                </div>
+                <div className="text-sm">
+                  <p className="font-bold text-foreground">Join 5000+ Happy Patients</p>
+                  <p className="text-muted-foreground">Start your healing journey today</p>
+                </div>
+              </div>
             </div>
-            <div className="hidden md:block animate-slide-up">
-              <img src={treatmentImage} alt="Homeopathy Treatment" className="rounded-2xl shadow-soft" />
+
+            {/* Right Content - Image with Decorative Elements */}
+            <div className="relative hidden lg:block">
+              <div className="relative z-10 animate-fade-in">
+                {/* Main Image Card */}
+                <div className="relative rounded-3xl overflow-hidden shadow-soft border-4 border-white bg-white p-4 hover:shadow-glow transition-all duration-500 hover:-translate-y-2">
+                  <img 
+                    src={treatmentImage} 
+                    alt="Natural Homeopathy Treatment" 
+                    className="rounded-2xl w-full h-auto"
+                  />
+                  
+                  {/* Floating Info Cards */}
+                  <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-card p-4 border border-primary/20 animate-float">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                        <Users className="w-6 h-6 text-primary" />
+                      </div>
+                      <div>
+                        <p className="text-2xl font-bold text-foreground">5000+</p>
+                        <p className="text-xs text-muted-foreground">Patients Treated</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="absolute -top-6 -right-6 bg-gradient-natural text-white rounded-2xl shadow-card p-4 animate-float-delayed">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+                        <Award className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <p className="text-2xl font-bold">100%</p>
+                        <p className="text-xs text-white/90">Result Oriented</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Decorative Dots */}
+                <div className="absolute -bottom-8 -right-8 w-24 h-24 grid grid-cols-4 gap-2 opacity-20">
+                  {[...Array(16)].map((_, i) => (
+                    <div key={i} className="w-2 h-2 rounded-full bg-primary" />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Trust Signals */}
-      <section className="py-12 bg-gradient-natural text-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="flex flex-col items-center gap-2">
-              <Users className="w-12 h-12" />
-              <p className="text-3xl font-bold">5000+</p>
-              <p className="text-white/90">Happy Patients</p>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <Award className="w-12 h-12" />
-              <p className="text-3xl font-bold">Certified</p>
-              <p className="text-white/90">Medicine & Treatment</p>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <Shield className="w-12 h-12" />
-              <p className="text-3xl font-bold">100%</p>
-              <p className="text-white/90">Result Oriented</p>
-            </div>
-          </div>
+        {/* Wave Separator */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+            <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
+          </svg>
         </div>
       </section>
 
