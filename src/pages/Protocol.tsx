@@ -99,9 +99,19 @@ const Protocol = () => {
             </div>
 
             <div className="text-center mt-12">
-              <Button asChild size="lg" className="bg-gradient-hero shadow-soft">
-                <Link to="/contact">Start Your Healing Journey</Link>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg" className="bg-gradient-hero shadow-soft">
+                  <Link to="/contact">Start Your Healing Journey</Link>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary-light">
+                  <a 
+                    href="/protocol-guide.pdf" 
+                    download="Sanjiva-Protocol-Guide.pdf"
+                  >
+                    Download Protocol Guide (PDF)
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </section>

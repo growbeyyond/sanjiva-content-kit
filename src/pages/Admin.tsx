@@ -87,6 +87,60 @@ const Admin = () => {
     }
   };
 
+  const updateAppointmentStatus = async (id: string, newStatus: string) => {
+    try {
+      const { error } = await supabase
+        .from('appointments')
+        .update({ status: newStatus })
+        .eq('id', id);
+
+      if (error) throw error;
+
+      setAppointments(prev =>
+        prev.map(apt => apt.id === id ? { ...apt, status: newStatus } : apt)
+      );
+
+      toast({
+        title: "Status Updated",
+        description: "Appointment status has been updated successfully.",
+      });
+    } catch (error) {
+      console.error('Error updating status:', error);
+      toast({
+        title: "Error",
+        description: "Failed to update status.",
+        variant: "destructive"
+      });
+    }
+  };
+
+  const updateInquiryStatus = async (id: string, newStatus: string) => {
+    try {
+      const { error } = await supabase
+        .from('contact_inquiries')
+        .update({ status: newStatus })
+        .eq('id', id);
+
+      if (error) throw error;
+
+      setInquiries(prev =>
+        prev.map(inq => inq.id === id ? { ...inq, status: newStatus } : inq)
+      );
+
+      toast({
+        title: "Status Updated",
+        description: "Inquiry status has been updated successfully.",
+      });
+    } catch (error) {
+      console.error('Error updating status:', error);
+      toast({
+        title: "Error",
+        description: "Failed to update status.",
+        variant: "destructive"
+      });
+    }
+  };
+
   const handleLogout = async () => {
     await supabase.auth.signOut();
     toast({
@@ -179,6 +233,19 @@ const Admin = () => {
                       {appointment.message && (
                         <p className="text-sm mt-2"><strong>Message:</strong> {appointment.message}</p>
                       )}
+                      <div className="mt-3 flex items-center gap-2">
+                        <label className="text-sm font-medium">Status:</label>
+                        <select
+                          value={appointment.status || 'pending'}
+                          onChange={(e) => updateAppointmentStatus(appointment.id, e.target.value)}
+                          className="px-3 py-1 text-sm rounded-md border border-border bg-background"
+                        >
+                          <option value="pending">Pending</option>
+                          <option value="confirmed">Confirmed</option>
+                          <option value="completed">Completed</option>
+                          <option value="cancelled">Cancelled</option>
+                        </select>
+                      </div>
                       <p className="text-xs text-muted-foreground mt-2">
                         Submitted: {new Date(appointment.created_at).toLocaleString()}
                       </p>
@@ -204,6 +271,18 @@ const Admin = () => {
                       <p className="text-sm"><strong>Subject:</strong> {inquiry.subject}</p>
                     )}
                     <p className="text-sm"><strong>Message:</strong> {inquiry.message}</p>
+                    <div className="mt-3 flex items-center gap-2">
+                      <label className="text-sm font-medium">Status:</label>
+                      <select
+                        value={inquiry.status || 'new'}
+                        onChange={(e) => updateInquiryStatus(inquiry.id, e.target.value)}
+                        className="px-3 py-1 text-sm rounded-md border border-border bg-background"
+                      >
+                        <option value="new">New</option>
+                        <option value="contacted">Contacted</option>
+                        <option value="resolved">Resolved</option>
+                      </select>
+                    </div>
                     <p className="text-xs text-muted-foreground">
                       Submitted: {new Date(inquiry.created_at).toLocaleString()}
                     </p>
