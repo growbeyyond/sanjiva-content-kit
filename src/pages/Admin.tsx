@@ -60,6 +60,24 @@ const Admin = () => {
       return;
     }
 
+    // Verify admin role
+    const { data: roleData, error } = await supabase
+      .from('user_roles')
+      .select('role')
+      .eq('user_id', session.user.id)
+      .eq('role', 'admin')
+      .maybeSingle();
+
+    if (error || !roleData) {
+      toast({
+        title: "Access Denied",
+        description: "You don't have admin privileges.",
+        variant: "destructive"
+      });
+      navigate("/");
+      return;
+    }
+
     fetchData();
   };
 
