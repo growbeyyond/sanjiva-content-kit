@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import WhatsAppWidget from "./components/WhatsAppWidget";
 import LiveChat from "./components/LiveChat";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Treatments from "./pages/Treatments";
@@ -19,6 +20,7 @@ import Disclaimer from "./pages/Disclaimer";
 import SymptomChecker from "./pages/SymptomChecker";
 import Gallery from "./pages/Gallery";
 import PatientPortal from "./pages/PatientPortal";
+import BookingPage from "./pages/BookingPage";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Admin from "./pages/Admin";
@@ -50,6 +52,7 @@ const App = () => (
             <Route path="/symptom-checker" element={<SymptomChecker />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/patient-portal" element={<PatientPortal />} />
+            <Route path="/book" element={<BookingPage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/admin" element={
@@ -60,6 +63,7 @@ const App = () => (
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <GoogleAnalytics />
         </BrowserRouter>
         <WhatsAppWidget />
         <LiveChat />
