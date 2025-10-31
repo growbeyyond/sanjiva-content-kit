@@ -54,7 +54,7 @@ const Navigation = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button asChild className="bg-gradient-hero shadow-soft">
-              <Link to="/contact">Book Appointment</Link>
+              <Link to="/book">Book Appointment</Link>
             </Button>
           </div>
 
@@ -87,7 +87,7 @@ const Navigation = () => {
             ))}
             <div className="px-4 pt-2">
               <Button asChild className="w-full bg-gradient-hero shadow-soft">
-                <Link to="/contact">Book Appointment</Link>
+                <Link to="/book">Book Appointment</Link>
               </Button>
             </div>
           </div>

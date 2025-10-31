@@ -24,6 +24,7 @@ import BookingPage from "./pages/BookingPage";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Admin from "./pages/Admin";
+import AdminEnhanced from "./pages/AdminEnhanced";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { HelmetProvider } from "react-helmet-async";
@@ -58,6 +59,11 @@ const App = () => (
             <Route path="/admin" element={
               <ProtectedRoute>
                 <Admin />
+              </ProtectedRoute>
+            } />
+            <Route path="/admin/enhanced" element={
+              <ProtectedRoute>
+                <AdminEnhanced />
               </ProtectedRoute>
             } />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
