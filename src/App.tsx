@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import WhatsAppWidget from "./components/WhatsAppWidget";
+import LiveChat from "./components/LiveChat";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Treatments from "./pages/Treatments";
@@ -15,6 +16,9 @@ import FAQ from "./pages/FAQ";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 import Disclaimer from "./pages/Disclaimer";
+import SymptomChecker from "./pages/SymptomChecker";
+import Gallery from "./pages/Gallery";
+import PatientPortal from "./pages/PatientPortal";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Admin from "./pages/Admin";
@@ -43,6 +47,9 @@ const App = () => (
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsConditions />} />
             <Route path="/disclaimer" element={<Disclaimer />} />
+            <Route path="/symptom-checker" element={<SymptomChecker />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/patient-portal" element={<PatientPortal />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/admin" element={
@@ -55,6 +62,7 @@ const App = () => (
           </Routes>
         </BrowserRouter>
         <WhatsAppWidget />
+        <LiveChat />
       </TooltipProvider>
     </QueryClientProvider>
   </HelmetProvider>

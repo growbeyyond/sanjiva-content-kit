@@ -15,6 +15,8 @@ const Navigation = () => {
     { to: "/testimonials", label: "Testimonials" },
     { to: "/blog", label: "Blog" },
     { to: "/faq", label: "FAQ" },
+    { to: "/symptom-checker", label: "Symptom Checker" },
+    { to: "/gallery", label: "Gallery" },
     { to: "/contact", label: "Contact" },
   ];
 
