@@ -264,7 +264,7 @@ const Home = () => {
               <Link to="/contact">Book Appointment Now</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-              <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/918179942297" target="_blank" rel="noopener noreferrer">
                 WhatsApp Us
               </a>
             </Button>

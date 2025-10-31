@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import WhatsAppWidget from "./components/WhatsAppWidget";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Treatments from "./pages/Treatments";
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      <WhatsAppWidget />
     </TooltipProvider>
   </QueryClientProvider>
 );

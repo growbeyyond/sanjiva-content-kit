@@ -7,24 +7,76 @@ import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     email: "",
     condition: "",
+    preferred_date: "",
+    preferred_time: "",
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Appointment Request Received!",
-      description: "We'll contact you within 24 hours to confirm your appointment.",
-    });
-    setFormData({ name: "", phone: "", email: "", condition: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      // Insert into database
+      const { error: dbError } = await supabase
+        .from('appointments')
+        .insert([{
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email || null,
+          condition: formData.condition,
+          preferred_date: formData.preferred_date || null,
+          preferred_time: formData.preferred_time || null,
+          message: formData.message || null,
+          status: 'pending'
+        }]);
+
+      if (dbError) throw dbError;
+
+      // Send email notification
+      const { error: emailError } = await supabase.functions.invoke('send-appointment-email', {
+        body: formData
+      });
+
+      if (emailError) {
+        console.error('Email notification error:', emailError);
+        // Don't fail the whole process if email fails
+      }
+
+      toast({
+        title: "Appointment Request Received!",
+        description: "We'll contact you within 24 hours to confirm your appointment.",
+      });
+
+      setFormData({ 
+        name: "", 
+        phone: "", 
+        email: "", 
+        condition: "", 
+        preferred_date: "",
+        preferred_time: "",
+        message: "" 
+      });
+    } catch (error) {
+      console.error('Error submitting appointment:', error);
+      toast({
+        title: "Error",
+        description: "Failed to submit appointment. Please try again or contact us directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -104,6 +156,31 @@ const Contact = () => {
                       required
                     />
                   </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-foreground mb-2">
+                        Preferred Date
+                      </label>
+                      <Input
+                        name="preferred_date"
+                        type="date"
+                        value={formData.preferred_date}
+                        onChange={handleChange}
+                        min={new Date().toISOString().split('T')[0]}
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-foreground mb-2">
+                        Preferred Time
+                      </label>
+                      <Input
+                        name="preferred_time"
+                        type="time"
+                        value={formData.preferred_time}
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </div>
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
                       Message (Optional)
@@ -116,8 +193,12 @@ const Contact = () => {
                       rows={4}
                     />
                   </div>
-                  <Button type="submit" className="w-full bg-gradient-hero shadow-soft">
-                    Submit Appointment Request
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-gradient-hero shadow-soft"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Submitting..." : "Submit Appointment Request"}
                   </Button>
                 </form>
 
@@ -131,7 +212,7 @@ const Contact = () => {
                     className="w-full border-primary text-primary hover:bg-primary-light"
                   >
                     <a 
-                      href="https://wa.me/919876543210" 
+                      href="https://wa.me/918179942297"
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2"
@@ -162,10 +243,10 @@ const Contact = () => {
                       <div>
                         <p className="font-semibold text-foreground">Phone</p>
                         <a 
-                          href="tel:+919876543210" 
+                          href="tel:+918179942297" 
                           className="text-muted-foreground text-sm hover:text-primary transition-colors"
                         >
-                          +91 98765 43210
+                          +91 81799 42297
                         </a>
                       </div>
                     </div>
@@ -174,10 +255,10 @@ const Contact = () => {
                       <div>
                         <p className="font-semibold text-foreground">Email</p>
                         <a 
-                          href="mailto:info@drprasanna.com" 
+                          href="mailto:prasannaboddu@gmail.com" 
                           className="text-muted-foreground text-sm hover:text-primary transition-colors"
                         >
-                          info@drprasanna.com
+                          prasannaboddu@gmail.com
                         </a>
                       </div>
                     </div>
@@ -227,6 +308,25 @@ const Contact = () => {
                   </p>
                 </Card>
               </div>
+            </div>
+
+            {/* Google Map */}
+            <div className="mt-12">
+              <Card className="p-6">
+                <h3 className="text-xl font-bold text-foreground mb-4">Find Us</h3>
+                <div className="rounded-lg overflow-hidden h-[400px]">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.31795243015!2d78.24323209999999!3d17.412608499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1234567890123"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Clinic Location - Hyderabad"
+                  ></iframe>
+                </div>
+              </Card>
             </div>
           </div>
         </section>
