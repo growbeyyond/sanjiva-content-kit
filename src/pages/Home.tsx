@@ -1,100 +1,81 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { 
-  Heart, 
-  Clock, 
-  Users, 
-  Shield,
-  Sparkles,
-  MessageCircle,
-  ArrowRight,
-  CheckCircle2
-} from "lucide-react";
+import { Heart, Clock, Users, Shield, Sparkles, MessageCircle, ArrowRight, CheckCircle2 } from "lucide-react";
 import heroImage from "@/assets/hero-bg.jpg";
 import doctorImage from "@/assets/doctor-prasanna.jpg";
-
 const Home = () => {
-  const conditions = [
-    { category: "Women's Health", items: ["PCOD", "Infertility", "Thyroid"] },
-    { category: "Hormonal & Metabolic", items: ["Obesity", "Diabetes", "Cholesterol"] },
-    { category: "Pain & Joint", items: ["Arthritis", "Sciatica", "Spondylitis"] },
-    { category: "Skin & Hair", items: ["Acne", "Hair Fall", "Psoriasis", "Vitiligo"] },
-    { category: "Respiratory", items: ["Asthma", "Sinusitis", "Allergies"] },
-    { category: "Lifestyle", items: ["Hypertension", "Kidney Stones", "Gall Stones"] },
-  ];
-
-  const whyChooseUs = [
-    {
-      icon: <Shield className="w-8 h-8 text-primary" />,
-      title: "Zero Side Effects",
-      description: "Safe, natural, and gentle healing for all ages."
-    },
-    {
-      icon: <Clock className="w-8 h-8 text-primary" />,
-      title: "Sustainable Healing",
-      description: "Focus on the root cause, not just symptoms."
-    },
-    {
-      icon: <Heart className="w-8 h-8 text-primary" />,
-      title: "Personalized Care",
-      description: "Every treatment plan is made uniquely for you."
-    },
-    {
-      icon: <Users className="w-8 h-8 text-primary" />,
-      title: "Trusted by Thousands",
-      description: "90% success in infertility & thyroid cases."
-    }
-  ];
-
-  const protocolSteps = [
-    {
-      number: "01",
-      title: "Consult & Understand",
-      description: "Comprehensive evaluation of physical and emotional factors"
-    },
-    {
-      number: "02",
-      title: "Tailored Plan",
-      description: "Customized homeopathic remedies for your constitution"
-    },
-    {
-      number: "03",
-      title: "Lifestyle Guidance",
-      description: "Simple, realistic habits for lasting wellness"
-    },
-    {
-      number: "04",
-      title: "Sustained Healing",
-      description: "Regular follow-ups to ensure zero recurrence"
-    }
-  ];
-
-  const testimonials = [
-    {
-      text: "After 3 years of thyroid medicines, I'm finally medicine-free! Dr. Prasanna's approach truly healed me.",
-      author: "Lakshmi R.",
-      condition: "Thyroid"
-    },
-    {
-      text: "We conceived naturally after 8 months of treatment. Forever grateful for the Sanjiva Protocol.",
-      author: "Anjali & Karthik",
-      condition: "Infertility"
-    },
-    {
-      text: "My chronic migraines vanished within three months. The best decision I ever made!",
-      author: "Priya S.",
-      condition: "Migraine"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen">
+  const conditions = [{
+    category: "Women's Health",
+    items: ["PCOD", "Infertility", "Thyroid"]
+  }, {
+    category: "Hormonal & Metabolic",
+    items: ["Obesity", "Diabetes", "Cholesterol"]
+  }, {
+    category: "Pain & Joint",
+    items: ["Arthritis", "Sciatica", "Spondylitis"]
+  }, {
+    category: "Skin & Hair",
+    items: ["Acne", "Hair Fall", "Psoriasis", "Vitiligo"]
+  }, {
+    category: "Respiratory",
+    items: ["Asthma", "Sinusitis", "Allergies"]
+  }, {
+    category: "Lifestyle",
+    items: ["Hypertension", "Kidney Stones", "Gall Stones"]
+  }];
+  const whyChooseUs = [{
+    icon: <Shield className="w-8 h-8 text-primary" />,
+    title: "Zero Side Effects",
+    description: "Safe, natural, and gentle healing for all ages."
+  }, {
+    icon: <Clock className="w-8 h-8 text-primary" />,
+    title: "Sustainable Healing",
+    description: "Focus on the root cause, not just symptoms."
+  }, {
+    icon: <Heart className="w-8 h-8 text-primary" />,
+    title: "Personalized Care",
+    description: "Every treatment plan is made uniquely for you."
+  }, {
+    icon: <Users className="w-8 h-8 text-primary" />,
+    title: "Trusted by Thousands",
+    description: "90% success in infertility & thyroid cases."
+  }];
+  const protocolSteps = [{
+    number: "01",
+    title: "Consult & Understand",
+    description: "Comprehensive evaluation of physical and emotional factors"
+  }, {
+    number: "02",
+    title: "Tailored Plan",
+    description: "Customized homeopathic remedies for your constitution"
+  }, {
+    number: "03",
+    title: "Lifestyle Guidance",
+    description: "Simple, realistic habits for lasting wellness"
+  }, {
+    number: "04",
+    title: "Sustained Healing",
+    description: "Regular follow-ups to ensure zero recurrence"
+  }];
+  const testimonials = [{
+    text: "After 3 years of thyroid medicines, I'm finally medicine-free! Dr. Prasanna's approach truly healed me.",
+    author: "Lakshmi R.",
+    condition: "Thyroid"
+  }, {
+    text: "We conceived naturally after 8 months of treatment. Forever grateful for the Sanjiva Protocol.",
+    author: "Anjali & Karthik",
+    condition: "Infertility"
+  }, {
+    text: "My chronic migraines vanished within three months. The best decision I ever made!",
+    author: "Priya S.",
+    condition: "Migraine"
+  }];
+  return <div className="min-h-screen">
       {/* Hero Section */}
-      <section 
-        className="relative h-[600px] flex items-center justify-center text-center bg-cover bg-center"
-        style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${heroImage})` }}
-      >
+      <section className="relative h-[600px] flex items-center justify-center text-center bg-cover bg-center" style={{
+      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${heroImage})`
+    }}>
         <div className="container mx-auto px-4 z-10 animate-fade-in">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             Healing Through Simplicity — <br />The Sanjiva Protocol Way
@@ -118,19 +99,13 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-up">
-              <img 
-                src={doctorImage} 
-                alt="Dr. Prasanna Boddupally" 
-                className="rounded-2xl shadow-card w-full max-w-md mx-auto"
-              />
+              <img src={doctorImage} alt="Dr. Prasanna Boddupally" className="rounded-2xl shadow-card w-full max-w-md mx-auto" />
             </div>
             <div className="space-y-6 animate-fade-in">
               <div className="inline-block px-4 py-2 bg-primary-light rounded-full">
                 <span className="text-primary font-semibold text-sm">Meet Dr. Prasanna</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                "Every symptom has a story — I help you heal from its root."
-              </h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">"Every symptom has a story  I help you heal from its root."</h2>
               <div className="space-y-3 text-muted-foreground">
                 <p className="flex items-center gap-2">
                   <CheckCircle2 className="w-5 h-5 text-primary" />
@@ -173,22 +148,15 @@ const Home = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {conditions.map((condition, index) => (
-              <Card 
-                key={index} 
-                className="p-6 hover:shadow-soft transition-all duration-300 hover:-translate-y-1 border-border bg-card"
-              >
+            {conditions.map((condition, index) => <Card key={index} className="p-6 hover:shadow-soft transition-all duration-300 hover:-translate-y-1 border-border bg-card">
                 <h3 className="font-bold text-lg mb-3 text-primary">{condition.category}</h3>
                 <ul className="space-y-2">
-                  {condition.items.map((item, idx) => (
-                    <li key={idx} className="text-muted-foreground flex items-center gap-2">
+                  {condition.items.map((item, idx) => <li key={idx} className="text-muted-foreground flex items-center gap-2">
                       <Sparkles className="w-4 h-4 text-primary" />
                       {item}
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
-              </Card>
-            ))}
+              </Card>)}
           </div>
           <div className="text-center mt-8">
             <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary-light">
@@ -210,13 +178,11 @@ const Home = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whyChooseUs.map((feature, index) => (
-              <Card key={index} className="p-6 text-center hover:shadow-soft transition-all duration-300 bg-background border-border">
+            {whyChooseUs.map((feature, index) => <Card key={index} className="p-6 text-center hover:shadow-soft transition-all duration-300 bg-background border-border">
                 <div className="flex justify-center mb-4">{feature.icon}</div>
                 <h3 className="font-bold text-lg mb-2 text-foreground">{feature.title}</h3>
                 <p className="text-sm text-muted-foreground">{feature.description}</p>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -236,20 +202,16 @@ const Home = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {protocolSteps.map((step, index) => (
-              <div key={index} className="relative">
+            {protocolSteps.map((step, index) => <div key={index} className="relative">
                 <Card className="p-6 h-full hover:shadow-soft transition-all duration-300 bg-background border-border">
                   <div className="text-5xl font-bold text-primary-light mb-4">{step.number}</div>
                   <h3 className="font-bold text-lg mb-2 text-foreground">{step.title}</h3>
                   <p className="text-sm text-muted-foreground">{step.description}</p>
                 </Card>
-                {index < protocolSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2">
+                {index < protocolSteps.length - 1 && <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2">
                     <ArrowRight className="w-6 h-6 text-primary" />
-                  </div>
-                )}
-              </div>
-            ))}
+                  </div>}
+              </div>)}
           </div>
           <div className="text-center mt-8">
             <Button asChild className="bg-gradient-hero shadow-soft">
@@ -271,16 +233,14 @@ const Home = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="p-6 hover:shadow-soft transition-all duration-300 bg-background border-border">
+            {testimonials.map((testimonial, index) => <Card key={index} className="p-6 hover:shadow-soft transition-all duration-300 bg-background border-border">
                 <MessageCircle className="w-8 h-8 text-primary mb-4" />
                 <p className="text-foreground mb-4 italic">"{testimonial.text}"</p>
                 <div className="border-t border-border pt-4">
                   <p className="font-semibold text-foreground">{testimonial.author}</p>
                   <p className="text-sm text-muted-foreground">Treated for {testimonial.condition}</p>
                 </div>
-              </Card>
-            ))}
+              </Card>)}
           </div>
           <div className="text-center mt-8">
             <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary-light">
@@ -311,8 +271,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Home;
