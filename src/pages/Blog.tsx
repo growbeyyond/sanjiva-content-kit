@@ -3,8 +3,53 @@ import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock } from "lucide-react";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Blog = () => {
+  const { toast } = useToast();
+  const [email, setEmail] = useState("");
+  const [isSubscribing, setIsSubscribing] = useState(false);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setIsSubscribing(true);
+    try {
+      const { error } = await supabase
+        .from('newsletter_subscribers')
+        .insert([{ email, active: true }]);
+
+      if (error) {
+        if (error.code === '23505') {
+          toast({
+            title: "Already Subscribed",
+            description: "This email is already on our newsletter list.",
+          });
+        } else {
+          throw error;
+        }
+      } else {
+        toast({
+          title: "Successfully Subscribed!",
+          description: "You'll receive our latest health insights via email.",
+        });
+        setEmail("");
+      }
+    } catch (error) {
+      console.error('Newsletter subscription error:', error);
+      toast({
+        title: "Error",
+        description: "Failed to subscribe. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubscribing(false);
+    }
+  };
+
   const blogPosts = [
     {
       title: "Is Homeopathy Really Slow? The Truth You Should Know",
@@ -100,16 +145,23 @@ const Blog = () => {
               <p className="text-muted-foreground mb-6">
                 Subscribe to receive the latest health tips and insights directly to your inbox
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 justify-center">
                 <input
                   type="email"
                   placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                   className="px-4 py-2 rounded-md border border-border bg-background text-foreground flex-1 max-w-sm"
                 />
-                <Button className="bg-gradient-hero shadow-soft">
-                  Subscribe
+                <Button 
+                  type="submit" 
+                  className="bg-gradient-hero shadow-soft"
+                  disabled={isSubscribing}
+                >
+                  {isSubscribing ? "Subscribing..." : "Subscribe"}
                 </Button>
-              </div>
+              </form>
             </div>
           </div>
         </section>

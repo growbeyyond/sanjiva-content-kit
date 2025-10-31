@@ -4,6 +4,21 @@ import { Card } from "@/components/ui/card";
 import { Star } from "lucide-react";
 
 const Testimonials = () => {
+  const videoTestimonials = [
+    {
+      name: "Priya & Ramesh",
+      condition: "Infertility",
+      videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video IDs
+      thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg"
+    },
+    {
+      name: "Lakshmi R.",
+      condition: "Thyroid",
+      videoId: "dQw4w9WgXcQ",
+      thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg"
+    }
+  ];
+
   const testimonials = [
     {
       name: "Lakshmi R.",
@@ -68,6 +83,39 @@ const Testimonials = () => {
 
         <section className="py-16">
           <div className="container mx-auto px-4">
+            {/* Video Testimonials Section */}
+            <div className="max-w-6xl mx-auto mb-16">
+              <h2 className="text-3xl font-bold text-center mb-8 text-foreground">
+                Watch Patient Success Stories
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {videoTestimonials.map((video, index) => (
+                  <Card key={index} className="overflow-hidden">
+                    <div className="relative aspect-video">
+                      <iframe
+                        width="100%"
+                        height="100%"
+                        src={`https://www.youtube.com/embed/${video.videoId}`}
+                        title={`${video.name} - ${video.condition} Testimonial`}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="absolute inset-0"
+                      ></iframe>
+                    </div>
+                    <div className="p-4">
+                      <p className="font-semibold text-foreground">{video.name}</p>
+                      <p className="text-sm text-primary">{video.condition}</p>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            {/* Written Testimonials */}
+            <h2 className="text-3xl font-bold text-center mb-8 text-foreground">
+              More Success Stories
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {testimonials.map((testimonial, index) => (
                 <Card key={index} className="p-6 hover:shadow-soft transition-all duration-300">
