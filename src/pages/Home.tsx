@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Heart, Clock, Users, Shield, Sparkles, MessageCircle, ArrowRight, CheckCircle2, Award, Leaf, Phone, Star, TrendingUp } from "lucide-react";
-import heroImage from "@/assets/hero-homeopathy.jpg";
+import heroImage from "@/assets/hero-modern.jpg";
 import doctorImage from "@/assets/doctor-prasanna.jpg";
 import treatmentImage from "@/assets/treatment-natural.jpg";
 const Home = () => {
@@ -172,7 +172,7 @@ const Home = () => {
                 {/* Main Image Card */}
                 <div className="relative rounded-3xl overflow-hidden shadow-soft border-4 border-white bg-white p-4 hover:shadow-glow transition-all duration-500 hover:-translate-y-2">
                   <img 
-                    src={treatmentImage} 
+                    src={heroImage} 
                     alt="Natural Homeopathy Treatment" 
                     className="rounded-2xl w-full h-auto"
                   />
