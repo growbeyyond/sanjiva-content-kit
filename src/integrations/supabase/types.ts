@@ -396,6 +396,45 @@ export type Database = {
         }
         Relationships: []
       }
+      testimonials: {
+        Row: {
+          condition: string
+          created_at: string
+          id: string
+          is_anonymous: boolean | null
+          location: string | null
+          name: string
+          rating: number | null
+          status: string | null
+          testimonial: string
+          updated_at: string
+        }
+        Insert: {
+          condition: string
+          created_at?: string
+          id?: string
+          is_anonymous?: boolean | null
+          location?: string | null
+          name: string
+          rating?: number | null
+          status?: string | null
+          testimonial: string
+          updated_at?: string
+        }
+        Update: {
+          condition?: string
+          created_at?: string
+          id?: string
+          is_anonymous?: boolean | null
+          location?: string | null
+          name?: string
+          rating?: number | null
+          status?: string | null
+          testimonial?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string | null
