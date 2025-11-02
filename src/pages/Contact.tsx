@@ -90,8 +90,8 @@ const Contact = () => {
         <section className="py-20 bg-gradient-subtle">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Let's Start Your Healing Journey
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                <span className="text-gradient-bright">Get in Touch</span> – Let's Start Your Healing Journey
               </h1>
               <p className="text-xl text-muted-foreground">
                 Book your consultation and take the first step toward natural wellness

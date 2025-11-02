@@ -131,8 +131,9 @@ const Testimonials = () => {
         <section className="py-20 bg-gradient-subtle">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Real Stories of Healing & Hope
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                <span className="text-gradient-bright">Healing Stories</span> That Inspire Hope
+                <br />Real Stories of Healing & Hope
               </h1>
               <p className="text-xl text-muted-foreground">
                 Discover how the Sanjiva Protocol transformed lives

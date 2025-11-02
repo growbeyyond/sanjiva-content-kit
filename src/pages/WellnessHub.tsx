@@ -64,8 +64,9 @@ const WellnessHub = () => {
         <section className="py-20 bg-gradient-subtle">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Your Digital Wellness Companion
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                <span className="text-gradient-bright">Wellness Hub:</span> Your Journey to Holistic Health
+                <br />Your Digital Wellness Companion
               </h1>
               <p className="text-xl text-muted-foreground mb-4">
                 Explore, track, and learn about your hormonal health

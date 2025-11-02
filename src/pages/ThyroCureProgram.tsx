@@ -62,8 +62,9 @@ const ThyroCureProgram = () => {
         <section className="py-16 bg-gradient-cream">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-8">
-                Understanding Thyroid Imbalance
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
+                <span className="text-gradient-bright">ThyroCure Program:</span> Natural Thyroid Balance
+                <br />Understanding Thyroid Imbalance
               </h2>
               <Card className="p-8 shadow-card">
                 <p className="text-lg text-muted-foreground leading-relaxed">

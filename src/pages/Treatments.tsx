@@ -51,8 +51,9 @@ const Treatments = () => {
         <section className="py-20 bg-gradient-subtle">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Women's Health Solutions
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                Natural Healing for <span className="text-gradient-bright">Chronic Conditions</span>
+                <br />Women's Health Solutions
               </h1>
               <p className="text-xl text-muted-foreground">
                 Comprehensive hormonal care for PCOS, thyroid health, and complete wellness

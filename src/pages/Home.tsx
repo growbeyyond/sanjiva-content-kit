@@ -84,12 +84,7 @@ const Home = () => {
             {/* Centered Content */}
             <div className="space-y-8 animate-fade-in text-center">
               <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-                <span style={{ 
-                  background: 'linear-gradient(135deg, #E91E8C 0%, #D946EF 50%, #C026D3 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text'
-                }}>
+                <span className="text-gradient-bright">
                   Balance Your Hormones.
                 </span>
                 <br />
@@ -137,8 +132,10 @@ const Home = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Every Woman Has a Story.<br />Every Hormone Has a Reason.
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="text-gradient-bright">Every Woman Has a Story.</span>
+              <br />
+              Every Hormone Has a Reason.
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               You're not alone in this journey. Thousands of women are finding their path to balance.
@@ -203,8 +200,8 @@ const Home = () => {
       <section className="py-20 bg-gradient-subtle">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              It's Not You — It's Your Hormonal Environment.
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="text-gradient-bright">It's Not You</span> — It's Your Hormonal Environment.
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Stress, processed food, sleeplessness, pollution, and emotional burnout silently trigger hormonal chaos.
@@ -247,8 +244,8 @@ const Home = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Your Personalized 4-Pillar Healing System
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Your Personalized <span className="text-gradient-bright">4-Pillar Healing System</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               A comprehensive approach that treats the root cause, not just symptoms
@@ -314,8 +311,8 @@ const Home = () => {
                 <span className="text-primary font-semibold">Meet Dr. Prasanna</span>
               </div>
               
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-                A Doctor Who Listens,<br />A Woman Who Understands.
+              <h2 className="text-4xl md:text-5xl font-bold">
+                A Doctor Who Listens,<br /><span className="text-gradient-bright">A Woman Who Understands.</span>
               </h2>
               
               <p className="text-xl text-accent font-semibold italic">
@@ -355,8 +352,8 @@ const Home = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Your Digital Hormone Coach is Here
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Your <span className="text-gradient-bright">Digital Hormone Coach</span> is Here
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Try interactive tools powered by AI and homeopathy science
@@ -401,8 +398,8 @@ const Home = () => {
       <section className="py-20 bg-gradient-subtle">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              From Pain to Power — Stories That Inspire
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="text-gradient-bright">From Pain to Power</span> — Stories That Inspire
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Thousands of women have transformed their cycles, weight, energy, and self-esteem
@@ -490,8 +487,8 @@ const Home = () => {
             <div className="inline-block px-6 py-3 bg-primary-light rounded-full mb-4">
               <span className="text-primary font-semibold">Holistic Wellness</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Mind · Body · Hormone · Soul
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="text-gradient-bright">Mind · Body · Hormone · Soul</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Healing is not only about medicines — it's about balance, belief, and being kind to yourself
@@ -534,8 +531,8 @@ const Home = () => {
       <section className="py-20 bg-gradient-rose">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              You're Not Alone — You're Among Strong Women
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="text-gradient-bright">You're Not Alone</span> — You're Among Strong Women
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Join thousands of women across India healing together
@@ -581,8 +578,8 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Your Hormonal Healing Begins Here
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                Your <span className="text-gradient-bright">Hormonal Healing</span> Begins Here
               </h2>
               <p className="text-lg text-muted-foreground">
                 Take your first step toward natural balance with Dr. Prasanna's personalized homeopathic plan

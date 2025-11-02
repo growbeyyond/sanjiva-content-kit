@@ -13,8 +13,9 @@ const About = () => {
         <section className="py-20 bg-gradient-subtle">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Empowering Women Through Hormonal Healing
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                <span className="text-gradient-bright">Meet Dr. Prasanna Boddupally</span>
+                <br />Empowering Women Through Hormonal Healing
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
                 "Science heals the body. Empathy heals the soul."
