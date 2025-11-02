@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Heart, Clock, Users, Shield, Sparkles, MessageCircle, ArrowRight, CheckCircle2, Award, Leaf, Phone, Star, TrendingUp } from "lucide-react";
+import { Heart, Clock, Users, Shield, Sparkles, MessageCircle, ArrowRight, CheckCircle2, Award, Leaf, Phone, Star, TrendingUp, Zap, Target, Brain, Calendar, IndianRupee, ChevronDown } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import SEO from "@/components/SEO";
 import heroImage from "@/assets/hero-modern.jpg";
 import heroHormonalBalance from "@/assets/hero-hormonal-balance.jpg";
 import doctorImage from "@/assets/doctor-prasanna.jpg";
 import treatmentImage from "@/assets/treatment-natural.jpg";
 import wellnessRituals from "@/assets/wellness-rituals.jpg";
+import pcosInfographic from "@/assets/pcos-infographic.jpg";
 const Home = () => {
   const structuredData = {
     "@context": "https://schema.org",
@@ -170,7 +172,7 @@ const Home = () => {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button asChild size="lg" className="bg-gradient-hero hover:shadow-glow text-white text-lg px-8 py-6 animate-pulse-glow">
-                  <Link to="/contact">
+                  <Link to="/book">
                     <span className="flex items-center gap-2">
                       Book My Consultation
                       <ArrowRight className="w-5 h-5" />
@@ -255,8 +257,78 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Meet Dr. Prasanna */}
+      {/* Trust Badges & Social Proof */}
+      <section className="py-12 bg-white border-y border-border">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center text-center">
+            <div>
+              <div className="text-4xl font-bold text-primary mb-2">5000+</div>
+              <p className="text-sm text-muted-foreground">Happy Patients</p>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-primary mb-2">90%</div>
+              <p className="text-sm text-muted-foreground">Success Rate</p>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-primary mb-2">10+</div>
+              <p className="text-sm text-muted-foreground">Years Experience</p>
+            </div>
+            <div>
+              <div className="flex justify-center mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 text-yellow-500 fill-yellow-500" />
+                ))}
+              </div>
+              <p className="text-sm text-muted-foreground">4.9/5 Rating</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Problem Section - Empathy */}
       <section className="py-20 bg-gradient-subtle">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+              Do You Feel Like Your Body Is Working Against You?
+            </h2>
+            <p className="text-xl text-muted-foreground mb-8">
+              You're not alone. Thousands of women struggle with:
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              { icon: "😓", text: "Unexplained weight gain that won't budge", color: "bg-red-50 border-red-200" },
+              { icon: "😴", text: "Constant fatigue & brain fog", color: "bg-blue-50 border-blue-200" },
+              { icon: "😰", text: "Irregular periods & hormonal chaos", color: "bg-purple-50 border-purple-200" },
+              { icon: "😢", text: "Hair fall & acne that shakes confidence", color: "bg-orange-50 border-orange-200" },
+              { icon: "💔", text: "Difficulty conceiving naturally", color: "bg-pink-50 border-pink-200" },
+              { icon: "😞", text: "Mood swings & anxiety", color: "bg-green-50 border-green-200" }
+            ].map((problem, idx) => (
+              <Card key={idx} className={`p-6 border-2 ${problem.color} hover:shadow-lg transition-all duration-300`}>
+                <div className="text-5xl mb-3">{problem.icon}</div>
+                <p className="font-semibold text-foreground">{problem.text}</p>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <div className="inline-block bg-primary/10 border-2 border-primary/20 rounded-2xl p-8 max-w-3xl">
+              <p className="text-xl md:text-2xl font-semibold text-foreground mb-4">
+                "I've tried everything, but nothing seems to work..."
+              </p>
+              <p className="text-lg text-muted-foreground">
+                Sound familiar? <span className="text-primary font-bold">What if the problem isn't you</span> — 
+                but the approach?
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Meet Dr. Prasanna */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-up">
@@ -297,45 +369,146 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Conditions We Treat - A to Z */}
+      {/* The Solution - Programs */}
       <section className="py-20 bg-gradient-cream">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <div className="inline-block px-4 py-2 bg-primary-light rounded-full mb-4">
+              <span className="text-primary font-semibold text-sm">The Solution</span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
               The ThyroCure & PCOS Reset Program
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Heal your hormones from the inside out — naturally and permanently
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              A <span className="text-primary font-bold">Root-Cause Approach</span> that heals your hormones naturally — no side effects, no lifelong medications
             </p>
           </div>
-          
-          {/* 4 Pillars */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <Card className="p-6 text-center hover:shadow-soft transition-all duration-300 hover:-translate-y-1">
-              <div className="text-4xl mb-4">🔬</div>
-              <h3 className="font-bold text-lg mb-2 text-foreground">Root-Cause Diagnosis</h3>
-              <p className="text-sm text-muted-foreground">Advanced AI + homeopathic analysis</p>
+
+          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-12">
+            {/* ThyroCure Program */}
+            <Card className="p-8 hover:shadow-card transition-all duration-300 border-2 border-primary/20 bg-gradient-to-br from-white to-primary/5">
+              <div className="text-5xl mb-4">🦋</div>
+              <h3 className="text-2xl font-bold text-foreground mb-4">ThyroCure Program</h3>
+              <p className="text-muted-foreground mb-6">
+                Balance your thyroid naturally without lifelong medication dependency
+              </p>
+              <ul className="space-y-3 mb-6">
+                {[
+                  "Reverse hypothyroidism naturally",
+                  "Reduce/eliminate thyroid medication",
+                  "Boost energy & metabolism",
+                  "Mental clarity & mood balance"
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-foreground">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button asChild className="w-full bg-gradient-hero">
+                <Link to="/thyrocure-program">Learn More</Link>
+              </Button>
             </Card>
-            <Card className="p-6 text-center hover:shadow-soft transition-all duration-300 hover:-translate-y-1">
-              <div className="text-4xl mb-4">💊</div>
-              <h3 className="font-bold text-lg mb-2 text-foreground">Personalized Homeopathy</h3>
-              <p className="text-sm text-muted-foreground">Customized natural solutions</p>
-            </Card>
-            <Card className="p-6 text-center hover:shadow-soft transition-all duration-300 hover:-translate-y-1">
-              <div className="text-4xl mb-4">🥗</div>
-              <h3 className="font-bold text-lg mb-2 text-foreground">Hormone-Friendly Nutrition</h3>
-              <p className="text-sm text-muted-foreground">Lifestyle & meal planning</p>
-            </Card>
-            <Card className="p-6 text-center hover:shadow-soft transition-all duration-300 hover:-translate-y-1">
-              <div className="text-4xl mb-4">🧘‍♀️</div>
-              <h3 className="font-bold text-lg mb-2 text-foreground">Mind-Body Healing</h3>
-              <p className="text-sm text-muted-foreground">Rituals for complete wellness</p>
+
+            {/* PCOS Program */}
+            <Card className="p-8 hover:shadow-card transition-all duration-300 border-2 border-accent/20 bg-gradient-to-br from-white to-accent/5">
+              <div className="text-5xl mb-4">🌸</div>
+              <h3 className="text-2xl font-bold text-foreground mb-4">PCOS Reset Program</h3>
+              <p className="text-muted-foreground mb-6">
+                Restore hormonal balance, regular cycles, and natural fertility
+              </p>
+              <ul className="space-y-3 mb-6">
+                {[
+                  "Regular, pain-free periods",
+                  "Natural weight management",
+                  "Clear skin & reduced hair fall",
+                  "Improved fertility naturally"
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                    <span className="text-foreground">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button asChild className="w-full bg-gradient-natural">
+                <Link to="/pcos-program">Learn More</Link>
+              </Button>
             </Card>
           </div>
 
-          <div className="text-center mt-8">
-            <Button asChild size="lg" className="bg-gradient-hero shadow-soft">
-              <Link to="/protocol">Start My 3-Month Transformation</Link>
+          {/* Visual Infographic */}
+          <div className="max-w-4xl mx-auto">
+            <img 
+              src={pcosInfographic} 
+              alt="PCOS & Thyroid Treatment Journey" 
+              className="rounded-2xl shadow-card w-full"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works - Process */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Your Healing Journey in 4 Simple Steps
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              From first consultation to complete recovery — here's how we guide you
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                number: "01",
+                icon: <Calendar className="w-8 h-8" />,
+                title: "Book Consultation",
+                description: "Free 15-min discovery call to understand your concerns"
+              },
+              {
+                number: "02",
+                icon: <Brain className="w-8 h-8" />,
+                title: "Deep Diagnosis",
+                description: "AI-powered + clinical assessment to find root causes"
+              },
+              {
+                number: "03",
+                icon: <Target className="w-8 h-8" />,
+                title: "Personalized Plan",
+                description: "Custom homeopathy + lifestyle protocol designed for you"
+              },
+              {
+                number: "04",
+                icon: <TrendingUp className="w-8 h-8" />,
+                title: "Track & Transform",
+                description: "Weekly follow-ups, adjustments, and visible results"
+              }
+            ].map((step, idx) => (
+              <div key={idx} className="relative">
+                {/* Connector Line */}
+                {idx < 3 && (
+                  <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-primary to-primary/20 z-0" />
+                )}
+                
+                <Card className="relative p-6 text-center hover:shadow-card transition-all duration-300 hover:-translate-y-2 z-10 bg-white">
+                  <div className="text-6xl font-bold text-primary/10 mb-2">{step.number}</div>
+                  <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                    {step.icon}
+                  </div>
+                  <h3 className="font-bold text-lg mb-2 text-foreground">{step.title}</h3>
+                  <p className="text-sm text-muted-foreground">{step.description}</p>
+                </Card>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Button asChild size="lg" className="bg-gradient-hero shadow-glow">
+              <Link to="/book">
+                Start Your Journey Today <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
             </Button>
           </div>
         </div>
@@ -425,20 +598,64 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Success Stories - Before/After */}
       <section className="py-20 bg-gradient-subtle">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Real Women, Real Results
+            <div className="inline-block px-4 py-2 bg-primary-light rounded-full mb-4">
+              <span className="text-primary font-semibold text-sm">Real Results</span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+              Real Women, Real Transformations
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Healing stories from women who reclaimed their health
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              These aren't just testimonials — they're life-changing stories
             </p>
           </div>
+
+          {/* Featured Story */}
+          <Card className="max-w-4xl mx-auto p-8 md:p-12 mb-12 bg-gradient-to-br from-primary/5 to-accent/5 border-2 border-primary/20">
+            <div className="flex items-start gap-4 mb-6">
+              <div className="w-16 h-16 rounded-full bg-gradient-hero flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">
+                A
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-foreground mb-2">Anjali's Journey</h3>
+                <p className="text-muted-foreground">PCOS & Infertility → Natural Conception</p>
+              </div>
+            </div>
+            <p className="text-lg text-foreground mb-6 italic">
+              "After 3 years of failed fertility treatments and crushing disappointment, I found Dr. Prasanna. 
+              Within 8 months on the Sanjiva Protocol, my cycles became regular, I lost 12kg naturally, 
+              and I conceived without IVF. Today I'm holding my miracle baby. This isn't just treatment — 
+              it's getting your life back."
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <div className="bg-white rounded-lg px-4 py-2 border border-primary/20">
+                <p className="text-sm text-muted-foreground">Weight Lost</p>
+                <p className="text-xl font-bold text-primary">12 kg</p>
+              </div>
+              <div className="bg-white rounded-lg px-4 py-2 border border-primary/20">
+                <p className="text-sm text-muted-foreground">Regular Cycles</p>
+                <p className="text-xl font-bold text-primary">✓ Achieved</p>
+              </div>
+              <div className="bg-white rounded-lg px-4 py-2 border border-primary/20">
+                <p className="text-sm text-muted-foreground">Natural Pregnancy</p>
+                <p className="text-xl font-bold text-primary">✓ Success</p>
+              </div>
+            </div>
+          </Card>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => <Card key={index} className="p-6 hover:shadow-soft transition-all duration-300 bg-background border-border">
-                <MessageCircle className="w-8 h-8 text-primary mb-4" />
+            {testimonials.map((testimonial, index) => <Card key={index} className="p-6 hover:shadow-card transition-all duration-300 bg-white border-border">
+                <div className="flex items-center gap-2 mb-4">
+                  <MessageCircle className="w-6 h-6 text-primary" />
+                  <div className="flex">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+                    ))}
+                  </div>
+                </div>
                 <p className="text-foreground mb-4 italic">"{testimonial.text}"</p>
                 <div className="border-t border-border pt-4">
                   <p className="font-semibold text-foreground">{testimonial.author}</p>
@@ -446,34 +663,234 @@ const Home = () => {
                 </div>
               </Card>)}
           </div>
-          <div className="text-center mt-8">
-            <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary-light">
-              <Link to="/testimonials">Read More Success Stories <ArrowRight className="ml-2 w-4 h-4" /></Link>
+          <div className="text-center mt-12">
+            <Button asChild size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-white">
+              <Link to="/testimonials">Read 100+ More Stories <ArrowRight className="ml-2 w-5 h-5" /></Link>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-natural text-white">
-        <div className="container mx-auto px-4 text-center">
+      {/* FAQ Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Common Questions Answered
+            </h2>
+            <p className="text-muted-foreground">
+              Everything you need to know before starting your healing journey
+            </p>
+          </div>
+
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem value="item-1" className="border rounded-lg px-6 bg-gradient-subtle">
+              <AccordionTrigger className="text-left font-semibold hover:text-primary">
+                How long does it take to see results?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground pt-2">
+                Most patients notice improvements within 4-6 weeks. Significant hormonal balance typically occurs 
+                in 3-6 months. Complete healing timelines vary based on individual conditions.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-2" className="border rounded-lg px-6 bg-gradient-subtle">
+              <AccordionTrigger className="text-left font-semibold hover:text-primary">
+                Is homeopathy safe with my current medications?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground pt-2">
+                Yes! Homeopathy is completely safe alongside conventional medicine. As you heal, we work with you 
+                to gradually reduce dependency on medications under proper guidance.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-3" className="border rounded-lg px-6 bg-gradient-subtle">
+              <AccordionTrigger className="text-left font-semibold hover:text-primary">
+                Do I need to follow strict diet restrictions?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground pt-2">
+                No extreme restrictions! We provide simple, sustainable lifestyle guidance focused on hormone-friendly 
+                nutrition. You'll still enjoy food while healing your body.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4" className="border rounded-lg px-6 bg-gradient-subtle">
+              <AccordionTrigger className="text-left font-semibold hover:text-primary">
+                What makes your approach different from conventional treatment?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground pt-2">
+                We treat the root cause, not just symptoms. No lifelong medication dependency, no side effects. 
+                Our Sanjiva Protocol combines personalized homeopathy with AI diagnostics, lifestyle coaching, 
+                and holistic wellness for complete, lasting healing.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5" className="border rounded-lg px-6 bg-gradient-subtle">
+              <AccordionTrigger className="text-left font-semibold hover:text-primary">
+                Can I consult online if I'm not in Hyderabad?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground pt-2">
+                Absolutely! We offer comprehensive online consultations with the same quality of care. Your medicines 
+                are shipped directly to you, and follow-ups happen via video calls.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+
+          <div className="text-center mt-8">
+            <Button asChild variant="outline" className="border-primary text-primary">
+              <Link to="/faq">View All FAQs <ChevronDown className="ml-2 w-4 h-4" /></Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Investment/Pricing Section */}
+      <section className="py-20 bg-gradient-cream">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Transparent Investment in Your Health
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              No hidden costs. Just honest pricing for transformative care.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {/* Initial Consultation */}
+            <Card className="p-8 text-center hover:shadow-card transition-all duration-300 bg-white">
+              <div className="text-4xl mb-4">📋</div>
+              <h3 className="text-xl font-bold mb-2 text-foreground">Initial Consultation</h3>
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <IndianRupee className="w-6 h-6 text-primary" />
+                <span className="text-4xl font-bold text-primary">800</span>
+              </div>
+              <p className="text-sm text-muted-foreground mb-6">
+                45-min comprehensive assessment + AI diagnostic report
+              </p>
+              <Button asChild className="w-full" variant="outline">
+                <Link to="/book">Book Now</Link>
+              </Button>
+            </Card>
+
+            {/* 3-Month Program */}
+            <Card className="p-8 text-center hover:shadow-card transition-all duration-300 bg-gradient-to-br from-primary/5 to-primary/10 border-2 border-primary relative">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold">
+                Most Popular
+              </div>
+              <div className="text-4xl mb-4">🌟</div>
+              <h3 className="text-xl font-bold mb-2 text-foreground">3-Month Program</h3>
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <IndianRupee className="w-6 h-6 text-primary" />
+                <span className="text-4xl font-bold text-primary">15,000</span>
+              </div>
+              <ul className="text-sm text-left space-y-2 mb-6 text-muted-foreground">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                  <span>Personalized homeopathy medicines</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                  <span>Weekly progress tracking</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                  <span>Lifestyle & diet guidance</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                  <span>AI wellness tools access</span>
+                </li>
+              </ul>
+              <Button asChild className="w-full bg-gradient-hero">
+                <Link to="/book">Start Program</Link>
+              </Button>
+            </Card>
+
+            {/* 6-Month Program */}
+            <Card className="p-8 text-center hover:shadow-card transition-all duration-300 bg-white">
+              <div className="text-4xl mb-4">💎</div>
+              <h3 className="text-xl font-bold mb-2 text-foreground">6-Month Complete Care</h3>
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <IndianRupee className="w-6 h-6 text-primary" />
+                <span className="text-4xl font-bold text-primary">28,000</span>
+              </div>
+              <p className="text-sm text-muted-foreground mb-2">Everything in 3-month +</p>
+              <ul className="text-sm text-left space-y-2 mb-6 text-muted-foreground">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                  <span>Extended support & follow-ups</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                  <span>Free wellness workshop access</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                  <span>Priority consultation booking</span>
+                </li>
+              </ul>
+              <Button asChild className="w-full" variant="outline">
+                <Link to="/book">Get Started</Link>
+              </Button>
+            </Card>
+          </div>
+
+          <div className="text-center mt-8">
+            <p className="text-sm text-muted-foreground">
+              💳 Easy payment options available | 🔒 100% secure checkout
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="py-20 bg-gradient-natural text-white relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl" />
+          <div className="absolute bottom-10 right-10 w-80 h-80 bg-white rounded-full blur-3xl" />
+        </div>
+
+        <div className="container mx-auto px-4 text-center relative z-10">
           <div className="inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full mb-6">
             <Award className="w-5 h-5" />
-            <span className="font-semibold">Empowering Women Through Hormonal Healing</span>
+            <span className="font-semibold">Take the First Step Toward Hormonal Wellness</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Let's Find Your Balance Today
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+            Your Body Knows How to Heal.<br />
+            Let's Help It Remember.
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Step into a personalized journey of recovery and rejuvenation
+            Join 5000+ women who chose natural healing over lifelong medications
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 shadow-glow">
-              <Link to="/contact">Book My Consultation Now</Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 shadow-glow text-lg px-10 py-7">
+              <Link to="/book">
+                Book My Consultation Now
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10 backdrop-blur-sm">
-              <Link to="/symptom-checker">Take Free Health Assessment</Link>
+            <Button asChild size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 backdrop-blur-sm text-lg px-10 py-7">
+              <Link to="/symptom-checker">
+                <Sparkles className="mr-2 w-5 h-5" />
+                Take Free Health Assessment
+              </Link>
             </Button>
+          </div>
+          <div className="flex items-center justify-center gap-6 text-sm text-white/80">
+            <div className="flex items-center gap-2">
+              <Shield className="w-5 h-5" />
+              <span>100% Safe & Natural</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Users className="w-5 h-5" />
+              <span>5000+ Success Stories</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Award className="w-5 h-5" />
+              <span>10+ Years Experience</span>
+            </div>
           </div>
         </div>
       </section>
