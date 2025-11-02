@@ -84,13 +84,18 @@ const Home = () => {
             {/* Centered Content */}
             <div className="space-y-8 animate-fade-in text-center">
               <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-                <span className="bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent">
+                <span style={{ 
+                  background: 'linear-gradient(135deg, #E91E8C 0%, #D946EF 50%, #C026D3 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text'
+                }}>
                   Balance Your Hormones.
                 </span>
                 <br />
-                <span className="text-foreground">Reclaim Your Energy.</span>
+                <span className="text-gray-900 font-extrabold">Reclaim Your Energy.</span>
                 <br />
-                <span className="text-foreground">Redefine Womanhood.</span>
+                <span className="text-gray-900 font-extrabold">Redefine Womanhood.</span>
               </h1>
               
               <p className="text-xl md:text-2xl text-muted-foreground font-light max-w-3xl mx-auto">
