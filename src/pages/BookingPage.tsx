@@ -215,14 +215,23 @@ const BookingPage = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-2">Condition / Concern *</label>
-                    <Input
+                    <label className="block text-sm font-medium mb-2">Choose Your Concern *</label>
+                    <select
                       name="condition"
                       value={formData.condition}
-                      onChange={handleChange}
-                      placeholder="e.g., Thyroid, PCOD, Arthritis"
+                      onChange={(e) => setFormData(prev => ({ ...prev, condition: e.target.value }))}
+                      className="w-full px-4 py-2 rounded-md border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                       required
-                    />
+                    >
+                      <option value="">Select your primary concern</option>
+                      <option value="PCOS">PCOS / Hormonal Imbalance</option>
+                      <option value="Thyroid">Thyroid Issues</option>
+                      <option value="Both">Both PCOS & Thyroid</option>
+                      <option value="Infertility">Infertility / Reproductive Health</option>
+                      <option value="Weight Management">Weight Management</option>
+                      <option value="Skin & Hair">Skin & Hair Issues</option>
+                      <option value="Other">Other Women's Health Concern</option>
+                    </select>
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-2">Message (Optional)</label>

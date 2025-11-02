@@ -1,9 +1,61 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
-import { Star } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Star, Heart } from "lucide-react";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Testimonials = () => {
+  const { toast } = useToast();
+  const [showForm, setShowForm] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    condition: "",
+    story: "",
+    anonymous: false
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase
+        .from('testimonials')
+        .insert([{
+          name: formData.anonymous ? "Anonymous" : formData.name,
+          condition: formData.condition,
+          testimonial: formData.story,
+          is_anonymous: formData.anonymous,
+          status: 'pending'
+        }]);
+
+      if (error) throw error;
+
+      toast({
+        title: "Thank you for sharing!",
+        description: "Your story will be reviewed and published soon.",
+      });
+
+      setFormData({ name: "", condition: "", story: "", anonymous: false });
+      setShowForm(false);
+    } catch (error) {
+      console.error('Error submitting testimonial:', error);
+      toast({
+        title: "Error",
+        description: "Failed to submit. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const videoTestimonials = [
     {
       name: "Priya & Ramesh",
@@ -21,10 +73,18 @@ const Testimonials = () => {
 
   const testimonials = [
     {
+      name: "Sravani M.",
+      condition: "PCOS & Emotional Wellness",
+      rating: 5,
+      text: "For the first time, I felt seen as a woman, not a symptom. Dr. Prasanna's approach healed not just my PCOS but my relationship with my body.",
+      location: "Hyderabad",
+      featured: true
+    },
+    {
       name: "Lakshmi R.",
       condition: "Thyroid Disorder",
       rating: 5,
-      text: "After 3 years of thyroid medicines with no real improvement, I came to Dr. Prasanna. Within 6 months, my TSH levels normalized, and I'm now completely medicine-free! The Sanjiva Protocol truly works.",
+      text: "After 3 years of thyroid medicines with no real improvement, I came to Dr. Prasanna. Within 6 months, my TSH levels normalized, and I'm now completely medicine-free! ThyroCure truly works.",
       location: "Hyderabad"
     },
     {
@@ -112,12 +172,28 @@ const Testimonials = () => {
               </div>
             </div>
 
+            {/* Featured Testimonial */}
+            <div className="max-w-4xl mx-auto mb-16">
+              <Card className="p-8 bg-gradient-hero text-primary-foreground border-none shadow-glow">
+                <div className="flex items-center justify-center mb-4">
+                  <Heart className="w-12 h-12 fill-current" />
+                </div>
+                <p className="text-2xl md:text-3xl text-center font-bold italic mb-6">
+                  "For the first time, I felt seen as a woman, not a symptom."
+                </p>
+                <div className="text-center">
+                  <p className="font-semibold text-lg">— Sravani M.</p>
+                  <p className="text-sm opacity-90">PCOS & Emotional Wellness</p>
+                </div>
+              </Card>
+            </div>
+
             {/* Written Testimonials */}
             <h2 className="text-3xl font-bold text-center mb-8 text-foreground">
               More Success Stories
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              {testimonials.map((testimonial, index) => (
+              {testimonials.filter(t => !t.featured).map((testimonial, index) => (
                 <Card key={index} className="p-6 hover:shadow-soft transition-all duration-300">
                   <div className="flex gap-1 mb-3">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -142,6 +218,90 @@ const Testimonials = () => {
               <p className="text-muted-foreground mt-2">
                 Based on 10+ years of clinical practice with thousands of patients
               </p>
+            </div>
+
+            {/* Share Your Journey Section */}
+            <div className="max-w-3xl mx-auto mt-16">
+              <Card className="p-8 shadow-card">
+                <h2 className="text-3xl font-bold text-center mb-4 text-foreground">
+                  Share Your Journey
+                </h2>
+                <p className="text-center text-muted-foreground mb-8">
+                  Your story could inspire another woman on her healing journey. Share anonymously if you prefer.
+                </p>
+
+                {!showForm ? (
+                  <div className="text-center">
+                    <Button 
+                      onClick={() => setShowForm(true)}
+                      className="bg-gradient-hero shadow-soft"
+                      size="lg"
+                    >
+                      Share Your Story
+                    </Button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Your Name *</label>
+                      <Input
+                        value={formData.name}
+                        onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                        placeholder="Enter your name"
+                        required={!formData.anonymous}
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Condition Treated *</label>
+                      <Input
+                        value={formData.condition}
+                        onChange={(e) => setFormData(prev => ({ ...prev, condition: e.target.value }))}
+                        placeholder="e.g., PCOS, Thyroid, Infertility"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Your Story *</label>
+                      <Textarea
+                        value={formData.story}
+                        onChange={(e) => setFormData(prev => ({ ...prev, story: e.target.value }))}
+                        placeholder="Share your healing journey, how treatment helped you, and what changed in your life..."
+                        rows={6}
+                        required
+                      />
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        id="anonymous"
+                        checked={formData.anonymous}
+                        onChange={(e) => setFormData(prev => ({ ...prev, anonymous: e.target.checked }))}
+                        className="w-4 h-4"
+                      />
+                      <label htmlFor="anonymous" className="text-sm text-muted-foreground">
+                        Post anonymously
+                      </label>
+                    </div>
+                    <div className="flex gap-3">
+                      <Button
+                        type="button"
+                        variant="outline"
+                        onClick={() => setShowForm(false)}
+                        className="flex-1"
+                      >
+                        Cancel
+                      </Button>
+                      <Button
+                        type="submit"
+                        className="flex-1 bg-gradient-hero"
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? "Submitting..." : "Submit Story"}
+                      </Button>
+                    </div>
+                  </form>
+                )}
+              </Card>
             </div>
           </div>
         </section>
