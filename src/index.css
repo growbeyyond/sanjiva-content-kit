@@ -106,102 +106,99 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 210 20% 15%;
+    --foreground: 330 50% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 20% 15%;
+    --card-foreground: 330 50% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 20% 15%;
+    --popover-foreground: 330 50% 15%;
 
-    /* Pink and lavender theme - feminine, healing */
-    --primary: 330 81% 60%;
-    --primary-foreground: 0 0% 100%;
-    --primary-light: 330 81% 95%;
-    --primary-glow: 330 91% 70%;
-    --primary-dark: 330 81% 45%;
+    /* Pastel Lavender & Pink theme - feminine, healing */
+    --primary: 290 50% 85%;
+    --primary-foreground: 330 50% 25%;
+    --primary-light: 290 50% 96%;
+    --primary-glow: 330 70% 88%;
+    --primary-dark: 290 50% 70%;
 
-    /* Lavender tones */
-    --secondary: 270 60% 95%;
-    --secondary-foreground: 270 10% 20%;
+    /* Soft Blush Pink */
+    --secondary: 340 100% 92%;
+    --secondary-foreground: 330 50% 25%;
 
-    --muted: 270 30% 96%;
-    --muted-foreground: 270 5% 45%;
+    --muted: 290 30% 95%;
+    --muted-foreground: 330 20% 50%;
 
-    /* Soft pink accent */
-    --accent: 280 65% 85%;
-    --accent-foreground: 280 10% 20%;
+    /* Rose Gold accent */
+    --accent: 340 50% 75%;
+    --accent-foreground: 330 50% 20%;
+    --rose-gold: 340 45% 65%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 270 20% 90%;
-    --input: 270 20% 90%;
-    --ring: 330 81% 60%;
+    --border: 290 30% 90%;
+    --input: 290 30% 90%;
+    --ring: 290 50% 85%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
     
-    /* Custom design tokens */
-    --gradient-hero: linear-gradient(135deg, hsl(330 81% 60%), hsl(280 70% 70%));
-    --gradient-natural: linear-gradient(120deg, hsl(330 81% 60%), hsl(270 70% 65%));
-    --gradient-subtle: linear-gradient(180deg, hsl(270 60% 98%), hsl(330 60% 96%));
-    --gradient-cream: linear-gradient(180deg, hsl(270 60% 95%), hsl(0 0% 100%));
-    --shadow-soft: 0 8px 24px -4px hsl(330 81% 60% / 0.2);
-    --shadow-card: 0 4px 16px -2px hsl(270 20% 40% / 0.1);
-    --shadow-glow: 0 0 40px hsl(330 91% 70% / 0.35);
+    /* Custom design tokens - Feminine Palette */
+    --gradient-hero: linear-gradient(135deg, hsl(290 50% 85%), hsl(330 70% 88%));
+    --gradient-natural: linear-gradient(135deg, hsl(290 50% 85%), hsl(340 45% 65%));
+    --gradient-rose: linear-gradient(135deg, hsl(340 100% 92%), hsl(330 70% 88%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(340 100% 92%), hsl(0 0% 100%));
+    --gradient-cream: linear-gradient(180deg, hsl(0 0% 100%), hsl(290 50% 96%));
+    --gradient-lavender: linear-gradient(135deg, hsl(290 50% 96%), hsl(0 0% 100%));
+    --shadow-soft: 0 8px 24px -4px hsl(290 50% 85% / 0.3);
+    --shadow-card: 0 4px 16px -2px hsl(290 20% 40% / 0.15);
+    --shadow-glow: 0 0 40px hsl(330 70% 88% / 0.4);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 280 20% 8%;
-    --foreground: 0 0% 95%;
+    --background: 330 30% 10%;
+    --foreground: 290 50% 95%;
 
-    --card: 280 15% 12%;
-    --card-foreground: 0 0% 95%;
+    --card: 330 30% 12%;
+    --card-foreground: 290 50% 95%;
 
-    --popover: 280 20% 10%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 330 30% 12%;
+    --popover-foreground: 290 50% 95%;
 
-    --primary: 330 81% 60%;
-    --primary-foreground: 0 0% 100%;
-    --primary-light: 330 81% 25%;
-    --primary-dark: 330 91% 70%;
+    --primary: 290 50% 70%;
+    --primary-foreground: 330 30% 10%;
+    --primary-light: 290 50% 25%;
+    --primary-dark: 330 70% 75%;
 
-    --secondary: 270 20% 18%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 340 40% 30%;
+    --secondary-foreground: 290 50% 95%;
 
-    --muted: 270 15% 20%;
-    --muted-foreground: 270 10% 65%;
+    --muted: 330 20% 25%;
+    --muted-foreground: 290 30% 70%;
 
-    --accent: 280 30% 25%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 340 50% 55%;
+    --accent-foreground: 290 50% 95%;
+    --rose-gold: 340 45% 60%;
 
     --destructive: 0 62.8% 50%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 270 15% 22%;
-    --input: 270 15% 22%;
-    --ring: 330 81% 60%;
+    --border: 330 20% 25%;
+    --input: 330 20% 25%;
+    --ring: 290 50% 70%;
     
-    --gradient-hero: linear-gradient(135deg, hsl(330 81% 35%), hsl(280 70% 45%));
-    --gradient-subtle: linear-gradient(180deg, hsl(280 20% 8%), hsl(280 15% 12%));
-    --shadow-soft: 0 4px 20px -2px hsl(330 81% 60% / 0.25);
+    --gradient-hero: linear-gradient(135deg, hsl(290 50% 35%), hsl(330 70% 45%));
+    --gradient-subtle: linear-gradient(180deg, hsl(330 30% 10%), hsl(330 30% 12%));
+    --shadow-soft: 0 4px 20px -2px hsl(290 50% 70% / 0.25);
     --shadow-card: 0 2px 12px -2px hsl(0 0% 0% / 0.3);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -221,5 +218,10 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
   }
 }
