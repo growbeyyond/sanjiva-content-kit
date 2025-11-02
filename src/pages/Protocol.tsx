@@ -7,28 +7,28 @@ import { Link } from "react-router-dom";
 const Protocol = () => {
   const phases = [
     {
-      phase: "1. Diagnosis",
-      focus: "Root-cause analysis",
-      outcome: "Personalized treatment plan",
-      details: "We conduct a comprehensive evaluation of your physical symptoms, emotional state, lifestyle, and medical history to identify the underlying causes."
+      phase: "1. Detox & Metabolism Reset",
+      focus: "Clear thyroid blockers",
+      outcome: "Improved energy & metabolism",
+      details: "We identify and eliminate factors suppressing your thyroid function — from toxins to nutrient deficiencies. Your body begins to awaken naturally."
     },
     {
-      phase: "2. Correction",
-      focus: "Homeopathic remedies + Lifestyle plan",
-      outcome: "Visible improvement",
-      details: "Customized homeopathic medicines combined with simple lifestyle modifications begin the healing process without side effects."
+      phase: "2. Homeopathy + Nutrient Support",
+      focus: "Constitutional remedies + targeted nutrition",
+      outcome: "Hormonal rebalancing",
+      details: "Personalized homeopathic medicines work at the cellular level while strategic nutrition supports thyroid hormone production and conversion."
     },
     {
-      phase: "3. Stabilization",
-      focus: "Regular monitoring & adjustments",
-      outcome: "Prevent relapse",
-      details: "Continuous follow-ups ensure the treatment is working effectively, with adjustments made as needed for optimal results."
+      phase: "3. Lifestyle Optimization",
+      focus: "Sleep, stress & movement patterns",
+      outcome: "Sustained vitality",
+      details: "Simple but powerful lifestyle adjustments help regulate your circadian rhythm, reduce cortisol, and support long-term thyroid health."
     },
     {
-      phase: "4. Sustain",
-      focus: "Long-term guidance & support",
-      outcome: "Holistic well-being",
-      details: "Even after symptoms resolve, we provide ongoing support to maintain your health and prevent recurrence naturally."
+      phase: "4. Emotional Healing Rituals",
+      focus: "Mind-body connection",
+      outcome: "Complete wellness",
+      details: "Address the emotional roots of hormonal imbalance through guided practices that restore your confidence and inner peace."
     }
   ];
 
@@ -40,10 +40,10 @@ const Protocol = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                The Sanjiva Protocol
+                The ThyroCure Method
               </h1>
               <p className="text-xl text-white/90">
-                A signature homeopathic system developed by Dr. Prasanna to restore total balance and prevent recurrence
+                A revolutionary approach to thyroid and hormonal healing — naturally, completely, permanently
               </p>
             </div>
           </div>
@@ -76,24 +76,24 @@ const Protocol = () => {
 
             <div className="max-w-3xl mx-auto mt-16 p-8 bg-secondary rounded-lg">
               <h2 className="text-2xl font-bold text-center mb-6 text-foreground">
-                What Makes Sanjiva Protocol Different?
+                What Makes ThyroCure Different?
               </h2>
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex items-start gap-3">
                   <span className="text-primary font-bold text-xl">✓</span>
-                  <span>Zero side effects — safe for all ages including children and pregnant women</span>
+                  <span>Natural thyroid restoration — no lifelong dependency on synthetic hormones</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary font-bold text-xl">✓</span>
-                  <span>No food restrictions — live your life normally while healing</span>
+                  <span>Addresses root causes — not just TSH numbers but actual thyroid function</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary font-bold text-xl">✓</span>
-                  <span>Prevents recurrence — treats the root cause, not just symptoms</span>
+                  <span>Holistic healing — treats the whole woman, not just the thyroid gland</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary font-bold text-xl">✓</span>
-                  <span>Personalized approach — every treatment plan is unique to you</span>
+                  <span>Proven results — women regaining energy, losing weight, and feeling like themselves again</span>
                 </li>
               </ul>
             </div>
@@ -106,9 +106,9 @@ const Protocol = () => {
                 <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary-light">
                   <a 
                     href="/protocol-guide.pdf" 
-                    download="Sanjiva-Protocol-Guide.pdf"
+                    download="ThyroCure-Method-Guide.pdf"
                   >
-                    Download Protocol Guide (PDF)
+                    Download ThyroCure Guide (PDF)
                   </a>
                 </Button>
               </div>

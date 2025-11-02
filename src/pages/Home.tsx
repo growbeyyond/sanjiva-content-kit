@@ -139,14 +139,14 @@ const Home = () => {
               <div className="space-y-4">
                 <h1 className="text-5xl md:text-7xl font-bold leading-tight">
                   <span className="bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent">
-                    Natural Healing
+                    Balance Your Hormones
                   </span>
                   <br />
-                  <span className="text-foreground">That Works</span>
+                  <span className="text-foreground">Reclaim Your Energy</span>
                 </h1>
                 <p className="text-xl md:text-2xl text-muted-foreground font-medium">
-                  Experience safe, effective homeopathy with{" "}
-                  <span className="text-primary font-bold">zero side effects</span>
+                  Personalized Homeopathic & Holistic Care for{" "}
+                  <span className="text-primary font-bold">PCOS + Thyroid Health</span>
                 </p>
               </div>
 
@@ -170,16 +170,16 @@ const Home = () => {
                 <Button asChild size="lg" className="bg-gradient-hero hover:shadow-glow text-white text-lg px-8 py-6 animate-pulse-glow">
                   <Link to="/contact">
                     <span className="flex items-center gap-2">
-                      Book Appointment
+                      Book My Consultation
                       <ArrowRight className="w-5 h-5" />
                     </span>
                   </Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-white text-lg px-8 py-6 backdrop-blur-sm bg-white/80">
-                  <a href="tel:+918179942297" className="flex items-center gap-2">
-                    <Phone className="w-5 h-5" />
-                    Call Now
-                  </a>
+                  <Link to="/symptom-checker" className="flex items-center gap-2">
+                    <Sparkles className="w-5 h-5" />
+                    Take Free ThyroCure AI Test
+                  </Link>
                 </Button>
               </div>
 
@@ -300,135 +300,124 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              We Treat A-Z Problems with Homeopathy
+              The ThyroCure & PCOS Reset Program
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive homeopathic treatment for all conditions from Acne to Vitiligo
+              Heal your hormones from the inside out — naturally and permanently
             </p>
           </div>
           
-          {/* Featured Treatments */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {conditions.map((condition, index) => <Card key={index} className="p-6 hover:shadow-soft transition-all duration-300 hover:-translate-y-1 border-border bg-card">
-                <h3 className="font-bold text-lg mb-3 text-primary">{condition.category}</h3>
-                <ul className="space-y-2">
-                  {condition.items.map((item, idx) => <li key={idx} className="text-muted-foreground flex items-center gap-2">
-                      <Sparkles className="w-4 h-4 text-primary" />
-                      {item}
-                    </li>)}
-                </ul>
-              </Card>)}
-          </div>
-
-          {/* A-Z Quick List */}
-          <div className="bg-white rounded-2xl shadow-card p-8 max-w-5xl mx-auto">
-            <h3 className="text-2xl font-bold text-center text-foreground mb-8">Complete Treatment List</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm">
-              <div>
-                <h4 className="font-bold text-primary mb-3">A-D</h4>
-                <ul className="space-y-1 text-muted-foreground">
-                  <li>• Acne & Allergies</li>
-                  <li>• Asthma & Arthritis</li>
-                  <li>• Blood Pressure</li>
-                  <li>• Cholesterol</li>
-                  <li>• Diabetes</li>
-                  <li>• Depression</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-bold text-primary mb-3">E-K</h4>
-                <ul className="space-y-1 text-muted-foreground">
-                  <li>• Eczema</li>
-                  <li>• Gout & Glaucoma</li>
-                  <li>• Hair Fall</li>
-                  <li>• Hypothyroid</li>
-                  <li>• Infertility</li>
-                  <li>• Kidney Stones</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-bold text-primary mb-3">L-P</h4>
-                <ul className="space-y-1 text-muted-foreground">
-                  <li>• Migraine</li>
-                  <li>• Obesity</li>
-                  <li>• PCOD & PCOS</li>
-                  <li>• Piles</li>
-                  <li>• Psoriasis</li>
-                  <li>• Paralysis</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-bold text-primary mb-3">R-Z</h4>
-                <ul className="space-y-1 text-muted-foreground">
-                  <li>• Rheumatoid Arthritis</li>
-                  <li>• Sinusitis</li>
-                  <li>• Thyroid Disorders</li>
-                  <li>• Tonsillitis</li>
-                  <li>• Vitiligo</li>
-                  <li>• & Many More...</li>
-                </ul>
-              </div>
-            </div>
+          {/* 4 Pillars */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <Card className="p-6 text-center hover:shadow-soft transition-all duration-300 hover:-translate-y-1">
+              <div className="text-4xl mb-4">🔬</div>
+              <h3 className="font-bold text-lg mb-2 text-foreground">Root-Cause Diagnosis</h3>
+              <p className="text-sm text-muted-foreground">Advanced AI + homeopathic analysis</p>
+            </Card>
+            <Card className="p-6 text-center hover:shadow-soft transition-all duration-300 hover:-translate-y-1">
+              <div className="text-4xl mb-4">💊</div>
+              <h3 className="font-bold text-lg mb-2 text-foreground">Personalized Homeopathy</h3>
+              <p className="text-sm text-muted-foreground">Customized natural solutions</p>
+            </Card>
+            <Card className="p-6 text-center hover:shadow-soft transition-all duration-300 hover:-translate-y-1">
+              <div className="text-4xl mb-4">🥗</div>
+              <h3 className="font-bold text-lg mb-2 text-foreground">Hormone-Friendly Nutrition</h3>
+              <p className="text-sm text-muted-foreground">Lifestyle & meal planning</p>
+            </Card>
+            <Card className="p-6 text-center hover:shadow-soft transition-all duration-300 hover:-translate-y-1">
+              <div className="text-4xl mb-4">🧘‍♀️</div>
+              <h3 className="font-bold text-lg mb-2 text-foreground">Mind-Body Healing</h3>
+              <p className="text-sm text-muted-foreground">Rituals for complete wellness</p>
+            </Card>
           </div>
 
           <div className="text-center mt-8">
-            <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary-light">
-              <Link to="/treatments">View Detailed Treatment Information <ArrowRight className="ml-2 w-4 h-4" /></Link>
+            <Button asChild size="lg" className="bg-gradient-hero shadow-soft">
+              <Link to="/protocol">Start My 3-Month Transformation</Link>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
+      {/* AI-Powered Tools */}
       <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Why Choose Us
+              AI-Powered Wellness Tools
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Experience the difference of holistic, compassionate care
+              Your digital wellness companion for hormonal health
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whyChooseUs.map((feature, index) => <Card key={index} className="p-6 text-center hover:shadow-soft transition-all duration-300 bg-background border-border">
-                <div className="flex justify-center mb-4">{feature.icon}</div>
-                <h3 className="font-bold text-lg mb-2 text-foreground">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">{feature.description}</p>
-              </Card>)}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <Card className="p-6 hover:shadow-soft transition-all duration-300 bg-background border-border">
+              <div className="text-4xl mb-4">🤖</div>
+              <h3 className="font-bold text-lg mb-2 text-foreground">ThyroCure AI Diagnostic</h3>
+              <p className="text-sm text-muted-foreground mb-4">Understand thyroid imbalance in 60 seconds</p>
+              <Button asChild variant="outline" className="w-full border-primary text-primary">
+                <Link to="/symptom-checker">Try Now</Link>
+              </Button>
+            </Card>
+            <Card className="p-6 hover:shadow-soft transition-all duration-300 bg-background border-border">
+              <div className="text-4xl mb-4">💬</div>
+              <h3 className="font-bold text-lg mb-2 text-foreground">PCOS CheckBot</h3>
+              <p className="text-sm text-muted-foreground mb-4">Chat with your virtual menstrual coach</p>
+              <Button asChild variant="outline" className="w-full border-primary text-primary">
+                <Link to="/symptom-checker">Start Chat</Link>
+              </Button>
+            </Card>
+            <Card className="p-6 hover:shadow-soft transition-all duration-300 bg-background border-border">
+              <div className="text-4xl mb-4">🥗</div>
+              <h3 className="font-bold text-lg mb-2 text-foreground">Hormone Diet Planner</h3>
+              <p className="text-sm text-muted-foreground mb-4">Personalized meal plan + calorie map</p>
+              <Button asChild variant="outline" className="w-full border-primary text-primary">
+                <Link to="/contact">Get Started</Link>
+              </Button>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Sanjiva Protocol */}
+      {/* Healing Beyond Medicine */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-block px-4 py-2 bg-primary-light rounded-full mb-4">
-              <span className="text-primary font-semibold text-sm">Our Signature Approach</span>
+              <span className="text-primary font-semibold text-sm">Holistic Wellness</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              The Sanjiva Protocol
+              Healing Beyond Medicine
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              A systematic healing journey designed for lasting wellness
+              Healing is not only about medicines — it's about balance, belief, and being kind to yourself
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {protocolSteps.map((step, index) => <div key={index} className="relative">
-                <Card className="p-6 h-full hover:shadow-soft transition-all duration-300 bg-background border-border">
-                  <div className="text-5xl font-bold text-primary-light mb-4">{step.number}</div>
-                  <h3 className="font-bold text-lg mb-2 text-foreground">{step.title}</h3>
-                  <p className="text-sm text-muted-foreground">{step.description}</p>
-                </Card>
-                {index < protocolSteps.length - 1 && <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2">
-                    <ArrowRight className="w-6 h-6 text-primary" />
-                  </div>}
-              </div>)}
+            <Card className="p-6 text-center hover:shadow-soft transition-all duration-300 bg-background border-border">
+              <div className="text-4xl mb-4">🧘‍♀️</div>
+              <h3 className="font-bold text-lg mb-2 text-primary">Yoga for Hormone Flow</h3>
+              <p className="text-sm text-muted-foreground">Gentle movements to restore balance</p>
+            </Card>
+            <Card className="p-6 text-center hover:shadow-soft transition-all duration-300 bg-background border-border">
+              <div className="text-4xl mb-4">🧘</div>
+              <h3 className="font-bold text-lg mb-2 text-primary">Guided Meditation</h3>
+              <p className="text-sm text-muted-foreground">Calm your mind, heal your body</p>
+            </Card>
+            <Card className="p-6 text-center hover:shadow-soft transition-all duration-300 bg-background border-border">
+              <div className="text-4xl mb-4">😴</div>
+              <h3 className="font-bold text-lg mb-2 text-primary">Sleep Reset</h3>
+              <p className="text-sm text-muted-foreground">Restore your natural circadian rhythm</p>
+            </Card>
+            <Card className="p-6 text-center hover:shadow-soft transition-all duration-300 bg-background border-border">
+              <div className="text-4xl mb-4">💪</div>
+              <h3 className="font-bold text-lg mb-2 text-primary">Confidence Therapy</h3>
+              <p className="text-sm text-muted-foreground">Rebuild your self-belief</p>
+            </Card>
           </div>
           <div className="text-center mt-8">
             <Button asChild className="bg-gradient-hero shadow-soft">
-              <Link to="/protocol">Learn More About Our Protocol</Link>
+              <Link to="/treatments">Explore All Wellness Resources</Link>
             </Button>
           </div>
         </div>
@@ -439,10 +428,10 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Patient Success Stories
+              Real Women, Real Results
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Real stories of healing and hope from our patients
+              Healing stories from women who reclaimed their health
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -468,23 +457,20 @@ const Home = () => {
         <div className="container mx-auto px-4 text-center">
           <div className="inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full mb-6">
             <Award className="w-5 h-5" />
-            <span className="font-semibold">Certified with 100% Result Oriented Treatment</span>
+            <span className="font-semibold">Empowering Women Through Hormonal Healing</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Need Help? Book an Appointment with One Call
+            Let's Find Your Balance Today
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Experience natural healing with our proven Sanjiva Protocol
+            Step into a personalized journey of recovery and rejuvenation
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 shadow-glow">
-              <Link to="/contact">Book Appointment Now</Link>
+              <Link to="/contact">Book My Consultation Now</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10 backdrop-blur-sm">
-              <a href="https://wa.me/918179942297" target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="mr-2 w-5 h-5" />
-                WhatsApp: +91-81799 42297
-              </a>
+              <Link to="/symptom-checker">Take Free Health Assessment</Link>
             </Button>
           </div>
         </div>
