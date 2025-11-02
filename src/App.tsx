@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import WhatsAppWidget from "./components/WhatsAppWidget";
 import LiveChat from "./components/LiveChat";
 import GoogleAnalytics from "./components/GoogleAnalytics";
+import MiraChat from "./components/MiraChat";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Treatments from "./pages/Treatments";
@@ -78,7 +79,7 @@ const App = () => (
           <GoogleAnalytics />
         </BrowserRouter>
         <WhatsAppWidget />
-        <LiveChat />
+        <MiraChat />
       </TooltipProvider>
     </QueryClientProvider>
   </HelmetProvider>

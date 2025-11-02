@@ -5,6 +5,8 @@ import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Heart, Activity, Smile, Sparkles, CheckCircle2 } from "lucide-react";
 import SEO from "@/components/SEO";
+import ProgressTracker from "@/components/ProgressTracker";
+import pcosInfographic from "@/assets/pcos-infographic.jpg";
 
 const PCOSProgram = () => {
   const approachSteps = [
@@ -51,20 +53,29 @@ const PCOSProgram = () => {
         {/* What is PCOS */}
         <section className="py-16 bg-gradient-cream">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-6xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-8">
                 What Is PCOS?
               </h2>
-              <Card className="p-8 shadow-card">
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  PCOS is not just a period problem. It's a <strong>metabolic, hormonal imbalance</strong> affecting 
-                  fertility, skin, weight, and mental health. The root cause lies in insulin resistance, chronic inflammation, 
-                  and stress — creating a vicious cycle that traditional medicine often overlooks.
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed mt-4">
-                  Our approach goes beyond symptom management. We work to restore your body's natural hormonal rhythm.
-                </p>
-              </Card>
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <Card className="p-8 shadow-card">
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    PCOS is not just a period problem. It's a <strong>metabolic, hormonal imbalance</strong> affecting 
+                    fertility, skin, weight, and mental health. The root cause lies in insulin resistance, chronic inflammation, 
+                    and stress — creating a vicious cycle that traditional medicine often overlooks.
+                  </p>
+                  <p className="text-lg text-muted-foreground leading-relaxed mt-4">
+                    Our approach goes beyond symptom management. We work to restore your body's natural hormonal rhythm.
+                  </p>
+                </Card>
+                <div className="relative">
+                  <img 
+                    src={pcosInfographic} 
+                    alt="PCOS hormonal cycle infographic" 
+                    className="rounded-lg shadow-card w-full"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -103,23 +114,14 @@ const PCOSProgram = () => {
         {/* Progress Tracker */}
         <section className="py-16 bg-secondary">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-5xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-4">
                 Track Your Progress
               </h2>
               <p className="text-center text-muted-foreground mb-12">
                 Monitor improvements across key health markers
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                {progressMetrics.map((metric, index) => (
-                  <Card key={index} className="p-6 text-center hover:shadow-soft transition-all">
-                    <div className={`flex justify-center mb-3 ${metric.color}`}>
-                      {metric.icon}
-                    </div>
-                    <p className="font-semibold text-foreground text-sm">{metric.label}</p>
-                  </Card>
-                ))}
-              </div>
+              <ProgressTracker type="pcos" />
             </div>
           </div>
         </section>

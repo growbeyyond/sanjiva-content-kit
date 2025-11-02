@@ -4,8 +4,10 @@ import { Card } from "@/components/ui/card";
 import { Heart, Clock, Users, Shield, Sparkles, MessageCircle, ArrowRight, CheckCircle2, Award, Leaf, Phone, Star, TrendingUp } from "lucide-react";
 import SEO from "@/components/SEO";
 import heroImage from "@/assets/hero-modern.jpg";
+import heroHormonalBalance from "@/assets/hero-hormonal-balance.jpg";
 import doctorImage from "@/assets/doctor-prasanna.jpg";
 import treatmentImage from "@/assets/treatment-natural.jpg";
+import wellnessRituals from "@/assets/wellness-rituals.jpg";
 const Home = () => {
   const structuredData = {
     "@context": "https://schema.org",

@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Flame, Leaf, Moon, Heart, TrendingUp } from "lucide-react";
 import SEO from "@/components/SEO";
+import ProgressTracker from "@/components/ProgressTracker";
 
 const ThyroCureProgram = () => {
   const methodSteps = [
@@ -132,41 +133,14 @@ const ThyroCureProgram = () => {
         {/* Progress Tracking */}
         <section className="py-16 bg-secondary">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
                 Track Your Progress
               </h2>
-              <p className="text-muted-foreground mb-8">
+              <p className="text-muted-foreground mb-8 text-center">
                 Log T3, T4, TSH levels and watch your improvement over time
               </p>
-              <Card className="p-8 shadow-card">
-                <div className="flex items-center justify-center gap-8 flex-wrap">
-                  <div className="text-center">
-                    <div className="flex items-center justify-center mb-2">
-                      <TrendingUp className="w-8 h-8 text-primary" />
-                    </div>
-                    <p className="font-bold text-2xl text-foreground">T3 Levels</p>
-                    <p className="text-sm text-muted-foreground">Optimized</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="flex items-center justify-center mb-2">
-                      <TrendingUp className="w-8 h-8 text-primary" />
-                    </div>
-                    <p className="font-bold text-2xl text-foreground">T4 Levels</p>
-                    <p className="text-sm text-muted-foreground">Balanced</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="flex items-center justify-center mb-2">
-                      <TrendingUp className="w-8 h-8 text-primary" />
-                    </div>
-                    <p className="font-bold text-2xl text-foreground">TSH</p>
-                    <p className="text-sm text-muted-foreground">Normalized</p>
-                  </div>
-                </div>
-                <p className="mt-6 text-sm text-muted-foreground">
-                  Personalized dashboards available to track your journey
-                </p>
-              </Card>
+              <ProgressTracker type="thyroid" />
             </div>
           </div>
         </section>

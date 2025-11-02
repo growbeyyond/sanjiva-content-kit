@@ -2,3 +2,9 @@ project_id = "ebcwuvbkmvaawvmyazeu"
 
 [functions.send-appointment-email]
 verify_jwt = false
+
+[functions.send-appointment-reminder]
+verify_jwt = false
+
+[functions.mira-chat]
+verify_jwt = false
