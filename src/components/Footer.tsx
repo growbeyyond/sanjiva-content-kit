@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-bold text-primary">Dr. Prasanna Boddupally</h3>
             <p className="text-sm text-muted-foreground">
-              Healing through simplicity and compassion with the Sanjiva Protocol — natural, long-lasting homeopathic care.
+              🌺 ThyroCure — Rewriting Women's Health Stories.
             </p>
           </div>
 
@@ -20,7 +20,9 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li><Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">About Dr. Prasanna</Link></li>
               <li><Link to="/treatments" className="text-muted-foreground hover:text-primary transition-colors">Treatments</Link></li>
-              <li><Link to="/protocol" className="text-muted-foreground hover:text-primary transition-colors">Sanjiva Protocol</Link></li>
+              <li><Link to="/protocol" className="text-muted-foreground hover:text-primary transition-colors">ThyroCure Method</Link></li>
+              <li><Link to="/pcos-program" className="text-muted-foreground hover:text-primary transition-colors">PCOS Program</Link></li>
+              <li><Link to="/wellness-hub" className="text-muted-foreground hover:text-primary transition-colors">Wellness Hub</Link></li>
               <li><Link to="/testimonials" className="text-muted-foreground hover:text-primary transition-colors">Success Stories</Link></li>
               <li><Link to="/blog" className="text-muted-foreground hover:text-primary transition-colors">Health Blog</Link></li>
               <li><Link to="/faq" className="text-muted-foreground hover:text-primary transition-colors">FAQ</Link></li>

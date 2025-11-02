@@ -146,15 +146,21 @@ const Contact = () => {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
-                      Condition / Concern *
+                      Choose Your Concern *
                     </label>
-                    <Input
+                    <select
                       name="condition"
                       value={formData.condition}
-                      onChange={handleChange}
-                      placeholder="e.g., Thyroid, PCOD, Arthritis"
+                      onChange={(e) => setFormData(prev => ({ ...prev, condition: e.target.value }))}
+                      className="w-full px-4 py-2 rounded-md border border-input bg-background text-foreground"
                       required
-                    />
+                    >
+                      <option value="">Select your primary concern</option>
+                      <option value="PCOS">PCOS</option>
+                      <option value="Thyroid">Thyroid</option>
+                      <option value="Both">Both PCOS & Thyroid</option>
+                      <option value="Other">Other Women's Health Concern</option>
+                    </select>
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
@@ -204,23 +210,28 @@ const Contact = () => {
 
                 <div className="mt-6 pt-6 border-t border-border">
                   <p className="text-sm text-muted-foreground text-center mb-4">
-                    Prefer to chat directly?
+                    Let's Talk — We're Here for You
                   </p>
-                  <Button
-                    asChild
-                    variant="outline"
-                    className="w-full border-primary text-primary hover:bg-primary-light"
-                  >
-                    <a 
-                      href="https://wa.me/918179942297"
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2"
+                  <div className="space-y-2">
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="w-full border-primary text-primary hover:bg-primary-light"
                     >
-                      <MessageCircle className="w-4 h-4" />
-                      WhatsApp Us Now
-                    </a>
-                  </Button>
+                      <a 
+                        href="https://wa.me/918179942297"
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2"
+                      >
+                        <MessageCircle className="w-4 h-4" />
+                        WhatsApp
+                      </a>
+                    </Button>
+                    <p className="text-xs text-center text-muted-foreground">
+                      Also available on Telegram | Email
+                    </p>
+                  </div>
                 </div>
               </Card>
 
@@ -234,7 +245,7 @@ const Contact = () => {
                       <div>
                         <p className="font-semibold text-foreground">Address</p>
                         <p className="text-muted-foreground text-sm">
-                          Hyderabad, Telangana, India
+                          Hyderabad | Online Consults Available Globally
                         </p>
                       </div>
                     </div>

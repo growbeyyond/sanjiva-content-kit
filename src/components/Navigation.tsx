@@ -11,12 +11,12 @@ const Navigation = () => {
     { to: "/", label: "Home" },
     { to: "/about", label: "About" },
     { to: "/treatments", label: "Treatments" },
-    { to: "/protocol", label: "Sanjiva Protocol" },
-    { to: "/testimonials", label: "Testimonials" },
+    { to: "/protocol", label: "ThyroCure Method" },
+    { to: "/pcos-program", label: "PCOS Program" },
+    { to: "/wellness-hub", label: "Wellness Hub" },
+    { to: "/testimonials", label: "Success Stories" },
     { to: "/blog", label: "Blog" },
     { to: "/faq", label: "FAQ" },
-    { to: "/symptom-checker", label: "Symptom Checker" },
-    { to: "/gallery", label: "Gallery" },
     { to: "/contact", label: "Contact" },
   ];
 

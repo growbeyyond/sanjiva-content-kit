@@ -10,6 +10,9 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Treatments from "./pages/Treatments";
 import Protocol from "./pages/Protocol";
+import PCOSProgram from "./pages/PCOSProgram";
+import ThyroCureProgram from "./pages/ThyroCureProgram";
+import WellnessHub from "./pages/WellnessHub";
 import Testimonials from "./pages/Testimonials";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
@@ -43,6 +46,9 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/treatments" element={<Treatments />} />
             <Route path="/protocol" element={<Protocol />} />
+            <Route path="/pcos-program" element={<PCOSProgram />} />
+            <Route path="/thyrocure-program" element={<ThyroCureProgram />} />
+            <Route path="/wellness-hub" element={<WellnessHub />} />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
