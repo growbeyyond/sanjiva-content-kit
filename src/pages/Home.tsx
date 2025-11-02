@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import SEO from "@/components/SEO";
-import heroHormonalBalance from "@/assets/hero-hormonal-balance.jpg";
+import heroBackground from "@/assets/hero-background.jpg";
 import doctorImage from "@/assets/doctor-prasanna.jpg";
 import wellnessRituals from "@/assets/wellness-rituals.jpg";
 import pcosInfographic from "@/assets/pcos-infographic.jpg";
@@ -60,12 +60,15 @@ const Home = () => {
       />
 
       {/* 1️⃣ Hero Banner – "Find Your Hormonal Harmony" */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-rose">
-        {/* Animated Background */}
-        <div className="absolute inset-0 overflow-hidden opacity-20">
-          <div className="absolute top-20 left-10 w-64 h-64 bg-primary rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-20 right-10 w-80 h-80 bg-accent rounded-full blur-3xl animate-float-delayed" />
-          <div className="absolute top-1/2 left-1/3 w-96 h-96 bg-primary-glow rounded-full blur-3xl animate-pulse" />
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src={heroBackground} 
+            alt="Hormonal Harmony Background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-transparent" />
         </div>
 
         {/* Floating Floral Particles */}
@@ -77,9 +80,9 @@ const Home = () => {
         </div>
 
         <div className="container mx-auto px-4 z-10 relative">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="space-y-8 animate-fade-in text-center lg:text-left">
+          <div className="max-w-4xl mx-auto">
+            {/* Centered Content */}
+            <div className="space-y-8 animate-fade-in text-center">
               <h1 className="text-5xl md:text-7xl font-bold leading-tight">
                 <span className="bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent">
                   Balance Your Hormones.
@@ -90,14 +93,14 @@ const Home = () => {
                 <span className="text-foreground">Redefine Womanhood.</span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-muted-foreground font-light">
+              <p className="text-xl md:text-2xl text-muted-foreground font-light max-w-3xl mx-auto">
                 Advanced homeopathy and lifestyle programs for{" "}
                 <span className="text-primary font-semibold">PCOS & Thyroid</span> — 
                 designed by women, for women.
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
+              <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
                 <Button asChild size="lg" className="bg-gradient-hero hover:shadow-glow text-white text-lg px-8 py-6">
                   <Link to="/book">
                     <span className="flex items-center gap-2">
@@ -106,23 +109,12 @@ const Home = () => {
                     </span>
                   </Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-white text-lg px-8 py-6">
+                <Button asChild size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-white text-lg px-8 py-6 bg-white/80 backdrop-blur-sm">
                   <Link to="/symptom-checker">
                     <Sparkles className="w-5 h-5 mr-2" />
                     Take Free ThyroCure AI Test
                   </Link>
                 </Button>
-              </div>
-            </div>
-
-            {/* Right Content - Image */}
-            <div className="relative hidden lg:block animate-fade-in">
-              <div className="relative rounded-3xl overflow-hidden shadow-glow">
-                <img 
-                  src={heroHormonalBalance} 
-                  alt="Woman experiencing hormonal balance" 
-                  className="rounded-2xl w-full h-auto"
-                />
               </div>
             </div>
           </div>
