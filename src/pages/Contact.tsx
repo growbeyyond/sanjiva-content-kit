@@ -93,7 +93,7 @@ const Contact = () => {
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 <span className="text-gradient-bright">Get in Touch</span> – Let's Start Your Healing Journey
               </h1>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-foreground/90">
                 Book your consultation and take the first step toward natural wellness
               </p>
             </div>

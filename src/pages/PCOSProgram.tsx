@@ -60,12 +60,12 @@ const PCOSProgram = () => {
               </h2>
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <Card className="p-8 shadow-card">
-                  <p className="text-lg text-muted-foreground leading-relaxed">
+                  <p className="text-lg text-foreground/80 leading-relaxed">
                     PCOS is not just a period problem. It's a <strong>metabolic, hormonal imbalance</strong> affecting 
                     fertility, skin, weight, and mental health. The root cause lies in insulin resistance, chronic inflammation, 
                     and stress — creating a vicious cycle that traditional medicine often overlooks.
                   </p>
-                  <p className="text-lg text-muted-foreground leading-relaxed mt-4">
+                  <p className="text-lg text-foreground/80 leading-relaxed mt-4">
                     Our approach goes beyond symptom management. We work to restore your body's natural hormonal rhythm.
                   </p>
                 </Card>
@@ -97,7 +97,7 @@ const PCOSProgram = () => {
                       </div>
                       <div>
                         <h3 className="text-xl font-bold text-foreground mb-2">{step.title}</h3>
-                        <p className="text-muted-foreground">{step.description}</p>
+                        <p className="text-foreground/80">{step.description}</p>
                       </div>
                     </div>
                   </Card>

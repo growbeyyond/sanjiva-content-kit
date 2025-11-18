@@ -105,7 +105,7 @@ const Blog = () => {
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 Health Insights & Articles
               </h1>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-foreground/90">
                 Expert guidance on natural healing and holistic wellness
               </p>
             </div>
@@ -123,7 +123,7 @@ const Blog = () => {
                     </span>
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-3">{post.title}</h3>
-                  <p className="text-muted-foreground text-sm mb-4 flex-grow">{post.excerpt}</p>
+                  <p className="text-foreground/80 text-sm mb-4 flex-grow">{post.excerpt}</p>
                   <div className="flex items-center justify-between text-xs text-muted-foreground border-t border-border pt-4">
                     <div className="flex items-center gap-1">
                       <Calendar className="w-3 h-3" />

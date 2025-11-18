@@ -93,7 +93,7 @@ const Home = () => {
                 <span className="text-gray-900 font-extrabold">Redefine Womanhood.</span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-muted-foreground font-light max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-foreground/80 font-light max-w-3xl mx-auto">
                 Advanced homeopathy and lifestyle programs for{" "}
                 <span className="text-primary font-semibold">PCOS & Thyroid</span> — 
                 designed by women, for women.
@@ -137,7 +137,7 @@ const Home = () => {
               <br />
               Every Hormone Has a Reason.
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-foreground/90 max-w-2xl mx-auto">
               You're not alone in this journey. Thousands of women are finding their path to balance.
             </p>
           </div>
@@ -151,7 +151,7 @@ const Home = () => {
                 </div>
                 <h3 className="text-3xl font-bold text-foreground">{stories[currentStory].name}</h3>
                 <p className="text-xl text-accent font-semibold">{stories[currentStory].condition}</p>
-                <p className="text-lg text-muted-foreground italic">"{stories[currentStory].story}"</p>
+                <p className="text-lg text-foreground/80 italic">"{stories[currentStory].story}"</p>
                 
                 {/* Navigation */}
                 <div className="flex items-center justify-center gap-4 pt-6">
@@ -203,7 +203,7 @@ const Home = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-gradient-bright">It's Not You</span> — It's Your Hormonal Environment.
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-foreground/90 max-w-3xl mx-auto">
               Stress, processed food, sleeplessness, pollution, and emotional burnout silently trigger hormonal chaos.
             </p>
           </div>
@@ -247,7 +247,7 @@ const Home = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Your Personalized <span className="text-gradient-bright">4-Pillar Healing System</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-foreground/90 max-w-2xl mx-auto">
               A comprehensive approach that treats the root cause, not just symptoms
             </p>
           </div>
@@ -281,7 +281,7 @@ const Home = () => {
                   {pillar.icon}
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-3">{pillar.title}</h3>
-                <p className="text-sm text-muted-foreground">{pillar.description}</p>
+                <p className="text-sm text-foreground/80">{pillar.description}</p>
               </Card>
             ))}
           </div>
@@ -384,7 +384,7 @@ const Home = () => {
               <Card key={idx} className="p-8 text-center hover:shadow-card transition-all duration-300 hover:-translate-y-2 bg-gradient-lavender border-2 border-primary/20">
                 <div className="text-7xl mb-6">{tool.icon}</div>
                 <h3 className="text-2xl font-bold text-foreground mb-3">{tool.title}</h3>
-                <p className="text-muted-foreground mb-6">{tool.description}</p>
+                <p className="text-foreground/80 mb-6">{tool.description}</p>
                 <Button asChild variant="outline" className="w-full border-primary text-primary">
                   <Link to={tool.link}>Try Free AI Tools</Link>
                 </Button>

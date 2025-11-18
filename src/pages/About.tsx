@@ -17,7 +17,7 @@ const About = () => {
                 <span className="text-gradient-bright">Meet Dr. Prasanna Boddupally</span>
                 <br />Empowering Women Through Hormonal Healing
               </h1>
-              <p className="text-xl text-muted-foreground mb-8">
+              <p className="text-xl text-foreground/90 mb-8">
                 "Science heals the body. Empathy heals the soul."
               </p>
             </div>
@@ -36,7 +36,7 @@ const About = () => {
                       <Clock className="w-5 h-5" />
                       Consultation Timings
                     </h3>
-                    <div className="space-y-2 text-muted-foreground">
+                    <div className="space-y-2 text-foreground/80">
                       <p className="flex justify-between">
                         <span className="font-semibold">Monday - Saturday (Morning)</span>
                         <span>10:00 AM - 1:00 PM</span>
@@ -56,7 +56,7 @@ const About = () => {
                 <div className="space-y-8">
                   <div className="space-y-4">
                     <h2 className="text-2xl font-bold text-primary">Her Journey</h2>
-                    <p className="text-muted-foreground">
+                    <p className="text-foreground/80">
                       Dr. Prasanna's story began with a simple vision — to treat women not just for their symptoms, but for their emotions, cycles, and confidence.
                     </p>
                     <p className="text-muted-foreground italic">
@@ -66,7 +66,7 @@ const About = () => {
 
                   <div className="space-y-4">
                     <h2 className="text-2xl font-bold text-primary">Experience & Expertise</h2>
-                    <ul className="space-y-3 text-muted-foreground">
+                    <ul className="space-y-3 text-foreground/80">
                       <li className="flex items-start gap-2">
                         <Leaf className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                         <span><strong>10+ years</strong> in women's homeopathy</span>
