@@ -13,7 +13,7 @@ import SEO from "@/components/SEO";
 import heroBackground from "@/assets/hero-background.jpg";
 import doctorImage from "@/assets/doctor-prasanna.jpg";
 import wellnessRituals from "@/assets/wellness-rituals.jpg";
-import pcosInfographic from "@/assets/pcos-infographic.jpg";
+import hormonalEnvironmentInfographic from "@/assets/hormonal-environment-infographic.jpg";
 
 const Home = () => {
   const [currentStory, setCurrentStory] = useState(0);
@@ -211,9 +211,9 @@ const Home = () => {
           {/* Infographic */}
           <div className="max-w-5xl mx-auto mb-12">
             <img 
-              src={pcosInfographic} 
-              alt="PCOS & Thyroid Root Causes Infographic" 
-              className="rounded-2xl shadow-card w-full"
+              src={hormonalEnvironmentInfographic} 
+              alt="Hormonal Environment Factors - Stress, Sleep, Food, Emotional Health" 
+              className="rounded-2xl shadow-card w-full hover:shadow-glow transition-all duration-300"
             />
           </div>
 
@@ -604,13 +604,6 @@ const Home = () => {
                   ))}
                 </div>
 
-                <div className="mt-8 p-6 bg-white rounded-xl border border-primary/20">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-lg font-semibold text-foreground">Initial Consultation</span>
-                    <span className="text-3xl font-bold text-primary">₹800</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">Investment in your lifelong wellness</p>
-                </div>
               </Card>
 
               {/* Quick Contact Form */}
