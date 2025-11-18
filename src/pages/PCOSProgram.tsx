@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Heart, Activity, Smile, Sparkles, CheckCircle2 } from "lucide-react";
 import SEO from "@/components/SEO";
 import ProgressTracker from "@/components/ProgressTracker";
-import pcosInfographic from "@/assets/pcos-infographic.jpg";
+import pcosCycleInfographic from "@/assets/pcos-cycle-infographic.jpg";
 
 const PCOSProgram = () => {
   const approachSteps = [
@@ -71,9 +71,9 @@ const PCOSProgram = () => {
                 </Card>
                 <div className="relative">
                   <img 
-                    src={pcosInfographic} 
-                    alt="PCOS hormonal cycle infographic" 
-                    className="rounded-lg shadow-card w-full"
+                    src={pcosCycleInfographic} 
+                    alt="PCOS hormonal cycle - insulin resistance, androgens, and symptoms" 
+                    className="rounded-lg shadow-card w-full hover:shadow-glow transition-all duration-300"
                   />
                 </div>
               </div>
