@@ -73,8 +73,8 @@ const FAQ = () => {
       category: "Pricing & Policies",
       questions: [
         {
-          q: "What are your consultation fees?",
-          a: "Initial consultation: ₹800. Follow-up consultations: ₹500. Online consultations have the same fees. Medicines are provided separately based on the treatment plan. We believe in transparent, affordable healthcare."
+          q: "How do I schedule a consultation?",
+          a: "You can book through our website contact form, call us, or WhatsApp us. We typically respond within 2-4 hours during working hours and will confirm your appointment slot. Consultation fees will be discussed during booking."
         },
         {
           q: "Do you accept insurance?",

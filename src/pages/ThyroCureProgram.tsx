@@ -67,11 +67,11 @@ const ThyroCureProgram = () => {
                 <br />Understanding Thyroid Imbalance
               </h2>
               <Card className="p-8 shadow-card">
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-lg text-foreground/80 leading-relaxed">
                   Your <strong>thyroid gland is the engine of your metabolism</strong>. When it slows down (hypothyroidism) 
                   or speeds up (hyperthyroidism), your energy fades, and so does your vitality. You may experience:
                 </p>
-                <ul className="mt-4 space-y-2 text-muted-foreground">
+                <ul className="mt-4 space-y-2 text-foreground/80">
                   <li className="flex items-start gap-2">
                     <span className="text-primary font-bold">•</span>
                     <span>Persistent fatigue and brain fog</span>
@@ -121,7 +121,7 @@ const ThyroCureProgram = () => {
                       </div>
                       <div>
                         <h3 className="text-xl font-bold text-foreground mb-3">{step.title}</h3>
-                        <p className="text-muted-foreground">{step.description}</p>
+                        <p className="text-foreground/80">{step.description}</p>
                       </div>
                     </div>
                   </Card>

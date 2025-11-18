@@ -55,7 +55,7 @@ const Treatments = () => {
                 Natural Healing for <span className="text-gradient-bright">Chronic Conditions</span>
                 <br />Women's Health Solutions
               </h1>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-foreground/90">
                 Comprehensive hormonal care for PCOS, thyroid health, and complete wellness
               </p>
             </div>
@@ -69,7 +69,7 @@ const Treatments = () => {
                 <Card key={index} className="p-6 hover:shadow-soft transition-all duration-300 hover:-translate-y-1">
                   <div className="text-4xl mb-3">{treatment.icon}</div>
                   <h3 className="text-xl font-bold text-primary mb-3">{treatment.category}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{treatment.description}</p>
+                  <p className="text-sm text-foreground/80 mb-4">{treatment.description}</p>
                   <ul className="space-y-2">
                     {treatment.conditions.map((condition, idx) => (
                       <li key={idx} className="text-sm text-foreground flex items-start gap-2">

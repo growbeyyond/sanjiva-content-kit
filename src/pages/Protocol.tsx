@@ -60,15 +60,15 @@ const Protocol = () => {
                       <h3 className="text-2xl font-bold text-primary mb-2">{item.phase}</h3>
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-muted-foreground mb-1">Focus</p>
+                      <p className="text-sm font-semibold text-foreground/70 mb-1">Focus</p>
                       <p className="text-foreground">{item.focus}</p>
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-muted-foreground mb-1">Outcome</p>
+                      <p className="text-sm font-semibold text-foreground/70 mb-1">Outcome</p>
                       <p className="text-foreground">{item.outcome}</p>
                     </div>
                     <div className="md:col-span-4 md:col-start-2">
-                      <p className="text-muted-foreground">{item.details}</p>
+                      <p className="text-foreground/80">{item.details}</p>
                     </div>
                   </div>
                 </Card>
@@ -79,7 +79,7 @@ const Protocol = () => {
               <h2 className="text-2xl font-bold text-center mb-6 text-foreground">
                 What Makes ThyroCure Different?
               </h2>
-              <ul className="space-y-3 text-muted-foreground">
+              <ul className="space-y-3 text-foreground/80">
                 <li className="flex items-start gap-3">
                   <span className="text-primary font-bold text-xl">✓</span>
                   <span>Natural thyroid restoration — no lifelong dependency on synthetic hormones</span>

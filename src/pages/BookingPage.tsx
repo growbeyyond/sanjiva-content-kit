@@ -14,7 +14,7 @@ import { format } from "date-fns";
 
 const BookingPage = () => {
   const { toast } = useToast();
-  const [step, setStep] = useState(1); // 1: Details, 2: Calendar, 3: Payment
+  const [step, setStep] = useState(1); // 1: Details, 2: Calendar
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [appointmentId, setAppointmentId] = useState<string>("");
   
@@ -29,7 +29,7 @@ const BookingPage = () => {
   const [selectedDate, setSelectedDate] = useState<Date>();
   const [selectedTime, setSelectedTime] = useState<string>("");
 
-  const consultationFee = 800; // Initial consultation fee
+  // Consultation fee will be discussed during appointment confirmation
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -45,7 +45,7 @@ const BookingPage = () => {
     setSelectedTime(time);
   };
 
-  const handleCalendarSubmit = () => {
+  const handleCalendarSubmit = async () => {
     if (!selectedDate || !selectedTime) {
       toast({
         title: "Please select a time slot",
@@ -54,7 +54,66 @@ const BookingPage = () => {
       });
       return;
     }
-    setStep(3);
+    
+    // Book appointment directly without payment
+    setIsSubmitting(true);
+    try {
+      const { data: appointment, error: dbError } = await supabase
+        .from('appointments')
+        .insert([{
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email || null,
+          condition: formData.condition,
+          preferred_date: selectedDate ? format(selectedDate, 'yyyy-MM-dd') : null,
+          preferred_time: selectedTime,
+          message: formData.message || null,
+          status: 'pending'
+        }])
+        .select()
+        .single();
+
+      if (dbError) throw dbError;
+
+      // Book the slot
+      if (selectedDate) {
+        await supabase.from('appointment_slots').insert({
+          date: format(selectedDate, 'yyyy-MM-dd'),
+          start_time: selectedTime,
+          end_time: selectedTime,
+          is_available: false,
+          appointment_id: appointment.id
+        });
+      }
+
+      // Send confirmation email
+      await supabase.functions.invoke('send-appointment-email', {
+        body: {
+          ...formData,
+          preferred_date: selectedDate ? format(selectedDate, 'yyyy-MM-dd') : '',
+          preferred_time: selectedTime
+        }
+      });
+
+      toast({
+        title: "Appointment Requested!",
+        description: "We'll confirm your appointment shortly.",
+      });
+
+      // Reset form
+      setFormData({ name: "", phone: "", email: "", condition: "", message: "" });
+      setSelectedDate(undefined);
+      setSelectedTime("");
+      setStep(1);
+    } catch (error: any) {
+      toast({
+        title: "Booking failed",
+        description: error.message,
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handlePaymentSuccess = async (transactionId: string) => {
@@ -89,15 +148,7 @@ const BookingPage = () => {
         });
       }
 
-      // Record payment
-      await supabase.from('payments').insert({
-        appointment_id: appointment.id,
-        amount: consultationFee,
-        currency: 'INR',
-        payment_status: 'completed',
-        transaction_id: transactionId,
-        payment_date: new Date().toISOString()
-      });
+      // Payment will be processed after appointment confirmation
 
       // Send confirmation email
       await supabase.functions.invoke('send-appointment-email', {
@@ -149,14 +200,14 @@ const BookingPage = () => {
               <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-hero bg-clip-text text-transparent">
                 Book Your Appointment
               </h1>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-foreground/90">
                 Complete the booking process in 3 simple steps
               </p>
             </div>
 
             {/* Progress Indicator */}
             <div className="flex items-center justify-center mb-8 gap-2">
-              <div className={`flex items-center gap-2 ${step >= 1 ? 'text-primary' : 'text-muted-foreground'}`}>
+              <div className={`flex items-center gap-2 ${step >= 1 ? 'text-primary' : 'text-foreground/50'}`}>
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${step >= 1 ? 'border-primary bg-primary text-white' : 'border-muted'}`}>
                   1
                 </div>
@@ -269,36 +320,11 @@ const BookingPage = () => {
                   <Button
                     onClick={handleCalendarSubmit}
                     className="flex-1 bg-gradient-hero"
-                    disabled={!selectedDate || !selectedTime}
+                    disabled={!selectedDate || !selectedTime || isSubmitting}
                   >
-                    Continue to Payment
+                    {isSubmitting ? "Booking..." : "Confirm Appointment"}
                   </Button>
                 </div>
-              </div>
-            )}
-
-            {/* Step 3: Payment */}
-            {step === 3 && (
-              <div className="space-y-6">
-                <Card className="p-6 bg-primary/5 border-primary/20">
-                  <h3 className="font-semibold mb-3">Booking Summary</h3>
-                  <div className="space-y-2 text-sm">
-                    <p><strong>Name:</strong> {formData.name}</p>
-                    <p><strong>Condition:</strong> {formData.condition}</p>
-                    <p><strong>Date:</strong> {selectedDate && format(selectedDate, 'PPP')}</p>
-                    <p><strong>Time:</strong> {selectedTime}</p>
-                    <p className="text-lg font-bold text-primary pt-2 border-t">
-                      Consultation Fee: ₹{consultationFee}
-                    </p>
-                  </div>
-                </Card>
-
-                <PaymentGateway
-                  amount={consultationFee}
-                  appointmentId={appointmentId}
-                  onSuccess={handlePaymentSuccess}
-                  onCancel={() => setStep(2)}
-                />
               </div>
             )}
           </div>

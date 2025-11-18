@@ -68,10 +68,10 @@ const WellnessHub = () => {
                 <span className="text-gradient-bright">Wellness Hub:</span> Your Journey to Holistic Health
                 <br />Your Digital Wellness Companion
               </h1>
-              <p className="text-xl text-muted-foreground mb-4">
+              <p className="text-xl text-foreground/90 mb-4">
                 Explore, track, and learn about your hormonal health
               </p>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-foreground/90">
                 Interactive tools designed to support your journey to hormonal balance
               </p>
             </div>
@@ -94,7 +94,7 @@ const WellnessHub = () => {
                       {tool.icon}
                     </div>
                     <h3 className="text-xl font-bold text-foreground">{tool.title}</h3>
-                    <p className="text-muted-foreground text-sm">{tool.description}</p>
+                    <p className="text-foreground/80 text-sm">{tool.description}</p>
                     {tool.status === "Available" ? (
                       <Link 
                         to={tool.link}

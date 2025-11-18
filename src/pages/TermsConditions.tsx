@@ -18,12 +18,12 @@ const TermsConditions = () => {
           <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-hero bg-clip-text text-transparent">
             Terms & Conditions
           </h1>
-          <p className="text-sm text-muted-foreground mb-8">Last updated: December 2024</p>
+          <p className="text-sm text-foreground/70 mb-8">Last updated: December 2024</p>
 
           <div className="prose prose-lg max-w-none space-y-8">
             <section>
               <h2 className="text-2xl font-bold text-primary mb-4">1. Acceptance of Terms</h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-foreground/80 leading-relaxed">
                 By accessing and using the services of Dr. Prasanna Boddupally's homeopathy clinic ("the Clinic"), you accept and agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use our services or website.
               </p>
             </section>
