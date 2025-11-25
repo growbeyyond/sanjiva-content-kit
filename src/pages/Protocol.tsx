@@ -41,7 +41,7 @@ const Protocol = () => {
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 <span className="text-gradient-bright">The Sanjiva Protocol:</span> Your Path to Natural Healing
-                <br />The ThyroCure Method
+                <br /><span className="text-white/95">The ThyroCure Method</span>
               </h1>
               <p className="text-xl text-white/90">
                 A revolutionary approach to thyroid and hormonal healing — naturally, completely, permanently

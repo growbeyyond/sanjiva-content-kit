@@ -166,7 +166,7 @@ const Testimonials = () => {
                     </div>
                     <div className="p-4">
                       <p className="font-semibold text-foreground">{video.name}</p>
-                      <p className="text-sm text-primary">{video.condition}</p>
+                      <p className="text-sm text-foreground/80 font-medium">{video.condition}</p>
                     </div>
                   </Card>
                 ))}

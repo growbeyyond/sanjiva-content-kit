@@ -201,7 +201,7 @@ const BookingPage = () => {
                 Book Your Appointment
               </h1>
               <p className="text-lg text-foreground/90">
-                Complete the booking process in 3 simple steps
+                Complete the booking process in 2 simple steps
               </p>
             </div>
 
@@ -219,13 +219,6 @@ const BookingPage = () => {
                   2
                 </div>
                 <span className="hidden sm:inline">Date & Time</span>
-              </div>
-              <div className={`w-12 h-0.5 ${step >= 3 ? 'bg-primary' : 'bg-muted'}`} />
-              <div className={`flex items-center gap-2 ${step >= 3 ? 'text-primary' : 'text-muted-foreground'}`}>
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${step >= 3 ? 'border-primary bg-primary text-white' : 'border-muted'}`}>
-                  3
-                </div>
-                <span className="hidden sm:inline">Payment</span>
               </div>
             </div>
 
