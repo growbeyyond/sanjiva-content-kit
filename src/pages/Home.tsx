@@ -355,7 +355,7 @@ const Home = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Your <span className="text-gradient-bright">Digital Hormone Coach</span> is Here
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-foreground/90 max-w-2xl mx-auto">
               Try interactive tools powered by AI and homeopathy science
             </p>
           </div>
@@ -401,7 +401,7 @@ const Home = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-gradient-bright">From Pain to Power</span> — Stories That Inspire
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-foreground/90 max-w-2xl mx-auto">
               Thousands of women have transformed their cycles, weight, energy, and self-esteem
             </p>
           </div>
@@ -425,15 +425,15 @@ const Home = () => {
             </p>
             <div className="flex flex-wrap gap-4">
               <div className="bg-primary-light rounded-lg px-6 py-4 border border-primary/30">
-                <p className="text-sm text-muted-foreground">Weight Lost</p>
+                <p className="text-sm text-foreground/80">Weight Lost</p>
                 <p className="text-2xl font-bold text-primary">12 kg</p>
               </div>
               <div className="bg-primary-light rounded-lg px-6 py-4 border border-primary/30">
-                <p className="text-sm text-muted-foreground">Regular Cycles</p>
+                <p className="text-sm text-foreground/80">Regular Cycles</p>
                 <p className="text-2xl font-bold text-primary">✓ Achieved</p>
               </div>
               <div className="bg-primary-light rounded-lg px-6 py-4 border border-primary/30">
-                <p className="text-sm text-muted-foreground">Natural Pregnancy</p>
+                <p className="text-sm text-foreground/80">Natural Pregnancy</p>
                 <p className="text-2xl font-bold text-primary">✓ Success</p>
               </div>
             </div>
@@ -466,7 +466,7 @@ const Home = () => {
                 <p className="text-foreground mb-4 italic">"{testimonial.text}"</p>
                 <div className="border-t border-border pt-4">
                   <p className="font-semibold text-foreground">{testimonial.author}</p>
-                  <p className="text-sm text-muted-foreground">Treated for {testimonial.condition}</p>
+                  <p className="text-sm text-foreground/70">Treated for {testimonial.condition}</p>
                 </div>
               </Card>
             ))}
@@ -490,7 +490,7 @@ const Home = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-gradient-bright">Mind · Body · Hormone · Soul</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-foreground/90 max-w-3xl mx-auto">
               Healing is not only about medicines — it's about balance, belief, and being kind to yourself
             </p>
           </div>
@@ -513,7 +513,7 @@ const Home = () => {
                 <Card key={idx} className="p-6 text-center hover:shadow-card transition-all duration-300 bg-gradient-lavender border border-primary/20">
                   <div className="text-5xl mb-3">{item.icon}</div>
                   <h3 className="font-bold text-lg mb-2 text-primary">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
+                  <p className="text-sm text-foreground/70">{item.description}</p>
                 </Card>
               ))}
             </div>
@@ -534,7 +534,7 @@ const Home = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-gradient-bright">You're Not Alone</span> — You're Among Strong Women
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-foreground/90 max-w-2xl mx-auto">
               Join thousands of women across India healing together
             </p>
           </div>
@@ -545,17 +545,17 @@ const Home = () => {
                 <div className="text-center">
                   <Users className="w-12 h-12 text-primary mx-auto mb-4" />
                   <h3 className="text-2xl font-bold text-foreground mb-2">5000+</h3>
-                  <p className="text-muted-foreground">Active Members</p>
+                  <p className="text-foreground/70">Active Members</p>
                 </div>
                 <div className="text-center">
                   <MessageCircle className="w-12 h-12 text-primary mx-auto mb-4" />
                   <h3 className="text-2xl font-bold text-foreground mb-2">Daily</h3>
-                  <p className="text-muted-foreground">Live Q&A Sessions</p>
+                  <p className="text-foreground/70">Live Q&A Sessions</p>
                 </div>
                 <div className="text-center">
                   <Heart className="w-12 h-12 text-primary mx-auto mb-4" />
                   <h3 className="text-2xl font-bold text-foreground mb-2">Weekly</h3>
-                  <p className="text-muted-foreground">Wellness Challenges</p>
+                  <p className="text-foreground/70">Wellness Challenges</p>
                 </div>
               </div>
 
@@ -581,7 +581,7 @@ const Home = () => {
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
                 Your <span className="text-gradient-bright">Hormonal Healing</span> Begins Here
               </h2>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-foreground/90">
                 Take your first step toward natural balance with Dr. Prasanna's personalized homeopathic plan
               </p>
             </div>
@@ -631,7 +631,7 @@ const Home = () => {
                 </form>
 
                 <div className="mt-6 pt-6 border-t border-border">
-                  <p className="text-sm text-muted-foreground text-center mb-3">Or reach out directly:</p>
+                  <p className="text-sm text-foreground/70 text-center mb-3">Or reach out directly:</p>
                   <div className="flex flex-col gap-2">
                     <a href="tel:+919876543210" className="flex items-center justify-center gap-2 text-primary hover:text-primary-dark transition-colors">
                       <Phone className="w-4 h-4" />
