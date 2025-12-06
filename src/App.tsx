@@ -23,7 +23,7 @@ import TermsConditions from "./pages/TermsConditions";
 import Disclaimer from "./pages/Disclaimer";
 import SymptomChecker from "./pages/SymptomChecker";
 import Gallery from "./pages/Gallery";
-import PatientPortal from "./pages/PatientPortal";
+
 import BookingPage from "./pages/BookingPage";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -68,7 +68,7 @@ const App = () => (
             <Route path="/symptom-checker" element={<SymptomChecker />} />
             <Route path="/hormone-health-test" element={<SymptomChecker />} />
             <Route path="/gallery" element={<Gallery />} />
-            <Route path="/patient-portal" element={<PatientPortal />} />
+            
             <Route path="/book" element={<BookingPage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
