@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import TopBanner from "@/components/TopBanner";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { ClipboardList, MessageSquare, UtensilsCrossed, Calendar, Activity, Bot } from "lucide-react";
@@ -53,7 +54,8 @@ const WellnessHub = () => {
 
   return (
     <>
-      <SEO 
+      <TopBanner />
+      <SEO
         title="Wellness Hub | AI-Powered Health Tools"
         description="Explore our suite of interactive wellness tools including hormone quiz, symptom checker, nutrition planner, cycle tracker, and AI health assistant Mira."
         keywords="wellness tools, hormone quiz, symptom checker, health tracker, AI health assistant, women's health tools"

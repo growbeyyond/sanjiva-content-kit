@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import TopBanner from "@/components/TopBanner";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -76,7 +77,8 @@ const Treatments = () => {
 
   return (
     <>
-      <SEO 
+      <TopBanner />
+      <SEO
         title="Homeopathy Treatments in Hyderabad | Thyroid, PCOS, Hormonal Care - Dr. Prasanna"
         description="Expert homeopathic treatment for thyroid disorders, PCOS, weight management, skin & hair health, and chronic conditions in Hyderabad. Natural healing with lasting results."
         keywords="homeopathy treatments Hyderabad, thyroid treatment, PCOS treatment, hormonal imbalance cure, weight loss homeopathy, skin treatment, chronic fatigue treatment"

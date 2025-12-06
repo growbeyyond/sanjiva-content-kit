@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import TopBanner from "@/components/TopBanner";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -60,7 +61,8 @@ const Protocol = () => {
 
   return (
     <>
-      <SEO 
+      <TopBanner />
+      <SEO
         title="Thyroid Treatment in Hyderabad | ThyroCure Method - Dr. Prasanna Boddupally"
         description="Natural thyroid treatment using the ThyroCure Method. Holistic cure for hypothyroidism, hyperthyroidism & thyroid nodules without lifelong medication dependency. Book consultation."
         keywords="thyroid treatment Hyderabad, hypothyroidism cure, hyperthyroidism treatment, thyroid homeopathy, ThyroCure, natural thyroid healing, Dr Prasanna thyroid"

@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import TopBanner from "@/components/TopBanner";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -42,7 +43,8 @@ const About = () => {
 
   return (
     <>
-      <SEO 
+      <TopBanner />
+      <SEO
         title="About Dr. Prasanna Boddupally | Homeopathy Doctor Hyderabad - PCOS & Thyroid Specialist"
         description="Dr. Prasanna Boddupally is a leading homeopathy physician in Hyderabad with 10+ years experience treating PCOS, thyroid disorders, and hormonal imbalances. Book consultation today."
         keywords="Dr Prasanna Boddupally, homeopathy doctor Hyderabad, PCOS specialist, thyroid doctor, women's health expert, homeopathic physician Telangana"

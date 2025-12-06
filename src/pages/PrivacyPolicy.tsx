@@ -1,10 +1,12 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import TopBanner from "@/components/TopBanner";
 import { Helmet } from "react-helmet-async";
 
 const PrivacyPolicy = () => {
   return (
     <>
+      <TopBanner />
       <Helmet>
         <title>Privacy Policy - Dr. Prasanna Boddupally | Patient Data Protection</title>
         <meta name="description" content="Read our privacy policy to understand how we collect, use, and protect your personal and medical information at Dr. Prasanna's homeopathy clinic." />
@@ -147,10 +149,9 @@ const PrivacyPolicy = () => {
               <div className="bg-card border border-border rounded-lg p-6 space-y-2">
                 <p className="text-foreground"><strong>Dr. Prasanna Boddupally</strong></p>
                 <p className="text-muted-foreground">Homeopathy Clinic</p>
-                <p className="text-muted-foreground">123 Health Street, Banjara Hills</p>
-                <p className="text-muted-foreground">Hyderabad, Telangana - 500034</p>
-                <p className="text-muted-foreground">Phone: +91-9876543210</p>
-                <p className="text-muted-foreground">Email: info@drprasanna.com</p>
+                <p className="text-muted-foreground">Hyderabad, Telangana, India</p>
+                <p className="text-muted-foreground">Phone: +91 81799 42297</p>
+                <p className="text-muted-foreground">Email: prasannaboddu@gmail.com</p>
               </div>
             </section>
           </div>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import TopBanner from "@/components/TopBanner";
 import { Card, CardContent } from "@/components/ui/card";
 import { Helmet } from "react-helmet-async";
 import { supabase } from "@/integrations/supabase/client";
@@ -33,6 +34,7 @@ const Gallery = () => {
 
   return (
     <>
+      <TopBanner />
       <Helmet>
         <title>Clinic Gallery - Dr. Prasanna Boddupally | Our Facilities</title>
         <meta name="description" content="View photos of Dr. Prasanna's homeopathy clinic in Hyderabad. See our consultation rooms, treatment facilities, and welcoming environment." />

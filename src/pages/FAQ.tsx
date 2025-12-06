@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import TopBanner from "@/components/TopBanner";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -92,7 +93,8 @@ const FAQ = () => {
 
   return (
     <>
-      <SEO 
+      <TopBanner />
+      <SEO
         title="Frequently Asked Questions | Dr. Prasanna Boddupally - Homeopathy"
         description="Get answers to common questions about homeopathy treatment, consultation process, and conditions treated by Dr. Prasanna Boddupally."
         keywords="homeopathy FAQ, homeopathy questions, thyroid treatment FAQ, PCOS questions"

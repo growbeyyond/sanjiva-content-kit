@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import TopBanner from "@/components/TopBanner";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -117,7 +118,8 @@ const Testimonials = () => {
 
   return (
     <>
-      <SEO 
+      <TopBanner />
+      <SEO
         title="Patient Success Stories & Testimonials | Dr. Prasanna Boddupally"
         description="Read real success stories from patients treated by Dr. Prasanna Boddupally. PCOS cured, thyroid normalized, infertility overcome through homeopathy."
         keywords="homeopathy testimonials, PCOS success stories, thyroid treatment reviews, Dr Prasanna reviews"

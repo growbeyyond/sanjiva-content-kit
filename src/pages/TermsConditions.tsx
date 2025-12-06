@@ -1,10 +1,12 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import TopBanner from "@/components/TopBanner";
 import { Helmet } from "react-helmet-async";
 
 const TermsConditions = () => {
   return (
     <>
+      <TopBanner />
       <Helmet>
         <title>Terms & Conditions - Dr. Prasanna Boddupally | Service Agreement</title>
         <meta name="description" content="Read the terms and conditions for using Dr. Prasanna Boddupally's homeopathy services and website." />
@@ -182,10 +184,9 @@ const TermsConditions = () => {
               <div className="bg-card border border-border rounded-lg p-6 space-y-2">
                 <p className="text-foreground"><strong>Dr. Prasanna Boddupally</strong></p>
                 <p className="text-muted-foreground">Homeopathy Clinic</p>
-                <p className="text-muted-foreground">123 Health Street, Banjara Hills</p>
-                <p className="text-muted-foreground">Hyderabad, Telangana - 500034</p>
-                <p className="text-muted-foreground">Phone: +91-9876543210</p>
-                <p className="text-muted-foreground">Email: info@drprasanna.com</p>
+                <p className="text-muted-foreground">Hyderabad, Telangana, India</p>
+                <p className="text-muted-foreground">Phone: +91 81799 42297</p>
+                <p className="text-muted-foreground">Email: prasannaboddu@gmail.com</p>
               </div>
             </section>
           </div>
