@@ -36,12 +36,12 @@ const Protocol = () => {
     <>
       <Navigation />
       <div className="min-h-screen">
-        <section className="py-20 bg-gradient-hero text-white">
+        <section className="py-20 bg-gradient-natural text-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                <span className="text-gradient-bright">The Sanjiva Protocol:</span> Your Path to Natural Healing
-                <br /><span className="text-white/95">The ThyroCure Method</span>
+                <span className="text-white/90">The Sanjiva Protocol:</span> Your Path to Natural Healing
+                <br /><span className="text-white">The ThyroCure Method</span>
               </h1>
               <p className="text-xl text-white/90">
                 A revolutionary approach to thyroid and hormonal healing — naturally, completely, permanently
@@ -57,7 +57,7 @@ const Protocol = () => {
                 <Card key={index} className="p-8 hover:shadow-soft transition-all duration-300">
                   <div className="grid md:grid-cols-4 gap-6">
                     <div>
-                      <h3 className="text-2xl font-bold text-primary mb-2">{item.phase}</h3>
+                      <h3 className="text-2xl font-bold text-accent mb-2">{item.phase}</h3>
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-foreground/70 mb-1">Focus</p>
@@ -81,19 +81,19 @@ const Protocol = () => {
               </h2>
               <ul className="space-y-3 text-foreground/80">
                 <li className="flex items-start gap-3">
-                  <span className="text-primary font-bold text-xl">✓</span>
+                  <span className="text-accent font-bold text-xl">✓</span>
                   <span>Natural thyroid restoration — no lifelong dependency on synthetic hormones</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-primary font-bold text-xl">✓</span>
+                  <span className="text-accent font-bold text-xl">✓</span>
                   <span>Addresses root causes — not just TSH numbers but actual thyroid function</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-primary font-bold text-xl">✓</span>
+                  <span className="text-accent font-bold text-xl">✓</span>
                   <span>Holistic healing — treats the whole woman, not just the thyroid gland</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-primary font-bold text-xl">✓</span>
+                  <span className="text-accent font-bold text-xl">✓</span>
                   <span>Proven results — women regaining energy, losing weight, and feeling like themselves again</span>
                 </li>
               </ul>
@@ -101,10 +101,10 @@ const Protocol = () => {
 
             <div className="text-center mt-12">
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="bg-gradient-hero shadow-soft">
+                <Button asChild size="lg" className="bg-gradient-natural shadow-soft">
                   <Link to="/contact">Start Your Healing Journey</Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary-light">
+                <Button asChild size="lg" variant="outline" className="border-accent text-accent hover:bg-accent hover:text-white">
                   <a 
                     href="/protocol-guide.pdf" 
                     download="ThyroCure-Method-Guide.pdf"

@@ -119,7 +119,7 @@ const PCOSProgram = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-4">
                 Track Your Progress
               </h2>
-              <p className="text-center text-muted-foreground mb-12">
+              <p className="text-center text-foreground/70 mb-12">
                 Monitor improvements across key health markers
               </p>
               <ProgressTracker type="pcos" />
@@ -138,13 +138,13 @@ const PCOSProgram = () => {
                     <h3 className="text-lg font-semibold text-primary mb-2">
                       Can PCOS be cured naturally?
                     </h3>
-                    <p className="text-muted-foreground">
+                    <p className="text-foreground/70">
                       Yes. With root-cause care and consistent lifestyle rebalancing, most women see dramatic improvements 
                       in period regularity, fertility markers, weight, and energy within 3-6 months. Homeopathy addresses 
                       the hormonal imbalance at its source — not just masking symptoms.
                     </p>
                   </div>
-                  <div className="flex items-start gap-2 text-sm text-muted-foreground mt-6 p-4 bg-primary-light rounded-lg">
+                  <div className="flex items-start gap-2 text-sm text-foreground/70 mt-6 p-4 bg-primary-light rounded-lg">
                     <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                     <p>
                       <strong>Real Results:</strong> Our patients report restored menstrual cycles, improved fertility, 
@@ -164,7 +164,7 @@ const PCOSProgram = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Ready to Break Free from PCOS?
               </h2>
-              <p className="text-lg text-muted-foreground mb-8">
+              <p className="text-lg text-foreground/70 mb-8">
                 Start your journey to hormonal balance today. Personalized care, lasting results.
               </p>
               <Button asChild size="lg" className="bg-gradient-hero shadow-glow">

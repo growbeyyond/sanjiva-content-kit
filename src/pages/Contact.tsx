@@ -209,7 +209,7 @@ const Contact = () => {
                 </form>
 
                 <div className="mt-6 pt-6 border-t border-border">
-                  <p className="text-sm text-muted-foreground text-center mb-4">
+                  <p className="text-sm text-foreground/70 text-center mb-4">
                     Let's Talk — We're Here for You
                   </p>
                   <div className="space-y-2">
@@ -228,7 +228,7 @@ const Contact = () => {
                         WhatsApp
                       </a>
                     </Button>
-                    <p className="text-xs text-center text-muted-foreground">
+                    <p className="text-xs text-center text-foreground/60">
                       Also available on Telegram | Email
                     </p>
                   </div>
@@ -241,10 +241,10 @@ const Contact = () => {
                   <h3 className="text-xl font-bold text-foreground mb-4">Clinic Details</h3>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
-                      <MapPin className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <MapPin className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                       <div>
                         <p className="font-semibold text-foreground">Address</p>
-                        <p className="text-muted-foreground text-sm">
+                        <p className="text-foreground/70 text-sm">
                           Hyderabad | Online Consults Available Globally
                         </p>
                       </div>
@@ -267,17 +267,17 @@ const Contact = () => {
                         <p className="font-semibold text-foreground">Email</p>
                         <a 
                           href="mailto:prasannaboddu@gmail.com" 
-                          className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                          className="text-foreground/70 text-sm hover:text-primary transition-colors"
                         >
                           prasannaboddu@gmail.com
                         </a>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <Clock className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <Clock className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                       <div>
                         <p className="font-semibold text-foreground">Clinic Hours</p>
-                        <p className="text-muted-foreground text-sm">
+                        <p className="text-foreground/70 text-sm">
                           Monday - Saturday: 9:00 AM - 7:00 PM<br />
                           Sunday: Closed
                         </p>
@@ -314,7 +314,7 @@ const Contact = () => {
 
                 <Card className="p-6">
                   <h3 className="text-xl font-bold text-foreground mb-2">Languages Spoken</h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-foreground/70">
                     English • Telugu • Hindi
                   </p>
                 </Card>

@@ -59,7 +59,7 @@ const About = () => {
                     <p className="text-foreground/80">
                       Dr. Prasanna's story began with a simple vision — to treat women not just for their symptoms, but for their emotions, cycles, and confidence.
                     </p>
-                    <p className="text-muted-foreground italic">
+                    <p className="text-foreground/70 italic">
                       "Homeopathy × Modern Hormone Science — I help women rebuild confidence through balanced health."
                     </p>
                   </div>
@@ -68,7 +68,7 @@ const About = () => {
                     <h2 className="text-2xl font-bold text-primary">Experience & Expertise</h2>
                     <ul className="space-y-3 text-foreground/80">
                       <li className="flex items-start gap-2">
-                        <Leaf className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                        <Leaf className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
                         <span><strong>10+ years</strong> in women's homeopathy</span>
                       </li>
                       <li className="flex items-start gap-2">
@@ -91,13 +91,13 @@ const About = () => {
                   </div>
                   
                   <div className="space-y-4">
-                    <h2 className="text-2xl font-bold text-primary">The ThyroCure Philosophy</h2>
-                    <p className="text-muted-foreground italic text-lg">
+                    <h2 className="text-2xl font-bold text-accent">The ThyroCure Philosophy</h2>
+                    <p className="text-foreground/70 italic text-lg">
                       "Your body already knows how to heal. I just help you listen."
                     </p>
-                    <ul className="space-y-2 text-muted-foreground">
+                    <ul className="space-y-2 text-foreground/70">
                       <li className="flex items-start gap-2">
-                        <span className="text-primary font-bold">•</span>
+                        <span className="text-accent font-bold">•</span>
                         <span>Holistic approach to hormonal balance</span>
                       </li>
                       <li className="flex items-start gap-2">
@@ -105,7 +105,7 @@ const About = () => {
                         <span>Root-cause based diagnosis</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-primary font-bold">•</span>
+                        <span className="text-accent font-bold">•</span>
                         <span>Personalized care plans for every woman</span>
                       </li>
                     </ul>
@@ -113,7 +113,7 @@ const About = () => {
 
                   <div className="space-y-4">
                     <h2 className="text-2xl font-bold text-primary">Media & Milestones</h2>
-                    <p className="text-muted-foreground">
+                    <p className="text-foreground/70">
                       Featured in <strong>HealthLine India</strong> | Panelist on <strong>Women's Hormone Summit 2024</strong>
                     </p>
                   </div>
