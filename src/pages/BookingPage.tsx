@@ -6,17 +6,46 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import AppointmentCalendar from "@/components/AppointmentCalendar";
-import PaymentGateway from "@/components/PaymentGateway";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { Helmet } from "react-helmet-async";
 import { format } from "date-fns";
+import { z } from "zod";
+
+// Booking form validation schema
+const bookingSchema = z.object({
+  name: z.string()
+    .trim()
+    .min(2, { message: "Name must be at least 2 characters" })
+    .max(100, { message: "Name must be less than 100 characters" })
+    .regex(/^[a-zA-Z\s'.,-]+$/, { message: "Name contains invalid characters" }),
+  phone: z.string()
+    .trim()
+    .min(10, { message: "Phone number must be at least 10 digits" })
+    .max(15, { message: "Phone number is too long" })
+    .regex(/^[\d\s+()-]+$/, { message: "Invalid phone number format" }),
+  email: z.string()
+    .trim()
+    .email({ message: "Invalid email address" })
+    .max(255)
+    .optional()
+    .or(z.literal('')),
+  condition: z.string()
+    .trim()
+    .min(1, { message: "Please select a condition" })
+    .max(100),
+  message: z.string()
+    .trim()
+    .max(1000, { message: "Message must be less than 1000 characters" })
+    .optional()
+    .or(z.literal(''))
+});
 
 const BookingPage = () => {
   const { toast } = useToast();
-  const [step, setStep] = useState(1); // 1: Details, 2: Calendar
+  const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [appointmentId, setAppointmentId] = useState<string>("");
+  const [errors, setErrors] = useState<Record<string, string>>({});
   
   const [formData, setFormData] = useState({
     name: "",
@@ -29,15 +58,44 @@ const BookingPage = () => {
   const [selectedDate, setSelectedDate] = useState<Date>();
   const [selectedTime, setSelectedTime] = useState<string>("");
 
-  // Consultation fee will be discussed during appointment confirmation
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
+  };
+
+  const validateForm = () => {
+    try {
+      bookingSchema.parse(formData);
+      setErrors({});
+      return true;
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const newErrors: Record<string, string> = {};
+        error.errors.forEach((err) => {
+          if (err.path[0]) {
+            newErrors[err.path[0] as string] = err.message;
+          }
+        });
+        setErrors(newErrors);
+      }
+      return false;
+    }
   };
 
   const handleDetailsSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setStep(2);
+    if (validateForm()) {
+      setStep(2);
+    } else {
+      toast({
+        title: "Validation Error",
+        description: "Please check the form for errors",
+        variant: "destructive"
+      });
+    }
   };
 
   const handleSlotSelect = (date: Date, time: string) => {
@@ -55,19 +113,18 @@ const BookingPage = () => {
       return;
     }
     
-    // Book appointment directly without payment
     setIsSubmitting(true);
     try {
       const { data: appointment, error: dbError } = await supabase
         .from('appointments')
         .insert([{
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email || null,
-          condition: formData.condition,
+          name: formData.name.trim(),
+          phone: formData.phone.trim(),
+          email: formData.email?.trim() || null,
+          condition: formData.condition.trim(),
           preferred_date: selectedDate ? format(selectedDate, 'yyyy-MM-dd') : null,
           preferred_time: selectedTime,
-          message: formData.message || null,
+          message: formData.message?.trim() || null,
           status: 'pending'
         }])
         .select()
@@ -89,9 +146,13 @@ const BookingPage = () => {
       // Send confirmation email
       await supabase.functions.invoke('send-appointment-email', {
         body: {
-          ...formData,
+          name: formData.name.trim(),
+          phone: formData.phone.trim(),
+          email: formData.email?.trim() || '',
+          condition: formData.condition.trim(),
           preferred_date: selectedDate ? format(selectedDate, 'yyyy-MM-dd') : '',
-          preferred_time: selectedTime
+          preferred_time: selectedTime,
+          message: formData.message?.trim() || ''
         }
       });
 
@@ -104,79 +165,13 @@ const BookingPage = () => {
       setFormData({ name: "", phone: "", email: "", condition: "", message: "" });
       setSelectedDate(undefined);
       setSelectedTime("");
+      setErrors({});
       setStep(1);
     } catch (error: any) {
       toast({
         title: "Booking failed",
-        description: error.message,
+        description: error.message || "Please try again",
         variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handlePaymentSuccess = async (transactionId: string) => {
-    setIsSubmitting(true);
-    try {
-      // Insert appointment
-      const { data: appointment, error: dbError } = await supabase
-        .from('appointments')
-        .insert([{
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email || null,
-          condition: formData.condition,
-          preferred_date: selectedDate ? format(selectedDate, 'yyyy-MM-dd') : null,
-          preferred_time: selectedTime,
-          message: formData.message || null,
-          status: 'confirmed' // Confirmed since paid
-        }])
-        .select()
-        .single();
-
-      if (dbError) throw dbError;
-
-      // Book the slot
-      if (selectedDate) {
-        await supabase.from('appointment_slots').insert({
-          date: format(selectedDate, 'yyyy-MM-dd'),
-          start_time: selectedTime,
-          end_time: selectedTime, // Could calculate end time
-          is_available: false,
-          appointment_id: appointment.id
-        });
-      }
-
-      // Payment will be processed after appointment confirmation
-
-      // Send confirmation email
-      await supabase.functions.invoke('send-appointment-email', {
-        body: {
-          ...formData,
-          preferred_date: selectedDate ? format(selectedDate, 'yyyy-MM-dd') : '',
-          preferred_time: selectedTime,
-          transactionId
-        }
-      });
-
-      toast({
-        title: "Appointment Confirmed!",
-        description: "You'll receive a confirmation email shortly.",
-      });
-
-      // Reset form
-      setFormData({ name: "", phone: "", email: "", condition: "", message: "" });
-      setSelectedDate(undefined);
-      setSelectedTime("");
-      setStep(1);
-
-    } catch (error) {
-      console.error('Error confirming appointment:', error);
-      toast({
-        title: "Error",
-        description: "Payment received but failed to book appointment. We'll contact you.",
-        variant: "destructive"
       });
     } finally {
       setIsSubmitting(false);
@@ -188,7 +183,7 @@ const BookingPage = () => {
       <Helmet>
         <title>Book Appointment - Dr. Prasanna Boddupally</title>
         <meta name="description" content="Book your homeopathy consultation with Dr. Prasanna Boddupally online. Choose your preferred date and time." />
-        <link rel="canonical" href="https://drprasanna.lovable.app/book" />
+        <link rel="canonical" href="https://drprasannaboddupally.in/book" />
       </Helmet>
 
       <Navigation />
@@ -235,7 +230,10 @@ const BookingPage = () => {
                       onChange={handleChange}
                       placeholder="Enter your name"
                       required
+                      maxLength={100}
+                      className={errors.name ? "border-destructive" : ""}
                     />
+                    {errors.name && <p className="text-sm text-destructive mt-1">{errors.name}</p>}
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-2">Phone Number *</label>
@@ -246,7 +244,10 @@ const BookingPage = () => {
                       onChange={handleChange}
                       placeholder="+91 98765 43210"
                       required
+                      maxLength={15}
+                      className={errors.phone ? "border-destructive" : ""}
                     />
+                    {errors.phone && <p className="text-sm text-destructive mt-1">{errors.phone}</p>}
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-2">Email</label>
@@ -256,15 +257,21 @@ const BookingPage = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="your@email.com"
+                      maxLength={255}
+                      className={errors.email ? "border-destructive" : ""}
                     />
+                    {errors.email && <p className="text-sm text-destructive mt-1">{errors.email}</p>}
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-2">Choose Your Concern *</label>
                     <select
                       name="condition"
                       value={formData.condition}
-                      onChange={(e) => setFormData(prev => ({ ...prev, condition: e.target.value }))}
-                      className="w-full px-4 py-2 rounded-md border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                      onChange={(e) => {
+                        setFormData(prev => ({ ...prev, condition: e.target.value }));
+                        if (errors.condition) setErrors(prev => ({ ...prev, condition: '' }));
+                      }}
+                      className={`w-full px-4 py-2 rounded-md border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary ${errors.condition ? "border-destructive" : "border-input"}`}
                       required
                     >
                       <option value="">Select your primary concern</option>
@@ -276,6 +283,7 @@ const BookingPage = () => {
                       <option value="Skin & Hair">Skin & Hair Issues</option>
                       <option value="Other">Other Women's Health Concern</option>
                     </select>
+                    {errors.condition && <p className="text-sm text-destructive mt-1">{errors.condition}</p>}
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-2">Message (Optional)</label>
@@ -285,7 +293,10 @@ const BookingPage = () => {
                       onChange={handleChange}
                       placeholder="Any additional information..."
                       rows={3}
+                      maxLength={1000}
+                      className={errors.message ? "border-destructive" : ""}
                     />
+                    {errors.message && <p className="text-sm text-destructive mt-1">{errors.message}</p>}
                   </div>
                   <Button type="submit" className="w-full bg-gradient-hero">
                     Continue to Select Date & Time
