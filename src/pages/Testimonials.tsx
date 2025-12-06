@@ -135,7 +135,7 @@ const Testimonials = () => {
                 <span className="text-gradient-bright">Healing Stories</span> That Inspire Hope
                 <br />Real Stories of Healing & Hope
               </h1>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-foreground/70">
                 Discover how the Sanjiva Protocol transformed lives
               </p>
             </div>
@@ -216,7 +216,7 @@ const Testimonials = () => {
               <p className="text-foreground text-lg">
                 <strong>90% success rate</strong> in treating thyroid disorders and infertility cases
               </p>
-              <p className="text-muted-foreground mt-2">
+              <p className="text-foreground/70 mt-2">
                 Based on 10+ years of clinical practice with thousands of patients
               </p>
             </div>
@@ -227,7 +227,7 @@ const Testimonials = () => {
                 <h2 className="text-3xl font-bold text-center mb-4 text-foreground">
                   Share Your Journey
                 </h2>
-                <p className="text-center text-muted-foreground mb-8">
+                <p className="text-center text-foreground/70 mb-8">
                   Your story could inspire another woman on her healing journey. Share anonymously if you prefer.
                 </p>
 
@@ -279,7 +279,7 @@ const Testimonials = () => {
                         onChange={(e) => setFormData(prev => ({ ...prev, anonymous: e.target.checked }))}
                         className="w-4 h-4"
                       />
-                      <label htmlFor="anonymous" className="text-sm text-muted-foreground">
+                      <label htmlFor="anonymous" className="text-sm text-foreground/70">
                         Post anonymously
                       </label>
                     </div>

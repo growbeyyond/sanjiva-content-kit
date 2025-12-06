@@ -142,7 +142,7 @@ const Blog = () => {
               <h2 className="text-2xl font-bold text-foreground mb-4">
                 Stay Updated
               </h2>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-foreground/70 mb-6">
                 Subscribe to receive the latest health tips and insights directly to your inbox
               </p>
               <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 justify-center">

@@ -131,7 +131,7 @@ const FAQ = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-hero bg-clip-text text-transparent">
               Frequently Asked Questions
             </h1>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-foreground/70">
               Everything you need to know about homeopathy and our treatment approach
             </p>
           </div>
@@ -157,7 +157,7 @@ const FAQ = () => {
                       <AccordionTrigger className="text-left font-semibold hover:text-primary">
                         {faq.q}
                       </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground leading-relaxed">
+                      <AccordionContent className="text-foreground/70 leading-relaxed">
                         {faq.a}
                       </AccordionContent>
                     </AccordionItem>
