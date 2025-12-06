@@ -7,6 +7,7 @@ import WhatsAppWidget from "./components/WhatsAppWidget";
 import LiveChat from "./components/LiveChat";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 import MiraChat from "./components/MiraChat";
+import MobileQuickActions from "./components/MobileQuickActions";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Treatments from "./pages/Treatments";
@@ -86,6 +87,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
           <GoogleAnalytics />
+          <MobileQuickActions />
         </BrowserRouter>
         <WhatsAppWidget />
         <MiraChat />

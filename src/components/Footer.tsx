@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, Facebook, Instagram, Youtube, Twitter } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
@@ -10,9 +10,48 @@ const Footer = () => {
           {/* Logo & About */}
           <div className="md:col-span-1">
             <img src={logo} alt="Dr. Prasanna Boddupally" className="h-16 w-auto mb-3" />
-            <p className="text-sm text-foreground/70">
+            <p className="text-sm text-foreground/70 mb-4">
               Natural healing for Thyroid & PCOS
             </p>
+            {/* Social Media */}
+            <div className="flex gap-2">
+              <a 
+                href="https://www.facebook.com/drprasannahomeopathy" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full bg-background border border-border flex items-center justify-center text-foreground/60 hover:text-primary hover:border-primary transition-all"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://www.instagram.com/drprasannahomeopathy" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full bg-background border border-border flex items-center justify-center text-foreground/60 hover:text-primary hover:border-primary transition-all"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://www.youtube.com/@drprasannahomeopathy" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full bg-background border border-border flex items-center justify-center text-foreground/60 hover:text-primary hover:border-primary transition-all"
+                aria-label="YouTube"
+              >
+                <Youtube className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://twitter.com/drprasannahomeo" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full bg-background border border-border flex items-center justify-center text-foreground/60 hover:text-primary hover:border-primary transition-all"
+                aria-label="Twitter"
+              >
+                <Twitter className="w-4 h-4" />
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -35,6 +74,7 @@ const Footer = () => {
               <li><Link to="/blog" className="text-foreground/70 hover:text-primary transition-colors">Health Blog</Link></li>
               <li><Link to="/faq" className="text-foreground/70 hover:text-primary transition-colors">FAQ</Link></li>
               <li><Link to="/contact" className="text-foreground/70 hover:text-primary transition-colors">Book Appointment</Link></li>
+              <li><Link to="/patient-portal" className="text-foreground/70 hover:text-primary transition-colors">Patient Portal</Link></li>
             </ul>
           </div>
 
@@ -86,6 +126,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      {/* Spacer for mobile quick actions */}
+      <div className="h-16 md:hidden" />
     </footer>
   );
 };
