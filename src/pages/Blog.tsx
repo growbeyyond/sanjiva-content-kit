@@ -57,7 +57,7 @@ const Blog = () => {
     {
       title: "Is Homeopathy Really Slow? The Truth You Should Know",
       excerpt: "Debunking the most common myth about homeopathic treatment and understanding realistic healing timelines.",
-      date: "March 15, 2024",
+      date: "November 28, 2025",
       readTime: "5 min read",
       category: "Myths & Facts",
       slug: "is-homeopathy-slow-truth"
@@ -65,7 +65,7 @@ const Blog = () => {
     {
       title: "Foods That Help Balance Your Thyroid Naturally",
       excerpt: "Simple dietary changes that support thyroid function and complement homeopathic treatment.",
-      date: "March 10, 2024",
+      date: "November 22, 2025",
       readTime: "7 min read",
       category: "Thyroid Health",
       slug: "foods-balance-thyroid-naturally"
@@ -73,7 +73,7 @@ const Blog = () => {
     {
       title: "Understanding PCOD — A Homeopath's Perspective",
       excerpt: "What causes PCOD and how homeopathy addresses the root hormonal imbalances effectively.",
-      date: "March 5, 2024",
+      date: "November 15, 2025",
       readTime: "8 min read",
       category: "PCOS Care",
       slug: "understanding-pcod-homeopathy"
@@ -81,7 +81,7 @@ const Blog = () => {
     {
       title: "How to Manage Allergies Without Chemicals",
       excerpt: "Natural approaches to seasonal allergies that provide lasting relief without side effects.",
-      date: "February 28, 2024",
+      date: "November 10, 2025",
       readTime: "6 min read",
       category: "Respiratory Health",
       slug: "manage-allergies-naturally"
@@ -89,7 +89,7 @@ const Blog = () => {
     {
       title: "The Connection Between Stress and Chronic Pain",
       excerpt: "Exploring how emotional well-being impacts physical symptoms and the role of holistic healing.",
-      date: "February 20, 2024",
+      date: "November 5, 2025",
       readTime: "6 min read",
       category: "Pain Management",
       slug: "stress-chronic-pain-connection"
@@ -97,7 +97,7 @@ const Blog = () => {
     {
       title: "Preparing for Your First Homeopathy Consultation",
       excerpt: "What to expect during your visit and how to make the most of your appointment.",
-      date: "February 15, 2024",
+      date: "November 1, 2025",
       readTime: "4 min read",
       category: "Getting Started",
       slug: "first-homeopathy-consultation"
