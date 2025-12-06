@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { 
   CheckCircle2, ArrowRight, Star, Phone, MessageCircle, 
-  Clock, Users, Shield, Award, Heart, Leaf, Sparkles,
-  MapPin, Calendar, ChevronLeft, ChevronRight
+  Clock, Users, Shield, Award, Heart, Sparkles,
+  MapPin, ChevronLeft, ChevronRight
 } from "lucide-react";
 import SEO from "@/components/SEO";
 import doctorImage from "@/assets/doctor-prasanna.jpg";
@@ -67,36 +67,6 @@ const Home = () => {
     }
   };
 
-  const treatments = [
-    { 
-      name: "Thyroid Disorders", 
-      description: "Hypothyroidism, Hyperthyroidism, Thyroid Nodules, Hashimoto's", 
-      link: "/protocol", 
-      icon: Shield,
-      gradient: "from-accent/20 to-accent/5"
-    },
-    { 
-      name: "PCOS / PCOD", 
-      description: "Irregular periods, Weight gain, Hormonal acne, Hair loss", 
-      link: "/pcos-program", 
-      icon: Heart,
-      gradient: "from-primary/20 to-primary/5"
-    },
-    { 
-      name: "Infertility", 
-      description: "Natural conception support, Hormonal balance", 
-      link: "/treatments", 
-      icon: Sparkles,
-      gradient: "from-accent/20 to-accent/5"
-    },
-    { 
-      name: "Weight Management", 
-      description: "Hormonal weight issues, Metabolism support", 
-      link: "/treatments", 
-      icon: Leaf,
-      gradient: "from-primary/20 to-primary/5"
-    },
-  ];
 
   const testimonials = [
     { 
@@ -266,7 +236,118 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Conditions We Treat - Consistent section padding */}
+      {/* PCOS & ThyroCure Essence Section - NEW */}
+      <section className="py-12 md:py-16 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
+              Why <span className="bg-gradient-hero bg-clip-text text-transparent">ThyroCure</span> & <span className="bg-gradient-hero bg-clip-text text-transparent">PCOS Wellness?</span>
+            </h2>
+            <p className="text-foreground/70 max-w-2xl mx-auto">
+              The truth about hormonal disorders that every woman should know
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-10">
+            {/* Thyroid Stats & Info */}
+            <Card className="p-6 bg-gradient-to-br from-accent/10 to-accent/5 border-accent/20">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+                  <Shield className="w-6 h-6 text-accent" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground">Thyroid Disorders</h3>
+              </div>
+              <div className="space-y-3 mb-5">
+                <div className="flex items-center gap-2 text-foreground/80">
+                  <span className="text-2xl font-bold text-accent">42M+</span>
+                  <span className="text-sm">Indian women suffer from thyroid problems</span>
+                </div>
+                <div className="flex items-center gap-2 text-foreground/80">
+                  <span className="text-2xl font-bold text-accent">1 in 10</span>
+                  <span className="text-sm">Women have undiagnosed thyroid issues</span>
+                </div>
+              </div>
+              <p className="text-sm text-foreground/70 leading-relaxed mb-4">
+                Thyroid disorders are <strong>100% manageable</strong> with the right approach. Dr. Prasanna's homeopathic treatment 
+                addresses the root cause — not just symptoms. We help normalize T3, T4, and TSH levels naturally, 
+                reducing dependency on lifelong medication.
+              </p>
+              <div className="bg-accent/10 rounded-lg p-3 border border-accent/20">
+                <p className="text-sm font-medium text-foreground">
+                  <CheckCircle2 className="w-4 h-4 inline text-accent mr-1" />
+                  No false promises — Real results with consistent treatment
+                </p>
+              </div>
+            </Card>
+
+            {/* PCOS Stats & Info */}
+            <Card className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                  <Heart className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground">PCOS / PCOD</h3>
+              </div>
+              <div className="space-y-3 mb-5">
+                <div className="flex items-center gap-2 text-foreground/80">
+                  <span className="text-2xl font-bold text-primary">1 in 5</span>
+                  <span className="text-sm">Indian women are affected by PCOS</span>
+                </div>
+                <div className="flex items-center gap-2 text-foreground/80">
+                  <span className="text-2xl font-bold text-primary">70%</span>
+                  <span className="text-sm">Cases go undiagnosed for years</span>
+                </div>
+              </div>
+              <p className="text-sm text-foreground/70 leading-relaxed mb-4">
+                PCOS is <strong>completely reversible</strong> with proper treatment. Our holistic protocol combines 
+                homeopathy, nutrition, and lifestyle changes to restore hormonal balance, regulate periods, 
+                and help with weight management naturally.
+              </p>
+              <div className="bg-primary/10 rounded-lg p-3 border border-primary/20">
+                <p className="text-sm font-medium text-foreground">
+                  <CheckCircle2 className="w-4 h-4 inline text-primary mr-1" />
+                  Honest treatment — We show you the path to permanent healing
+                </p>
+              </div>
+            </Card>
+          </div>
+
+          {/* How Dr. Prasanna Helps */}
+          <div className="max-w-4xl mx-auto">
+            <Card className="p-6 md:p-8 bg-white border-primary/10">
+              <div className="text-center mb-6">
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2">
+                  How Dr. Prasanna Helps in <span className="bg-gradient-hero bg-clip-text text-transparent">Reversing</span> Hormonal Disorders
+                </h3>
+              </div>
+              <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                {[
+                  { num: "01", title: "Root Cause Analysis", desc: "Deep analysis of symptoms, reports & lifestyle" },
+                  { num: "02", title: "Personalized Protocol", desc: "Custom homeopathic medicines for your body" },
+                  { num: "03", title: "Diet & Lifestyle", desc: "Nutrition plan to support hormone balance" },
+                  { num: "04", title: "Continuous Monitoring", desc: "Regular follow-ups to track your progress" }
+                ].map((item, idx) => (
+                  <div key={idx} className="text-center p-4 bg-secondary rounded-lg">
+                    <span className="text-2xl font-bold bg-gradient-hero bg-clip-text text-transparent">{item.num}</span>
+                    <h4 className="font-semibold text-foreground text-sm mt-2 mb-1">{item.title}</h4>
+                    <p className="text-xs text-foreground/70">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="text-center">
+                <Button asChild size="lg" className="bg-gradient-hero">
+                  <a href="https://wa.me/918179942297?text=Hi%20Doctor,%20I%20want%20to%20know%20more%20about%20ThyroCure%20and%20PCOS%20treatment" target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="mr-2 w-5 h-5" /> Consult Dr. Prasanna on WhatsApp
+                  </a>
+                </Button>
+                <p className="text-xs text-foreground/60 mt-3">Free initial consultation • No obligation</p>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Conditions We Treat - Reorganized */}
       <section className="py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
@@ -274,12 +355,35 @@ const Home = () => {
               Conditions We Treat
             </h2>
             <p className="text-foreground/70 max-w-xl mx-auto">
-              Specialized homeopathic care for women's hormonal health problems
+              Specialized homeopathic care for women's hormonal health
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
-            {treatments.map((item, idx) => (
+          {/* Primary Conditions - First Row */}
+          <div className="grid md:grid-cols-3 gap-5 max-w-4xl mx-auto mb-8">
+            {[
+              { 
+                name: "Thyroid Disorders", 
+                description: "Hypothyroidism, Hyperthyroidism, Thyroid Nodules, Hashimoto's", 
+                link: "/protocol", 
+                icon: Shield,
+                gradient: "from-accent/20 to-accent/5"
+              },
+              { 
+                name: "PCOS / PCOD", 
+                description: "Irregular periods, Weight gain, Hormonal acne, Hair loss", 
+                link: "/pcos-program", 
+                icon: Heart,
+                gradient: "from-primary/20 to-primary/5"
+              },
+              { 
+                name: "Infertility", 
+                description: "Natural conception support, Hormonal balance, Reproductive health", 
+                link: "/treatments", 
+                icon: Sparkles,
+                gradient: "from-accent/20 to-accent/5"
+              },
+            ].map((item, idx) => (
               <Link to={item.link} key={idx} className="group">
                 <Card className={`p-5 h-full hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br ${item.gradient} group-hover:-translate-y-1`}>
                   <item.icon className="w-10 h-10 text-primary mb-3" />
@@ -292,11 +396,40 @@ const Home = () => {
               </Link>
             ))}
           </div>
-          
-          <div className="text-center mt-8">
-            <Button asChild variant="outline">
-              <Link to="/treatments">View All Treatments <ArrowRight className="ml-2 w-4 h-4" /></Link>
-            </Button>
+
+          {/* Other Conditions - Rectangle Box */}
+          <div className="max-w-4xl mx-auto">
+            <Card className="p-6 bg-secondary border-border/50">
+              <h3 className="text-lg font-bold text-foreground mb-4 text-center">
+                Other Conditions We Also Treat
+              </h3>
+              <div className="flex flex-wrap justify-center gap-3">
+                {[
+                  "Weight Management",
+                  "Hormonal Imbalance",
+                  "Menstrual Disorders",
+                  "Hair Fall",
+                  "Skin Problems",
+                  "Fatigue & Low Energy",
+                  "Mood Swings",
+                  "Stress & Anxiety",
+                  "Pre-menopause",
+                  "Post-delivery Care"
+                ].map((condition, idx) => (
+                  <span 
+                    key={idx} 
+                    className="px-4 py-2 bg-background rounded-full text-sm text-foreground/80 border border-border/50 hover:border-primary/50 hover:text-primary transition-colors cursor-default"
+                  >
+                    {condition}
+                  </span>
+                ))}
+              </div>
+              <div className="text-center mt-5">
+                <Button asChild variant="outline">
+                  <Link to="/treatments">View All Treatments <ArrowRight className="ml-2 w-4 h-4" /></Link>
+                </Button>
+              </div>
+            </Card>
           </div>
         </div>
       </section>
