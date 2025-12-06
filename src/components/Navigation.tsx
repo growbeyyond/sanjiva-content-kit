@@ -1,7 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import logo from "@/assets/logo.png";
 import {
   DropdownMenu,
@@ -12,13 +11,11 @@ import {
 
 const Navigation = () => {
   const location = useLocation();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const serviceLinks = [
-    { to: "/treatments", label: "All Treatments" },
-    { to: "/protocol", label: "Thyroid Care" },
-    { to: "/pcos-program", label: "PCOS Care" },
-    { to: "/wellness-hub", label: "Wellness Hub" },
+    { to: "/treatments", label: "Treatments" },
+    { to: "/protocol", label: "Thyroid" },
+    { to: "/pcos-program", label: "PCOS" },
   ];
 
   const mainLinks = [
@@ -27,9 +24,7 @@ const Navigation = () => {
   ];
 
   const secondaryLinks = [
-    { to: "/testimonials", label: "Success Stories" },
-    { to: "/blog", label: "Blog" },
-    { to: "/faq", label: "FAQ" },
+    { to: "/testimonials", label: "Stories" },
     { to: "/contact", label: "Contact" },
   ];
 
@@ -38,27 +33,28 @@ const Navigation = () => {
 
   return (
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-sm">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+      <div className="container mx-auto px-2 md:px-4">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center flex-shrink-0">
             <img 
               src={logo} 
-              alt="Dr. Prasanna Boddupally - PCOS & ThyroCure Homeopathy" 
-              className="h-16 w-auto"
+              alt="Dr. Prasanna Boddupally" 
+              className="h-12 md:h-16 w-auto"
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
+          {/* Navigation Links - Always Visible */}
+          <div className="flex items-center space-x-1 md:space-x-2">
+            {/* Main Links */}
             {mainLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`px-2 md:px-3 py-1.5 rounded-md text-xs md:text-sm font-medium transition-colors ${
                   isActive(link.to)
                     ? "text-primary bg-primary/10"
-                    : "text-foreground hover:text-primary hover:bg-secondary"
+                    : "text-foreground hover:text-primary"
                 }`}
               >
                 {link.label}
@@ -69,22 +65,22 @@ const Navigation = () => {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button
-                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-1 ${
+                  className={`px-2 md:px-3 py-1.5 rounded-md text-xs md:text-sm font-medium transition-colors flex items-center gap-0.5 ${
                     isServicesActive
                       ? "text-primary bg-primary/10"
-                      : "text-foreground hover:text-primary hover:bg-secondary"
+                      : "text-foreground hover:text-primary"
                   }`}
                 >
                   Services
-                  <ChevronDown className="w-4 h-4" />
+                  <ChevronDown className="w-3 h-3 md:w-4 md:h-4" />
                 </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-48 bg-background border border-border shadow-lg z-50">
+              <DropdownMenuContent align="center" className="w-40 bg-background border border-border shadow-lg z-50">
                 {serviceLinks.map((link) => (
                   <DropdownMenuItem key={link.to} asChild>
                     <Link
                       to={link.to}
-                      className={`w-full cursor-pointer ${
+                      className={`w-full cursor-pointer text-sm ${
                         isActive(link.to) ? "text-primary font-medium" : ""
                       }`}
                     >
@@ -95,14 +91,15 @@ const Navigation = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
+            {/* Secondary Links */}
             {secondaryLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`px-2 md:px-3 py-1.5 rounded-md text-xs md:text-sm font-medium transition-colors ${
                   isActive(link.to)
                     ? "text-primary bg-primary/10"
-                    : "text-foreground hover:text-primary hover:bg-secondary"
+                    : "text-foreground hover:text-primary"
                 }`}
               >
                 {link.label}
@@ -111,83 +108,10 @@ const Navigation = () => {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden lg:block">
-            <Button asChild className="bg-gradient-hero shadow-soft">
-              <Link to="/book">Book Appointment</Link>
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <Button asChild size="sm" className="bg-gradient-hero shadow-soft text-xs md:text-sm px-3 md:px-4 h-8 md:h-9 flex-shrink-0">
+            <Link to="/book">Book</Link>
+          </Button>
         </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="lg:hidden py-4 space-y-2 animate-fade-in">
-            {mainLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                onClick={() => setIsMenuOpen(false)}
-                className={`block px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                  isActive(link.to)
-                    ? "text-primary bg-primary/10"
-                    : "text-foreground hover:text-primary hover:bg-secondary"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-            
-            {/* Mobile Services Section */}
-            <div className="px-4 py-2">
-              <p className="text-xs font-semibold text-foreground/60 uppercase tracking-wide mb-2">Services</p>
-              <div className="space-y-1 pl-2 border-l-2 border-primary/20">
-                {serviceLinks.map((link) => (
-                  <Link
-                    key={link.to}
-                    to={link.to}
-                    onClick={() => setIsMenuOpen(false)}
-                    className={`block px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                      isActive(link.to)
-                        ? "text-primary bg-primary/10"
-                        : "text-foreground hover:text-primary hover:bg-secondary"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {secondaryLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                onClick={() => setIsMenuOpen(false)}
-                className={`block px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                  isActive(link.to)
-                    ? "text-primary bg-primary/10"
-                    : "text-foreground hover:text-primary hover:bg-secondary"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-            
-            <div className="px-4 pt-2">
-              <Button asChild className="w-full bg-gradient-hero shadow-soft">
-                <Link to="/book" onClick={() => setIsMenuOpen(false)}>Book Appointment</Link>
-              </Button>
-            </div>
-          </div>
-        )}
       </div>
     </nav>
   );
