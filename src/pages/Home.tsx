@@ -136,8 +136,8 @@ const Home = () => {
         structuredData={structuredData}
       />
 
-      {/* Hero Carousel Section */}
-      <section className="relative h-[600px] md:h-[650px] overflow-hidden">
+      {/* Hero Carousel Section - Full viewport height minus navbar */}
+      <section className="relative h-[550px] md:h-[600px] overflow-hidden">
         {/* Slides */}
         {heroSlides.map((slide, index) => (
           <div
@@ -242,8 +242,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Quick Stats Bar */}
-      <section className="bg-gradient-hero py-5">
+      {/* Quick Stats Bar - Compact */}
+      <section className="bg-gradient-hero py-4">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-white text-center">
             <div>
@@ -266,8 +266,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Conditions We Treat */}
-      <section className="py-14 md:py-16 bg-background">
+      {/* Conditions We Treat - Consistent section padding */}
+      <section className="py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
@@ -301,10 +301,10 @@ const Home = () => {
         </div>
       </section>
 
-      {/* About Doctor */}
-      <section className="py-14 md:py-16 bg-secondary">
+      {/* About Doctor - Consistent section padding */}
+      <section className="py-12 md:py-16 bg-secondary">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="order-2 md:order-1">
               <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
                 <Award className="w-4 h-4" />
@@ -375,8 +375,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-14 md:py-16 bg-background">
+      {/* How It Works - Consistent section padding */}
+      <section className="py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
@@ -406,8 +406,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-14 md:py-16 bg-gradient-subtle">
+      {/* Testimonials - Consistent section padding */}
+      <section className="py-12 md:py-16 bg-gradient-subtle">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
@@ -446,8 +446,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-14 md:py-16 bg-gradient-hero text-white">
+      {/* CTA Section - Slightly less padding */}
+      <section className="py-10 md:py-14 bg-gradient-hero text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-3">
             Ready to Start Your Healing Journey?
@@ -471,8 +471,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Clinic Info */}
-      <section className="py-10 bg-background">
+      {/* Clinic Info - Compact footer section */}
+      <section className="py-8 bg-background border-t border-border/50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-6 text-center md:text-left">
