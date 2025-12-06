@@ -423,6 +423,45 @@ const Contact = () => {
                     English • Telugu • Hindi
                   </p>
                 </Card>
+
+                {/* Consultation Types */}
+                <Card className="p-6 bg-secondary">
+                  <h2 className="text-xl font-bold text-foreground mb-3">Consultation Options</h2>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3 p-3 bg-background rounded-lg">
+                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <MapPin className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-foreground">In-Person Visit</p>
+                        <p className="text-xs text-foreground/70">Detailed physical examination, personalized attention, same-day medicine dispensing</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 p-3 bg-background rounded-lg">
+                      <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <MessageCircle className="w-5 h-5 text-accent" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-foreground">Online Consultation</p>
+                        <p className="text-xs text-foreground/70">Video call via WhatsApp/Zoom, medicines couriered, ideal for follow-ups & distant patients</p>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+
+                {/* Emergency Info */}
+                <Card className="p-6 border-destructive/30 bg-destructive/5">
+                  <h2 className="text-lg font-bold text-foreground mb-2">For Urgent Cases</h2>
+                  <p className="text-sm text-foreground/80 mb-3">
+                    If you're experiencing severe symptoms like difficulty breathing, severe chest pain, or thyroid storm symptoms:
+                  </p>
+                  <Button asChild variant="destructive" size="sm" className="w-full">
+                    <a href="tel:+918179942297">Call Immediately: +91 81799 42297</a>
+                  </Button>
+                  <p className="text-xs text-foreground/60 mt-2 text-center">
+                    For life-threatening emergencies, please visit the nearest hospital ER.
+                  </p>
+                </Card>
               </div>
             </div>
 

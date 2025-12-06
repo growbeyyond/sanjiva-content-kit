@@ -237,9 +237,13 @@ const PatientPortal = () => {
                 ) : (
                   <Card>
                     <CardContent className="text-center py-12">
-                      <p className="text-muted-foreground">No appointments yet</p>
-                      <Button asChild className="mt-4">
-                        <a href="/contact">Book Appointment</a>
+                      <Calendar className="w-12 h-12 text-muted-foreground/50 mx-auto mb-3" />
+                      <p className="text-muted-foreground mb-2">No appointments yet</p>
+                      <p className="text-sm text-muted-foreground/70 mb-4">
+                        Book your first consultation to start your healing journey
+                      </p>
+                      <Button asChild className="bg-gradient-hero">
+                        <a href="/contact">Book Your First Appointment</a>
                       </Button>
                     </CardContent>
                   </Card>
@@ -279,7 +283,11 @@ const PatientPortal = () => {
                 ) : (
                   <Card>
                     <CardContent className="text-center py-12">
-                      <p className="text-muted-foreground">No prescriptions available</p>
+                      <FileText className="w-12 h-12 text-muted-foreground/50 mx-auto mb-3" />
+                      <p className="text-muted-foreground mb-2">No prescriptions available</p>
+                      <p className="text-sm text-muted-foreground/70">
+                        Your prescriptions will appear here after your consultation
+                      </p>
                     </CardContent>
                   </Card>
                 )}
@@ -323,7 +331,11 @@ const PatientPortal = () => {
                 ) : (
                   <Card>
                     <CardContent className="text-center py-12">
-                      <p className="text-muted-foreground">No payment history</p>
+                      <CreditCard className="w-12 h-12 text-muted-foreground/50 mx-auto mb-3" />
+                      <p className="text-muted-foreground mb-2">No payment history</p>
+                      <p className="text-sm text-muted-foreground/70">
+                        Your payment records will be displayed here
+                      </p>
                     </CardContent>
                   </Card>
                 )}
