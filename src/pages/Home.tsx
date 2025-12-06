@@ -8,6 +8,9 @@ import {
   MapPin, Calendar, ChevronLeft, ChevronRight
 } from "lucide-react";
 import SEO from "@/components/SEO";
+import AnnouncementBanner from "@/components/AnnouncementBanner";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import doctorImage from "@/assets/doctor-prasanna.jpg";
 import heroWellness from "@/assets/hero-wellness-1.jpg";
 import heroThyroid from "@/assets/hero-thyroid-care.jpg";
@@ -127,14 +130,17 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <SEO 
-        title="Dr. Prasanna Boddupally | Thyroid & PCOS Homeopathy - Hyderabad"
-        description="Expert homeopathic treatment for thyroid, PCOS, and hormonal issues in Hyderabad. Natural healing with 10+ years experience. Book free consultation today."
-        keywords="thyroid treatment Hyderabad, PCOS treatment, homeopathy doctor, Dr Prasanna Boddupally, hormonal imbalance"
-        canonicalUrl="https://drprasannaboddupally.in"
-        structuredData={structuredData}
-      />
+    <>
+      <AnnouncementBanner />
+      <Navigation />
+      <div className="min-h-screen">
+        <SEO 
+          title="Dr. Prasanna Boddupally | Thyroid & PCOS Homeopathy - Hyderabad"
+          description="Expert homeopathic treatment for thyroid, PCOS, and hormonal issues in Hyderabad. Natural healing with 10+ years experience. Book free consultation today."
+          keywords="thyroid treatment Hyderabad, PCOS treatment, homeopathy doctor, Dr Prasanna Boddupally, hormonal imbalance"
+          canonicalUrl="https://drprasannaboddupally.in"
+          structuredData={structuredData}
+        />
 
       {/* Hero Carousel Section - Full viewport height minus navbar */}
       <section className="relative h-[550px] md:h-[600px] overflow-hidden">
@@ -526,7 +532,9 @@ const Home = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 };
 
