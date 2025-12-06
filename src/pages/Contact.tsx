@@ -9,10 +9,13 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import SEO from "@/components/SEO";
+import { appointmentSchema } from "@/lib/validations";
+import { z } from "zod";
 
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -23,28 +26,65 @@ const Contact = () => {
     message: ""
   });
 
+  const validateForm = () => {
+    try {
+      appointmentSchema.parse(formData);
+      setErrors({});
+      return true;
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const newErrors: Record<string, string> = {};
+        error.errors.forEach((err) => {
+          if (err.path[0]) {
+            newErrors[err.path[0] as string] = err.message;
+          }
+        });
+        setErrors(newErrors);
+      }
+      return false;
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!validateForm()) {
+      toast({
+        title: "Validation Error",
+        description: "Please check the form for errors",
+        variant: "destructive"
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
       const { error: dbError } = await supabase
         .from('appointments')
         .insert([{
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email || null,
-          condition: formData.condition,
+          name: formData.name.trim(),
+          phone: formData.phone.trim(),
+          email: formData.email?.trim() || null,
+          condition: formData.condition.trim(),
           preferred_date: formData.preferred_date || null,
           preferred_time: formData.preferred_time || null,
-          message: formData.message || null,
+          message: formData.message?.trim() || null,
           status: 'pending'
         }]);
 
       if (dbError) throw dbError;
 
       const { error: emailError } = await supabase.functions.invoke('send-appointment-email', {
-        body: formData
+        body: {
+          name: formData.name.trim(),
+          phone: formData.phone.trim(),
+          email: formData.email?.trim() || '',
+          condition: formData.condition.trim(),
+          preferred_date: formData.preferred_date,
+          preferred_time: formData.preferred_time,
+          message: formData.message?.trim() || ''
+        }
       });
 
       if (emailError) {
@@ -65,6 +105,7 @@ const Contact = () => {
         preferred_time: "",
         message: "" 
       });
+      setErrors({});
     } catch (error) {
       console.error('Error submitting appointment:', error);
       toast({
@@ -78,7 +119,12 @@ const Contact = () => {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
   };
 
   const structuredData = {
@@ -150,7 +196,9 @@ const Contact = () => {
                       placeholder="Enter your name"
                       required
                       maxLength={100}
+                      className={errors.name ? "border-destructive" : ""}
                     />
+                    {errors.name && <p className="text-sm text-destructive mt-1">{errors.name}</p>}
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
@@ -164,7 +212,9 @@ const Contact = () => {
                       placeholder="+91 98765 43210"
                       required
                       maxLength={15}
+                      className={errors.phone ? "border-destructive" : ""}
                     />
+                    {errors.phone && <p className="text-sm text-destructive mt-1">{errors.phone}</p>}
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
@@ -177,7 +227,9 @@ const Contact = () => {
                       onChange={handleChange}
                       placeholder="your@email.com"
                       maxLength={255}
+                      className={errors.email ? "border-destructive" : ""}
                     />
+                    {errors.email && <p className="text-sm text-destructive mt-1">{errors.email}</p>}
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
@@ -186,8 +238,11 @@ const Contact = () => {
                     <select
                       name="condition"
                       value={formData.condition}
-                      onChange={(e) => setFormData(prev => ({ ...prev, condition: e.target.value }))}
-                      className="w-full px-4 py-2 rounded-md border border-input bg-background text-foreground"
+                      onChange={(e) => {
+                        setFormData(prev => ({ ...prev, condition: e.target.value }));
+                        if (errors.condition) setErrors(prev => ({ ...prev, condition: '' }));
+                      }}
+                      className={`w-full px-4 py-2 rounded-md border bg-background text-foreground ${errors.condition ? "border-destructive" : "border-input"}`}
                       required
                     >
                       <option value="">Select your primary concern</option>
@@ -197,6 +252,7 @@ const Contact = () => {
                       <option value="Hormonal Imbalance">Other Hormonal Issues</option>
                       <option value="Other">Other Health Concern</option>
                     </select>
+                    {errors.condition && <p className="text-sm text-destructive mt-1">{errors.condition}</p>}
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
@@ -234,7 +290,9 @@ const Contact = () => {
                       placeholder="Any additional information you'd like to share..."
                       rows={4}
                       maxLength={1000}
+                      className={errors.message ? "border-destructive" : ""}
                     />
+                    {errors.message && <p className="text-sm text-destructive mt-1">{errors.message}</p>}
                   </div>
                   <Button 
                     type="submit" 
