@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 
 const Protocol = () => {
   const phases = [
@@ -32,10 +33,29 @@ const Protocol = () => {
     }
   ];
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "name": "ThyroCure Method - Thyroid Treatment in Hyderabad",
+    "description": "Revolutionary homeopathic approach to thyroid treatment. Natural healing for hypothyroidism, hyperthyroidism, and thyroid nodules.",
+    "mainEntity": {
+      "@type": "MedicalTherapy",
+      "name": "ThyroCure Method",
+      "description": "4-phase holistic thyroid healing program combining homeopathy, nutrition, lifestyle optimization, and emotional healing."
+    }
+  };
+
   return (
     <>
+      <SEO 
+        title="Thyroid Treatment in Hyderabad | ThyroCure Method - Dr. Prasanna Boddupally"
+        description="Natural thyroid treatment using the ThyroCure Method. Holistic cure for hypothyroidism, hyperthyroidism & thyroid nodules without lifelong medication dependency. Book consultation."
+        keywords="thyroid treatment Hyderabad, hypothyroidism cure, hyperthyroidism treatment, thyroid homeopathy, ThyroCure, natural thyroid healing, Dr Prasanna thyroid"
+        canonicalUrl="https://drprasannaboddupally.in/thyroid-treatment-hyderabad"
+        structuredData={structuredData}
+      />
       <Navigation />
-      <div className="min-h-screen">
+      <main className="min-h-screen">
         <section className="py-20 bg-gradient-natural text-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
@@ -57,7 +77,7 @@ const Protocol = () => {
                 <Card key={index} className="p-8 hover:shadow-soft transition-all duration-300">
                   <div className="grid md:grid-cols-4 gap-6">
                     <div>
-                      <h3 className="text-2xl font-bold text-accent mb-2">{item.phase}</h3>
+                      <h2 className="text-2xl font-bold text-accent mb-2">{item.phase}</h2>
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-foreground/70 mb-1">Focus</p>
@@ -116,7 +136,7 @@ const Protocol = () => {
             </div>
           </div>
         </section>
-      </div>
+      </main>
       <Footer />
     </>
   );
