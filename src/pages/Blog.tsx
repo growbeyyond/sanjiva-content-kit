@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import TopBanner from "@/components/TopBanner";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
@@ -122,7 +123,8 @@ const Blog = () => {
 
   return (
     <>
-      <SEO 
+      <TopBanner />
+      <SEO
         title="Health Articles & Blog | Thyroid, PCOS, Homeopathy Tips - Dr. Prasanna"
         description="Expert health articles on thyroid disorders, PCOS management, hormonal balance, and natural healing. Get tips from Dr. Prasanna Boddupally, homeopathy specialist."
         keywords="homeopathy blog, thyroid articles, PCOS tips, hormonal health articles, natural healing blog, Dr Prasanna blog, women's health tips"

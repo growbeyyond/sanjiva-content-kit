@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import TopBanner from "@/components/TopBanner";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -124,6 +125,7 @@ const SymptomChecker = () => {
 
   return (
     <>
+      <TopBanner />
       <Helmet>
         <title>Symptom Checker - Dr. Prasanna Boddupally | Find Right Treatment</title>
         <meta name="description" content="Check your symptoms and get personalized homeopathic treatment recommendations from Dr. Prasanna Boddupally in Hyderabad." />

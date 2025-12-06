@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import TopBanner from "@/components/TopBanner";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -156,7 +157,8 @@ const Contact = () => {
 
   return (
     <>
-      <SEO 
+      <TopBanner />
+      <SEO
         title="Contact & Book Appointment | Dr. Prasanna Boddupally - Homeopathy Hyderabad"
         description="Book your consultation with Dr. Prasanna Boddupally. Available for thyroid, PCOS, and hormonal health consultations in Hyderabad. Online consultations also available."
         keywords="book appointment homeopathy, Dr Prasanna contact, homeopathy consultation Hyderabad, online homeopathy consultation, PCOS consultation, thyroid doctor appointment"

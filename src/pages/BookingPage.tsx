@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import TopBanner from "@/components/TopBanner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -180,6 +181,7 @@ const BookingPage = () => {
 
   return (
     <>
+      <TopBanner />
       <Helmet>
         <title>Book Appointment - Dr. Prasanna Boddupally</title>
         <meta name="description" content="Book your homeopathy consultation with Dr. Prasanna Boddupally online. Choose your preferred date and time." />

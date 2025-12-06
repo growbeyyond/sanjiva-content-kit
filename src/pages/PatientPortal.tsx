@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import TopBanner from "@/components/TopBanner";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
@@ -88,6 +89,7 @@ const PatientPortal = () => {
   if (loading) {
     return (
       <>
+        <TopBanner />
         <Navigation />
         <main className="min-h-screen bg-gradient-subtle pt-32 px-4">
           <div className="container mx-auto max-w-6xl">
@@ -101,6 +103,7 @@ const PatientPortal = () => {
 
   return (
     <>
+      <TopBanner />
       <Helmet>
         <title>Patient Portal - Dr. Prasanna Boddupally | Your Health Dashboard</title>
         <meta name="description" content="Access your appointments, prescriptions, and medical records in your secure patient portal." />

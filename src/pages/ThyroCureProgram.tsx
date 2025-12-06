@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import TopBanner from "@/components/TopBanner";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -33,7 +34,8 @@ const ThyroCureProgram = () => {
 
   return (
     <>
-      <SEO 
+      <TopBanner />
+      <SEO
         title="ThyroCure Program | Natural Thyroid Healing"
         description="Heal your thyroid naturally and completely with our comprehensive 4-step method combining homeopathy, nutrition, lifestyle optimization, and emotional healing."
         keywords="thyroid treatment, hypothyroid cure, hyperthyroid natural treatment, thyroid homeopathy, hormonal balance"

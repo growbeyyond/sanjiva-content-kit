@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import TopBanner from "@/components/TopBanner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
@@ -71,6 +72,7 @@ const Signup = () => {
 
   return (
     <>
+      <TopBanner />
       <Navigation />
       <div className="min-h-screen flex items-center justify-center py-20 bg-gradient-subtle">
         <Card className="p-8 w-full max-w-md">

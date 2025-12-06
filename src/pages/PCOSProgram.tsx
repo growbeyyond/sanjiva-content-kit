@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import TopBanner from "@/components/TopBanner";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -18,7 +19,8 @@ const PCOSProgram = () => {
 
   return (
     <>
-      <SEO 
+      <TopBanner />
+      <SEO
         title="PCOS Care Program | Natural Hormonal Balance - Dr. Prasanna"
         description="Break the PCOS cycle naturally with our 360° approach combining homeopathy, nutrition, and lifestyle medicine for lasting hormonal balance."
         keywords="PCOS treatment, PCOD cure, hormonal balance, natural PCOS care, women's health, homeopathy for PCOS"
