@@ -4,7 +4,7 @@ import TopBanner from "@/components/TopBanner";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Shield, Heart, Sparkles, Leaf, Scale, Brain } from "lucide-react";
+import { ArrowRight, Shield, Heart, Sparkles, Leaf, Scale, Brain, MessageCircle } from "lucide-react";
 import SEO from "@/components/SEO";
 import treatmentsHero from "@/assets/treatments-hero.jpg";
 
@@ -104,9 +104,16 @@ const Treatments = () => {
               <p className="text-lg text-foreground/80 mb-6">
                 Comprehensive hormonal care for thyroid, PCOS, and complete wellness through homeopathy
               </p>
-              <Button asChild size="lg" className="bg-gradient-hero">
-                <Link to="/contact">Book Consultation <ArrowRight className="ml-2 w-4 h-4" /></Link>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#20BA5A] text-white">
+                  <a href="https://wa.me/918179942297?text=Hi%20Doctor,%20I%20want%20to%20book%20a%20consultation" target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="mr-2 w-4 h-4" /> Book on WhatsApp
+                  </a>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="bg-background/60 backdrop-blur-sm">
+                  <Link to="/contact">Learn More <ArrowRight className="ml-2 w-4 h-4" /></Link>
+                </Button>
+              </div>
             </div>
           </div>
         </section>
@@ -154,9 +161,16 @@ const Treatments = () => {
             <p className="text-lg opacity-90 mb-6 max-w-xl mx-auto">
               Book a free consultation and Dr. Prasanna will guide you to the best treatment plan.
             </p>
-            <Button asChild size="lg" variant="secondary">
-              <Link to="/contact">Book Free Consultation</Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#20BA5A] text-white border-0">
+                <a href="https://wa.me/918179942297?text=Hi%20Doctor,%20I%20need%20help%20choosing%20the%20right%20treatment" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="mr-2 w-5 h-5" /> Chat on WhatsApp
+                </a>
+              </Button>
+              <Button asChild size="lg" variant="secondary">
+                <Link to="/contact">Contact Us</Link>
+              </Button>
+            </div>
           </div>
         </section>
       </main>
