@@ -11,7 +11,7 @@ const Navigation = () => {
     { to: "/", label: "Home" },
     { to: "/about", label: "About" },
     { to: "/treatments", label: "Treatments" },
-    { to: "/protocol", label: "ThyroCure Method" },
+    { to: "/protocol", label: "Thyroid Program" },
     { to: "/pcos-program", label: "PCOS Program" },
     { to: "/wellness-hub", label: "Wellness Hub" },
     { to: "/testimonials", label: "Success Stories" },

@@ -88,14 +88,15 @@ const Home = () => {
                   Balance Your Hormones.
                 </span>
                 <br />
-                <span className="text-gray-900 font-extrabold">Reclaim Your Energy.</span>
+                <span className="text-foreground font-extrabold">Reclaim Your Energy.</span>
                 <br />
-                <span className="text-gray-900 font-extrabold">Redefine Womanhood.</span>
+                <span className="text-foreground font-extrabold">Redefine Womanhood.</span>
               </h1>
               
               <p className="text-xl md:text-2xl text-foreground/80 font-light max-w-3xl mx-auto">
                 Advanced homeopathy and lifestyle programs for{" "}
-                <span className="text-primary font-semibold">PCOS & Thyroid</span> — 
+                <span className="text-accent font-semibold">Thyroid</span> &{" "}
+                <span className="text-primary font-semibold">PCOS</span> — 
                 designed by women, for women.
               </p>
 
@@ -109,10 +110,10 @@ const Home = () => {
                     </span>
                   </Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-white text-lg px-8 py-6 bg-white/80 backdrop-blur-sm">
+                <Button asChild size="lg" variant="outline" className="border-2 border-accent text-accent hover:bg-accent hover:text-white text-lg px-8 py-6 bg-white/80 backdrop-blur-sm">
                   <Link to="/symptom-checker">
                     <Sparkles className="w-5 h-5 mr-2" />
-                    Take Free ThyroCure AI Test
+                    Take Free Hormone Health Test
                   </Link>
                 </Button>
               </div>
@@ -363,30 +364,33 @@ const Home = () => {
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
               {
-                icon: "🤖",
-                title: "ThyroCure AI Diagnostic",
+                icon: "🦋",
+                title: "Thyroid Health Check",
                 description: "Detect thyroid imbalance in 60 seconds",
-                link: "/symptom-checker"
+                link: "/symptom-checker",
+                color: "border-accent/30 bg-gradient-to-br from-accent/10 to-white"
               },
               {
-                icon: "💬",
-                title: "PCOS CheckBot",
-                description: "Chat with your virtual menstrual coach",
-                link: "/symptom-checker"
+                icon: "🌸",
+                title: "PCOS Symptom Checker",
+                description: "Analyze your hormonal health patterns",
+                link: "/symptom-checker",
+                color: "border-primary/30 bg-gradient-lavender"
               },
               {
                 icon: "🥗",
                 title: "Hormone Diet Planner",
-                description: "Personalized meal plan + calorie map",
-                link: "/book"
+                description: "Personalized meal plan for balance",
+                link: "/book",
+                color: "border-primary/20 bg-gradient-lavender"
               }
             ].map((tool, idx) => (
-              <Card key={idx} className="p-8 text-center hover:shadow-card transition-all duration-300 hover:-translate-y-2 bg-gradient-lavender border-2 border-primary/20">
+              <Card key={idx} className={`p-8 text-center hover:shadow-card transition-all duration-300 hover:-translate-y-2 border-2 ${tool.color}`}>
                 <div className="text-7xl mb-6">{tool.icon}</div>
                 <h3 className="text-2xl font-bold text-foreground mb-3">{tool.title}</h3>
                 <p className="text-foreground/80 mb-6">{tool.description}</p>
-                <Button asChild variant="outline" className="w-full border-primary text-primary">
-                  <Link to={tool.link}>Try Free AI Tools</Link>
+                <Button asChild variant="outline" className={`w-full ${idx === 0 ? 'border-accent text-accent hover:bg-accent hover:text-white' : 'border-primary text-primary hover:bg-primary hover:text-white'}`}>
+                  <Link to={tool.link}>Try Free</Link>
                 </Button>
               </Card>
             ))}
@@ -444,29 +448,32 @@ const Home = () => {
               {
                 text: "After 3 years of thyroid medicines, I'm finally medicine-free! Dr. Prasanna's approach truly healed me.",
                 author: "Lakshmi R.",
-                condition: "Thyroid"
+                condition: "Thyroid",
+                color: "border-l-4 border-l-accent"
               },
               {
-                text: "My chronic migraines vanished within three months. The best decision I ever made!",
+                text: "My TSH levels normalized in just 4 months. No more fatigue or weight gain!",
                 author: "Priya S.",
-                condition: "Migraine"
+                condition: "Hypothyroid",
+                color: "border-l-4 border-l-accent"
               },
               {
                 text: "I lost 15kg naturally and my PCOS symptoms are gone. I feel like myself again!",
                 author: "Divya M.",
-                condition: "PCOS"
+                condition: "PCOS",
+                color: "border-l-4 border-l-primary"
               }
             ].map((testimonial, idx) => (
-              <Card key={idx} className="p-6 bg-white hover:shadow-card transition-all duration-300">
+              <Card key={idx} className={`p-6 bg-white hover:shadow-card transition-all duration-300 ${testimonial.color}`}>
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+                    <Star key={i} className="w-4 h-4 text-amber-500 fill-amber-500" />
                   ))}
                 </div>
                 <p className="text-foreground mb-4 italic">"{testimonial.text}"</p>
                 <div className="border-t border-border pt-4">
                   <p className="font-semibold text-foreground">{testimonial.author}</p>
-                  <p className="text-sm text-foreground/70">Treated for {testimonial.condition}</p>
+                  <p className={`text-sm font-medium ${testimonial.condition.includes('Thyroid') || testimonial.condition.includes('Hypothyroid') ? 'text-accent' : 'text-primary'}`}>Treated for {testimonial.condition}</p>
                 </div>
               </Card>
             ))}
@@ -619,9 +626,9 @@ const Home = () => {
                   <div>
                     <select className="w-full px-4 py-2 rounded-md border border-primary/30 bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary">
                       <option value="">Choose Your Concern</option>
+                      <option value="Thyroid">Thyroid Disorders (Hypo/Hyper)</option>
                       <option value="PCOS">PCOS / Hormonal Imbalance</option>
-                      <option value="Thyroid">Thyroid Issues</option>
-                      <option value="Both">Both PCOS & Thyroid</option>
+                      <option value="Both">Both Thyroid & PCOS</option>
                       <option value="Other">Other Women's Health Concern</option>
                     </select>
                   </div>

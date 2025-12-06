@@ -126,7 +126,7 @@ All colors MUST be HSL.
     --secondary-foreground: 330 50% 25%;
 
     --muted: 290 30% 95%;
-    --muted-foreground: 330 20% 50%;
+    --muted-foreground: 330 25% 40%;
 
     /* Rose Gold accent */
     --accent: 340 50% 75%;
