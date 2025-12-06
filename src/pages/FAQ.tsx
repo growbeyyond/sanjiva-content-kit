@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import SEO from "@/components/SEO";
 
 const FAQ = () => {
@@ -16,15 +17,11 @@ const FAQ = () => {
         },
         {
           q: "Is Homeopathy scientifically proven?",
-          a: "Homeopathy has been practiced for over 200 years and is recognized by the WHO. While research continues, millions worldwide have experienced positive results. It's regulated in many countries including India, where it's an official system of medicine."
-        },
-        {
-          q: "How is Homeopathy different from conventional medicine?",
-          a: "Homeopathy treats the person holistically, not just the disease. It's gentle, non-toxic, and works by stimulating the body's natural healing mechanisms. Conventional medicine often suppresses symptoms, while homeopathy addresses root causes."
+          a: "Homeopathy has been practiced for over 200 years and is recognized by the WHO. While research continues, millions worldwide have experienced positive results. It's regulated in many countries including India."
         },
         {
           q: "Can Homeopathy treat chronic diseases?",
-          a: "Yes, homeopathy is particularly effective for chronic conditions like allergies, asthma, skin conditions, digestive disorders, arthritis, and hormonal imbalances. Treatment addresses the underlying constitution for lasting results."
+          a: "Yes, homeopathy is particularly effective for chronic conditions like allergies, asthma, skin conditions, digestive disorders, arthritis, and hormonal imbalances."
         }
       ]
     },
@@ -33,40 +30,32 @@ const FAQ = () => {
       questions: [
         {
           q: "How long does homeopathic treatment take?",
-          a: "Acute conditions may show improvement within hours to days. Chronic conditions typically require 3-6 months for significant improvement, though this varies based on condition severity and individual response. Long-standing issues may need extended treatment."
+          a: "Acute conditions may show improvement within hours to days. Chronic conditions typically require 3-6 months for significant improvement."
         },
         {
           q: "Are there any side effects?",
-          a: "Homeopathic medicines are extremely safe with no toxic side effects. Occasionally, a temporary mild aggravation of symptoms may occur as the body begins healing, which is actually a positive sign of remedy action."
+          a: "Homeopathic medicines are extremely safe with no toxic side effects. Occasionally, a temporary mild aggravation may occur, which is a positive sign."
         },
         {
           q: "Can I take homeopathy with other medications?",
-          a: "Yes, homeopathic medicines can be taken alongside conventional medications. They don't interfere with other treatments. However, always inform your homeopath about all medications you're taking for optimal treatment planning."
-        },
-        {
-          q: "What is the ThyroCure Method?",
-          a: "The ThyroCure Method is Dr. Prasanna's specialized 4-phase approach combining classical homeopathy with constitutional analysis, nutrition support, lifestyle optimization, and emotional healing for comprehensive thyroid and hormonal wellness."
+          a: "Yes, homeopathic medicines can be taken alongside conventional medications. They don't interfere with other treatments."
         }
       ]
     },
     {
-      category: "Consultation & Appointments",
+      category: "Consultations",
       questions: [
         {
           q: "What happens during the first consultation?",
-          a: "The initial consultation takes 30-45 minutes. Dr. Prasanna conducts a detailed case history covering physical symptoms, mental-emotional state, lifestyle, and family history. This helps identify your constitutional remedy for personalized treatment."
+          a: "The initial consultation takes 30-45 minutes. Dr. Prasanna conducts a detailed case history covering physical symptoms, mental-emotional state, and lifestyle."
         },
         {
           q: "Do you offer online consultations?",
-          a: "Yes, we provide online video consultations for patients who cannot visit in person. The quality of homeopathic treatment remains the same whether in-person or online, as diagnosis is based on detailed case history."
+          a: "Yes, we provide online video consultations for patients who cannot visit in person. The quality of treatment remains the same."
         },
         {
-          q: "How often are follow-up appointments needed?",
-          a: "Follow-ups are typically scheduled every 4-6 weeks initially, then extended to 2-3 months as improvement progresses. Frequency depends on your condition and response to treatment. Emergency consultations are available when needed."
-        },
-        {
-          q: "What should I bring to my appointment?",
-          a: "Please bring any recent medical reports, previous prescriptions, and a list of current medications. It's helpful to note down your symptoms, their patterns, and what makes them better or worse."
+          q: "How often are follow-ups needed?",
+          a: "Follow-ups are typically every 4-6 weeks initially, then extended to 2-3 months as improvement progresses."
         }
       ]
     },
@@ -75,19 +64,15 @@ const FAQ = () => {
       questions: [
         {
           q: "What conditions do you specialize in?",
-          a: "Dr. Prasanna specializes in women's hormonal health including thyroid disorders (hypothyroidism, hyperthyroidism), PCOS/PCOD, infertility, menstrual problems, weight management, skin conditions, and chronic fatigue."
+          a: "Dr. Prasanna specializes in women's hormonal health including thyroid disorders, PCOS/PCOD, infertility, menstrual problems, and weight management."
         },
         {
           q: "Can children take homeopathic medicine?",
-          a: "Absolutely! Homeopathy is extremely safe for children of all ages, including infants. Sweet-tasting medicines are easy to administer. We successfully treat childhood ailments, developmental issues, and behavioral problems."
+          a: "Absolutely! Homeopathy is extremely safe for children of all ages, including infants."
         },
         {
           q: "Is homeopathy effective for mental health?",
-          a: "Yes, homeopathy treats anxiety, depression, stress, insomnia, and other mental-emotional conditions effectively. We address both the psychological symptoms and underlying constitutional factors for comprehensive healing."
-        },
-        {
-          q: "Can homeopathy help with skin conditions?",
-          a: "Homeopathy is highly effective for skin conditions like eczema, psoriasis, acne, vitiligo, and allergic rashes. Treatment addresses internal imbalances rather than just suppressing external symptoms for lasting results."
+          a: "Yes, homeopathy treats anxiety, depression, stress, and insomnia effectively by addressing both psychological symptoms and underlying factors."
         }
       ]
     }
@@ -100,10 +85,7 @@ const FAQ = () => {
       category.questions.map(q => ({
         "@type": "Question",
         "name": q.q,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": q.a
-        }
+        "acceptedAnswer": { "@type": "Answer", "text": q.a }
       }))
     )
   };
@@ -111,35 +93,37 @@ const FAQ = () => {
   return (
     <>
       <SEO 
-        title="Frequently Asked Questions | Homeopathy FAQs - Dr. Prasanna Boddupally"
-        description="Get answers to common questions about homeopathy treatment, consultation process, thyroid care, PCOS treatment, and conditions treated by Dr. Prasanna Boddupally."
-        keywords="homeopathy FAQ, homeopathy questions, thyroid treatment FAQ, PCOS questions, consultation process, Dr Prasanna FAQ, Hyderabad homeopathy"
+        title="Frequently Asked Questions | Dr. Prasanna Boddupally - Homeopathy"
+        description="Get answers to common questions about homeopathy treatment, consultation process, and conditions treated by Dr. Prasanna Boddupally."
+        keywords="homeopathy FAQ, homeopathy questions, thyroid treatment FAQ, PCOS questions"
         canonicalUrl="https://drprasannaboddupally.in/faq"
         structuredData={structuredData}
       />
 
       <Navigation />
       
-      <main className="min-h-screen bg-gradient-subtle">
-        {/* Hero Section */}
-        <section className="pt-32 pb-16 px-4">
-          <div className="container mx-auto max-w-4xl text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-hero bg-clip-text text-transparent">
-              Frequently Asked Questions
-            </h1>
-            <p className="text-lg text-foreground/80">
-              Everything you need to know about homeopathy and our treatment approach
-            </p>
+      <main className="min-h-screen">
+        {/* Hero */}
+        <section className="py-16 md:py-20 bg-gradient-subtle">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">
+                <span className="bg-gradient-hero bg-clip-text text-transparent">Frequently Asked Questions</span>
+              </h1>
+              <p className="text-lg text-foreground/80">
+                Everything you need to know about homeopathy and our treatment approach
+              </p>
+            </div>
           </div>
         </section>
 
         {/* FAQ Sections */}
-        <section className="pb-20 px-4">
-          <div className="container mx-auto max-w-4xl space-y-12">
+        <section className="py-12 md:py-16 bg-background">
+          <div className="container mx-auto px-4 max-w-3xl space-y-10">
             {faqs.map((category, idx) => (
-              <div key={idx} className="space-y-4">
-                <h2 className="text-2xl font-bold text-primary flex items-center gap-2">
-                  <div className="h-1 w-8 bg-gradient-hero rounded-full" />
+              <div key={idx}>
+                <h2 className="text-xl font-bold text-primary mb-4 flex items-center gap-2">
+                  <div className="h-1 w-6 bg-gradient-hero rounded-full" />
                   {category.category}
                 </h2>
                 
@@ -148,12 +132,12 @@ const FAQ = () => {
                     <AccordionItem 
                       key={qIdx} 
                       value={`${idx}-${qIdx}`}
-                      className="bg-card border border-border rounded-lg px-6 shadow-soft"
+                      className="bg-card border border-border rounded-lg px-5"
                     >
-                      <AccordionTrigger className="text-left font-semibold hover:text-primary">
+                      <AccordionTrigger className="text-left font-medium hover:text-primary text-sm">
                         {faq.q}
                       </AccordionTrigger>
-                      <AccordionContent className="text-foreground/80 leading-relaxed">
+                      <AccordionContent className="text-foreground/80 text-sm leading-relaxed">
                         {faq.a}
                       </AccordionContent>
                     </AccordionItem>
@@ -164,18 +148,16 @@ const FAQ = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="pb-20 px-4">
-          <div className="container mx-auto max-w-2xl">
-            <div className="bg-gradient-hero rounded-2xl p-8 md:p-12 text-center text-white shadow-glow">
-              <h2 className="text-3xl font-bold mb-4">Still Have Questions?</h2>
-              <p className="text-lg mb-6 opacity-90">
-                Can't find the answer you're looking for? Feel free to reach out to us directly.
-              </p>
-              <Button asChild size="lg" variant="secondary">
-                <Link to="/contact">Contact Us</Link>
-              </Button>
-            </div>
+        {/* CTA */}
+        <section className="py-12 md:py-16 bg-gradient-hero text-white">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl font-bold mb-4">Still Have Questions?</h2>
+            <p className="text-lg opacity-90 mb-6 max-w-xl mx-auto">
+              Can't find the answer you're looking for? Feel free to reach out directly.
+            </p>
+            <Button asChild size="lg" variant="secondary">
+              <Link to="/contact">Contact Us <ArrowRight className="ml-2 w-4 h-4" /></Link>
+            </Button>
           </div>
         </section>
       </main>

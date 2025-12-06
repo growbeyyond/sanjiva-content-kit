@@ -1,8 +1,9 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { Heart, Award, Users, Globe, Clock, Leaf } from "lucide-react";
+import { Heart, Award, Users, Globe, Clock, Leaf, CheckCircle2, ArrowRight } from "lucide-react";
 import SEO from "@/components/SEO";
 import doctorImage from "@/assets/doctor-prasanna.jpg";
 
@@ -25,6 +26,20 @@ const About = () => {
     "email": "prasannaboddu@gmail.com"
   };
 
+  const expertise = [
+    { label: "10+ Years Experience", description: "In women's homeopathy" },
+    { label: "PCOS & Thyroid Specialist", description: "Focused expertise" },
+    { label: "5000+ Patients Treated", description: "Across India & abroad" },
+    { label: "ThyroCure Founder", description: "Proprietary healing method" }
+  ];
+
+  const values = [
+    { icon: Heart, label: "Integrity" },
+    { icon: Users, label: "Empathy" },
+    { icon: Globe, label: "Transparency" },
+    { icon: Award, label: "Excellence" }
+  ];
+
   return (
     <>
       <SEO 
@@ -36,138 +51,120 @@ const About = () => {
       />
       <Navigation />
       <main className="min-h-screen">
-        <section className="py-20 bg-gradient-subtle">
+        {/* Hero */}
+        <section className="py-16 md:py-20 bg-gradient-subtle">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                <span className="text-gradient-bright">Meet Dr. Prasanna Boddupally</span>
-                <br />Empowering Women Through Hormonal Healing
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">
+                Meet <span className="bg-gradient-hero bg-clip-text text-transparent">Dr. Prasanna Boddupally</span>
               </h1>
-              <p className="text-xl text-foreground/90 mb-8">
-                "Science heals the body. Empathy heals the soul."
+              <p className="text-lg text-foreground/80">
+                Empowering women through natural hormonal healing
               </p>
             </div>
           </div>
         </section>
 
-        <section className="py-16 bg-gradient-cream">
+        {/* Main Content */}
+        <section className="py-12 md:py-16 bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-12 items-start mb-12">
+              <div className="grid md:grid-cols-2 gap-10 items-start">
+                {/* Image & Timings */}
                 <div className="space-y-6">
                   <img 
                     src={doctorImage} 
-                    alt="Dr. Prasanna Boddupally - Homeopathy Physician in Hyderabad specializing in PCOS and Thyroid treatment" 
-                    className="rounded-2xl shadow-card w-full" 
+                    alt="Dr. Prasanna Boddupally - Homeopathy Physician in Hyderabad" 
+                    className="rounded-2xl shadow-lg w-full" 
                   />
                   
-                  <div className="bg-white rounded-xl shadow-card p-6 space-y-4">
-                    <h2 className="text-xl font-bold text-primary flex items-center gap-2">
-                      <Clock className="w-5 h-5" />
+                  <Card className="p-5">
+                    <h2 className="text-lg font-bold text-foreground flex items-center gap-2 mb-4">
+                      <Clock className="w-5 h-5 text-primary" />
                       Consultation Timings
                     </h2>
-                    <div className="space-y-2 text-foreground/80">
-                      <p className="flex justify-between">
-                        <span className="font-semibold">Monday - Saturday (Morning)</span>
-                        <span>10:00 AM - 1:00 PM</span>
-                      </p>
-                      <p className="flex justify-between">
-                        <span className="font-semibold">Monday - Saturday (Evening)</span>
-                        <span>5:00 PM - 8:30 PM</span>
-                      </p>
-                      <p className="flex justify-between">
-                        <span className="font-semibold">Sunday (Morning)</span>
-                        <span>10:00 AM - 1:00 PM</span>
-                      </p>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between">
+                        <span className="text-foreground/70">Mon - Sat (Morning)</span>
+                        <span className="font-medium text-foreground">10:00 AM - 1:00 PM</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-foreground/70">Mon - Sat (Evening)</span>
+                        <span className="font-medium text-foreground">5:00 PM - 8:30 PM</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-foreground/70">Sunday</span>
+                        <span className="font-medium text-foreground">10:00 AM - 1:00 PM</span>
+                      </div>
                     </div>
-                  </div>
+                  </Card>
                 </div>
 
-                <div className="space-y-8">
-                  <div className="space-y-4">
-                    <h2 className="text-2xl font-bold text-primary">Her Journey</h2>
-                    <p className="text-foreground/80">
+                {/* Bio */}
+                <div className="space-y-6">
+                  <div>
+                    <h2 className="text-2xl font-bold text-foreground mb-3">Her Journey</h2>
+                    <p className="text-foreground/80 mb-4">
                       Dr. Prasanna's story began with a simple vision — to treat women not just for their symptoms, but for their emotions, cycles, and confidence.
                     </p>
-                    <p className="text-foreground/80 italic">
+                    <blockquote className="border-l-4 border-primary pl-4 italic text-foreground/80">
                       "Homeopathy × Modern Hormone Science — I help women rebuild confidence through balanced health."
-                    </p>
+                    </blockquote>
                   </div>
 
-                  <div className="space-y-4">
-                    <h2 className="text-2xl font-bold text-primary">Experience & Expertise</h2>
-                    <ul className="space-y-3 text-foreground/80">
-                      <li className="flex items-start gap-2">
-                        <Leaf className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                        <span><strong>10+ years</strong> in women's homeopathy</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Leaf className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                        <span><strong>Specialist</strong> in PCOS & thyroid care</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Leaf className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                        <span><strong>International certifications</strong> in functional medicine</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Leaf className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                        <span><strong>Founder</strong> of ThyroCure Method</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Leaf className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                        <span><strong>Certified</strong> Women's Hormonal Health Specialist</span>
-                      </li>
-                    </ul>
+                  <div>
+                    <h2 className="text-2xl font-bold text-foreground mb-3">Experience & Expertise</h2>
+                    <div className="grid grid-cols-2 gap-3">
+                      {expertise.map((item, index) => (
+                        <div key={index} className="flex items-start gap-2">
+                          <Leaf className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                          <div>
+                            <p className="font-semibold text-foreground text-sm">{item.label}</p>
+                            <p className="text-xs text-foreground/60">{item.description}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                   
-                  <div className="space-y-4">
-                    <h2 className="text-2xl font-bold text-accent">The ThyroCure Philosophy</h2>
-                    <p className="text-foreground/80 italic text-lg">
+                  <div>
+                    <h2 className="text-2xl font-bold text-accent mb-3">The ThyroCure Philosophy</h2>
+                    <blockquote className="text-lg italic text-foreground/80 mb-4">
                       "Your body already knows how to heal. I just help you listen."
-                    </p>
-                    <ul className="space-y-2 text-foreground/80">
-                      <li className="flex items-start gap-2">
-                        <span className="text-accent font-bold">•</span>
-                        <span>Holistic approach to hormonal balance</span>
+                    </blockquote>
+                    <ul className="space-y-2">
+                      <li className="flex items-center gap-2 text-sm text-foreground/80">
+                        <CheckCircle2 className="w-4 h-4 text-primary" />
+                        Holistic approach to hormonal balance
                       </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-primary font-bold">•</span>
-                        <span>Root-cause based diagnosis</span>
+                      <li className="flex items-center gap-2 text-sm text-foreground/80">
+                        <CheckCircle2 className="w-4 h-4 text-primary" />
+                        Root-cause based diagnosis
                       </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-accent font-bold">•</span>
-                        <span>Personalized care plans for every woman</span>
+                      <li className="flex items-center gap-2 text-sm text-foreground/80">
+                        <CheckCircle2 className="w-4 h-4 text-primary" />
+                        Personalized care for every woman
                       </li>
                     </ul>
                   </div>
 
-                  <div className="space-y-4">
-                    <h2 className="text-2xl font-bold text-primary">Media & Milestones</h2>
-                    <p className="text-foreground/80">
-                      Featured in <strong>HealthLine India</strong> | Panelist on <strong>Women's Hormone Summit 2024</strong>
-                    </p>
-                  </div>
+                  <Button asChild size="lg" className="bg-gradient-hero w-full sm:w-auto">
+                    <Link to="/contact">Schedule a Session <ArrowRight className="ml-2 w-4 h-4" /></Link>
+                  </Button>
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                {[
-                  { icon: <Heart className="w-8 h-8" />, label: "Integrity" },
-                  { icon: <Users className="w-8 h-8" />, label: "Empathy" },
-                  { icon: <Globe className="w-8 h-8" />, label: "Transparency" },
-                  { icon: <Award className="w-8 h-8" />, label: "Scientific" }
-                ].map((value, index) => (
-                  <div key={index} className="text-center p-6 bg-secondary rounded-lg">
-                    <div className="flex justify-center text-primary mb-2">{value.icon}</div>
-                    <p className="font-semibold text-foreground">{value.label}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="text-center pt-8">
-                <Button asChild size="lg" className="bg-gradient-hero shadow-soft">
-                  <Link to="/contact">Schedule a Session with Dr. Prasanna</Link>
-                </Button>
+              {/* Values */}
+              <div className="mt-12 pt-12 border-t border-border">
+                <h2 className="text-2xl font-bold text-center text-foreground mb-8">Core Values</h2>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {values.map((value, index) => (
+                    <div key={index} className="text-center p-5 bg-secondary rounded-xl">
+                      <value.icon className="w-8 h-8 text-primary mx-auto mb-2" />
+                      <p className="font-semibold text-foreground">{value.label}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
