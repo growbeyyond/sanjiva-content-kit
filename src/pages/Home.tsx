@@ -482,10 +482,10 @@ const Home = () => {
             Online and in-person appointments available.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" variant="secondary" className="text-lg px-8 h-12">
-              <Link to="/book">
-                <Calendar className="mr-2 w-5 h-5" /> Book Free Consultation
-              </Link>
+            <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#20BA5A] text-white text-lg px-8 h-12 border-0">
+              <a href="https://wa.me/918179942297?text=Hi%20Doctor,%20I%20want%20to%20book%20a%20free%20consultation" target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="mr-2 w-5 h-5" /> Book on WhatsApp
+              </a>
             </Button>
             <Button asChild size="lg" variant="outline" className="text-lg px-8 h-12 border-white text-white hover:bg-white hover:text-primary">
               <a href="tel:+918179942297">

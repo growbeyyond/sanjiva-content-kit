@@ -4,7 +4,7 @@ import TopBanner from "@/components/TopBanner";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { Heart, Activity, Smile, Sparkles, CheckCircle2, ArrowRight } from "lucide-react";
+import { Heart, Activity, Smile, Sparkles, CheckCircle2, ArrowRight, MessageCircle } from "lucide-react";
 import SEO from "@/components/SEO";
 import ProgressTracker from "@/components/ProgressTracker";
 import pcosCycleInfographic from "@/assets/pcos-cycle-infographic.jpg";
@@ -38,9 +38,16 @@ const PCOSProgram = () => {
               <p className="text-xl opacity-90 mb-6">
                 Natural, holistic care that addresses the root cause — not just symptoms
               </p>
-              <Button asChild size="lg" variant="secondary">
-                <Link to="/contact">Book PCOS Assessment <ArrowRight className="ml-2 w-4 h-4" /></Link>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#20BA5A] text-white border-0">
+                  <a href="https://wa.me/918179942297?text=Hi%20Doctor,%20I%20want%20to%20book%20a%20PCOS%20assessment" target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="mr-2 w-4 h-4" /> Book on WhatsApp
+                  </a>
+                </Button>
+                <Button asChild size="lg" variant="secondary">
+                  <Link to="/contact">Learn More</Link>
+                </Button>
+              </div>
             </div>
           </div>
         </section>
@@ -244,13 +251,13 @@ const PCOSProgram = () => {
               Start your journey to hormonal balance today. Personalized care, lasting results.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button asChild size="lg" variant="secondary">
-                <Link to="/contact">Book PCOS Assessment</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                <a href="https://wa.me/918179942297?text=Hi%20Doctor,%20I%20have%20questions%20about%20PCOS%20treatment" target="_blank" rel="noopener noreferrer">
-                  Ask a Question
+              <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#20BA5A] text-white border-0">
+                <a href="https://wa.me/918179942297?text=Hi%20Doctor,%20I%20want%20to%20start%20the%20PCOS%20program" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="mr-2 w-5 h-5" /> Start on WhatsApp
                 </a>
+              </Button>
+              <Button asChild size="lg" variant="secondary">
+                <Link to="/contact">Contact Us</Link>
               </Button>
             </div>
           </div>
