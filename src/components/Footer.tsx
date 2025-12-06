@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -8,9 +9,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold text-primary">Dr. Prasanna Boddupally</h3>
+            <img src={logo} alt="Dr. Prasanna Boddupally Logo" className="h-20 w-auto" />
             <p className="text-sm text-foreground/80">
-              🌺 Thyroid & PCOS Care — Rewriting Women's Health Stories.
+              Holistic healing for Thyroid & PCOS through homeopathy.
             </p>
           </div>
 
