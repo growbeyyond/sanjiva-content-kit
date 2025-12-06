@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import logo from "@/assets/logo.png";
 
 const Navigation = () => {
   const location = useLocation();
@@ -27,11 +28,12 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="flex flex-col">
-              <span className="text-xl font-bold text-primary">Dr. Prasanna Boddupally</span>
-              <span className="text-xs text-muted-foreground">Homeopathy Physician</span>
-            </div>
+          <Link to="/" className="flex items-center">
+            <img 
+              src={logo} 
+              alt="Dr. Prasanna Boddupally - PCOS & ThyroCure Homeopathy" 
+              className="h-16 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
