@@ -137,6 +137,101 @@ const PCOSProgram = () => {
           </div>
         </section>
 
+        {/* What to Expect - Timeline */}
+        <section className="py-12 md:py-16 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold text-center text-foreground mb-8">
+                Your Healing Timeline
+              </h2>
+              <div className="grid md:grid-cols-4 gap-4">
+                {[
+                  { month: "Month 1-2", title: "Foundation", points: ["Initial assessment", "Baseline testing", "Start treatment plan"] },
+                  { month: "Month 3-4", title: "Correction", points: ["Hormone regulation", "Energy improvement", "Weight stabilization"] },
+                  { month: "Month 5-6", title: "Stabilization", points: ["Regular periods", "Skin clearing", "Mood balance"] },
+                  { month: "Month 6+", title: "Maintenance", points: ["Sustained results", "Reduced medication", "Long-term wellness"] }
+                ].map((phase, idx) => (
+                  <Card key={idx} className="p-4 text-center border-t-4 border-t-primary">
+                    <p className="text-xs font-semibold text-primary mb-1">{phase.month}</p>
+                    <h3 className="font-bold text-foreground mb-2">{phase.title}</h3>
+                    <ul className="text-xs text-foreground/70 space-y-1">
+                      {phase.points.map((p, i) => <li key={i}>• {p}</li>)}
+                    </ul>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* What to Bring */}
+        <section className="py-12 md:py-16 bg-secondary">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-2xl font-bold text-center text-foreground mb-6">
+                Before Your First Visit
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <Card className="p-5">
+                  <h3 className="font-bold text-foreground mb-3 flex items-center gap-2">
+                    <Activity className="w-5 h-5 text-primary" /> Reports to Bring
+                  </h3>
+                  <ul className="text-sm text-foreground/80 space-y-2">
+                    <li>• Hormone panel (LH, FSH, Testosterone, Prolactin)</li>
+                    <li>• Thyroid profile (TSH, T3, T4)</li>
+                    <li>• Fasting insulin & blood sugar</li>
+                    <li>• Recent ultrasound report (if any)</li>
+                    <li>• Previous treatment records</li>
+                  </ul>
+                </Card>
+                <Card className="p-5">
+                  <h3 className="font-bold text-foreground mb-3 flex items-center gap-2">
+                    <Smile className="w-5 h-5 text-primary" /> Consultation Includes
+                  </h3>
+                  <ul className="text-sm text-foreground/80 space-y-2">
+                    <li>• 30-45 min detailed discussion</li>
+                    <li>• Complete symptom analysis</li>
+                    <li>• Personalized treatment plan</li>
+                    <li>• Diet & lifestyle recommendations</li>
+                    <li>• Follow-up schedule planning</li>
+                  </ul>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Is This Right for You */}
+        <section className="py-12 md:py-16 bg-background">
+          <div className="container mx-auto px-4">
+            <Card className="max-w-3xl mx-auto p-6">
+              <h2 className="text-xl font-bold text-foreground mb-4 text-center">Is This Program Right for You?</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h3 className="font-semibold text-primary mb-2">✓ Ideal For</h3>
+                  <ul className="text-sm text-foreground/80 space-y-1">
+                    <li>• Irregular or absent periods</li>
+                    <li>• Struggling with weight despite dieting</li>
+                    <li>• Hormonal acne or hair loss</li>
+                    <li>• Fertility concerns</li>
+                    <li>• Seeking natural alternatives</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground/60 mb-2">May Need Different Care</h3>
+                  <ul className="text-sm text-foreground/60 space-y-1">
+                    <li>• Acute medical emergencies</li>
+                    <li>• Ovarian cysts requiring surgery</li>
+                    <li>• Currently undergoing IVF</li>
+                    <li>• Severe uncontrolled diabetes</li>
+                  </ul>
+                  <p className="text-xs text-foreground/50 mt-2">We'll guide you to the right care during consultation.</p>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="py-12 md:py-16 bg-gradient-hero text-white">
           <div className="container mx-auto px-4 text-center">
@@ -146,9 +241,16 @@ const PCOSProgram = () => {
             <p className="text-lg opacity-90 mb-6 max-w-xl mx-auto">
               Start your journey to hormonal balance today. Personalized care, lasting results.
             </p>
-            <Button asChild size="lg" variant="secondary">
-              <Link to="/contact">Book PCOS Assessment</Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button asChild size="lg" variant="secondary">
+                <Link to="/contact">Book PCOS Assessment</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                <a href="https://wa.me/918179942297?text=Hi%20Doctor,%20I%20have%20questions%20about%20PCOS%20treatment" target="_blank" rel="noopener noreferrer">
+                  Ask a Question
+                </a>
+              </Button>
+            </div>
           </div>
         </section>
       </main>

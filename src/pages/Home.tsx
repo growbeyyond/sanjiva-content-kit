@@ -446,6 +446,31 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Why Patients Trust Us - NEW SECTION */}
+      <section className="py-12 md:py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-bold text-center text-foreground mb-8">
+              Why Patients Choose Us
+            </h2>
+            <div className="grid md:grid-cols-4 gap-4">
+              {[
+                { icon: Shield, title: "Safe & Natural", desc: "No side effects, safe for all ages including pregnant women" },
+                { icon: Users, title: "Family-Friendly", desc: "Treat entire family under one roof, children to seniors" },
+                { icon: Award, title: "Expert Care", desc: "10+ years specialization in hormonal disorders" },
+                { icon: Heart, title: "Holistic Approach", desc: "Address root cause, not just symptoms" }
+              ].map((item, idx) => (
+                <Card key={idx} className="p-4 text-center hover:shadow-lg transition-all bg-secondary">
+                  <item.icon className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <h3 className="font-bold text-foreground text-sm mb-1">{item.title}</h3>
+                  <p className="text-xs text-foreground/70">{item.desc}</p>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section - Slightly less padding */}
       <section className="py-10 md:py-14 bg-gradient-hero text-white">
         <div className="container mx-auto px-4 text-center">
@@ -468,6 +493,9 @@ const Home = () => {
               </a>
             </Button>
           </div>
+          <p className="text-sm opacity-80 mt-4">
+            Available in English, Telugu & Hindi • Online consultations for patients worldwide
+          </p>
         </div>
       </section>
 
