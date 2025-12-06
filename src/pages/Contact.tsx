@@ -8,6 +8,7 @@ import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import SEO from "@/components/SEO";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -27,7 +28,6 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Insert into database
       const { error: dbError } = await supabase
         .from('appointments')
         .insert([{
@@ -43,14 +43,12 @@ const Contact = () => {
 
       if (dbError) throw dbError;
 
-      // Send email notification
       const { error: emailError } = await supabase.functions.invoke('send-appointment-email', {
         body: formData
       });
 
       if (emailError) {
         console.error('Email notification error:', emailError);
-        // Don't fail the whole process if email fails
       }
 
       toast({
@@ -83,10 +81,44 @@ const Contact = () => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Dr. Prasanna Boddupally",
+    "description": "Book your homeopathy consultation with Dr. Prasanna Boddupally in Hyderabad. Available for in-person and online consultations.",
+    "mainEntity": {
+      "@type": "LocalBusiness",
+      "name": "Dr. Prasanna Boddupally Homeopathy Clinic",
+      "telephone": "+918179942297",
+      "email": "prasannaboddu@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
+        "addressCountry": "IN"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "09:00",
+          "closes": "19:00"
+        }
+      ]
+    }
+  };
+
   return (
     <>
+      <SEO 
+        title="Contact & Book Appointment | Dr. Prasanna Boddupally - Homeopathy Hyderabad"
+        description="Book your consultation with Dr. Prasanna Boddupally. Available for thyroid, PCOS, and hormonal health consultations in Hyderabad. Online consultations also available."
+        keywords="book appointment homeopathy, Dr Prasanna contact, homeopathy consultation Hyderabad, online homeopathy consultation, PCOS consultation, thyroid doctor appointment"
+        canonicalUrl="https://drprasannaboddupally.in/contact"
+        structuredData={structuredData}
+      />
       <Navigation />
-      <div className="min-h-screen">
+      <main className="min-h-screen">
         <section className="py-20 bg-gradient-subtle">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
@@ -117,6 +149,7 @@ const Contact = () => {
                       onChange={handleChange}
                       placeholder="Enter your name"
                       required
+                      maxLength={100}
                     />
                   </div>
                   <div>
@@ -130,6 +163,7 @@ const Contact = () => {
                       onChange={handleChange}
                       placeholder="+91 98765 43210"
                       required
+                      maxLength={15}
                     />
                   </div>
                   <div>
@@ -142,6 +176,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="your@email.com"
+                      maxLength={255}
                     />
                   </div>
                   <div>
@@ -156,10 +191,11 @@ const Contact = () => {
                       required
                     >
                       <option value="">Select your primary concern</option>
-                      <option value="PCOS">PCOS</option>
-                      <option value="Thyroid">Thyroid</option>
-                      <option value="Both">Both PCOS & Thyroid</option>
-                      <option value="Other">Other Women's Health Concern</option>
+                      <option value="Thyroid">Thyroid Disorders</option>
+                      <option value="PCOS">PCOS/PCOD</option>
+                      <option value="Both">Both Thyroid & PCOS</option>
+                      <option value="Hormonal Imbalance">Other Hormonal Issues</option>
+                      <option value="Other">Other Health Concern</option>
                     </select>
                   </div>
                   <div className="grid grid-cols-2 gap-4">
@@ -197,6 +233,7 @@ const Contact = () => {
                       onChange={handleChange}
                       placeholder="Any additional information you'd like to share..."
                       rows={4}
+                      maxLength={1000}
                     />
                   </div>
                   <Button 
@@ -209,8 +246,8 @@ const Contact = () => {
                 </form>
 
                 <div className="mt-6 pt-6 border-t border-border">
-                  <p className="text-sm text-foreground/70 text-center mb-4">
-                    Let's Talk — We're Here for You
+                  <p className="text-sm text-foreground/80 text-center mb-4">
+                    Prefer to connect directly? We're here for you.
                   </p>
                   <div className="space-y-2">
                     <Button
@@ -219,18 +256,28 @@ const Contact = () => {
                       className="w-full border-primary text-primary hover:bg-primary-light"
                     >
                       <a 
-                        href="https://wa.me/918179942297"
+                        href="https://wa.me/918179942297?text=Hi%20Doctor,%20I%20want%20to%20book%20an%20appointment"
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="flex items-center justify-center gap-2"
                       >
                         <MessageCircle className="w-4 h-4" />
-                        WhatsApp
+                        WhatsApp Now
                       </a>
                     </Button>
-                    <p className="text-xs text-center text-foreground/60">
-                      Also available on Telegram | Email
-                    </p>
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="w-full border-accent text-accent hover:bg-accent/10"
+                    >
+                      <a 
+                        href="tel:+918179942297"
+                        className="flex items-center justify-center gap-2"
+                      >
+                        <Phone className="w-4 h-4" />
+                        Call Now
+                      </a>
+                    </Button>
                   </div>
                 </div>
               </Card>
@@ -238,24 +285,24 @@ const Contact = () => {
               {/* Contact Information */}
               <div className="space-y-6">
                 <Card className="p-6">
-                  <h3 className="text-xl font-bold text-foreground mb-4">Clinic Details</h3>
+                  <h2 className="text-xl font-bold text-foreground mb-4">Clinic Details</h2>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
                       <MapPin className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                       <div>
                         <p className="font-semibold text-foreground">Address</p>
-                        <p className="text-foreground/70 text-sm">
-                          Hyderabad | Online Consults Available Globally
+                        <p className="text-foreground/80 text-sm">
+                          Hyderabad, Telangana | Online Consults Available Globally
                         </p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <Phone className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <Phone className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                       <div>
                         <p className="font-semibold text-foreground">Phone</p>
                         <a 
                           href="tel:+918179942297" 
-                          className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                          className="text-foreground/80 text-sm hover:text-primary transition-colors"
                         >
                           +91 81799 42297
                         </a>
@@ -267,19 +314,19 @@ const Contact = () => {
                         <p className="font-semibold text-foreground">Email</p>
                         <a 
                           href="mailto:prasannaboddu@gmail.com" 
-                          className="text-foreground/70 text-sm hover:text-primary transition-colors"
+                          className="text-foreground/80 text-sm hover:text-primary transition-colors"
                         >
                           prasannaboddu@gmail.com
                         </a>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <Clock className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                      <Clock className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                       <div>
                         <p className="font-semibold text-foreground">Clinic Hours</p>
-                        <p className="text-foreground/70 text-sm">
-                          Monday - Saturday: 9:00 AM - 7:00 PM<br />
-                          Sunday: Closed
+                        <p className="text-foreground/80 text-sm">
+                          Monday - Saturday: 10:00 AM - 1:00 PM, 5:00 PM - 8:30 PM<br />
+                          Sunday: 10:00 AM - 1:00 PM
                         </p>
                       </div>
                     </div>
@@ -287,7 +334,7 @@ const Contact = () => {
                 </Card>
 
                 <Card className="p-6 bg-primary-light">
-                  <h3 className="text-xl font-bold text-primary mb-4">What to Expect</h3>
+                  <h2 className="text-xl font-bold text-primary mb-4">What to Expect</h2>
                   <ul className="space-y-2 text-sm text-foreground">
                     <li className="flex items-start gap-2">
                       <span className="text-primary font-bold">•</span>
@@ -313,8 +360,8 @@ const Contact = () => {
                 </Card>
 
                 <Card className="p-6">
-                  <h3 className="text-xl font-bold text-foreground mb-2">Languages Spoken</h3>
-                  <p className="text-foreground/70">
+                  <h2 className="text-xl font-bold text-foreground mb-2">Languages Spoken</h2>
+                  <p className="text-foreground/80">
                     English • Telugu • Hindi
                   </p>
                 </Card>
@@ -322,9 +369,9 @@ const Contact = () => {
             </div>
 
             {/* Google Map */}
-            <div className="mt-12">
+            <div className="mt-12 max-w-6xl mx-auto">
               <Card className="p-6">
-                <h3 className="text-xl font-bold text-foreground mb-4">Find Us</h3>
+                <h2 className="text-xl font-bold text-foreground mb-4">Find Us</h2>
                 <div className="rounded-lg overflow-hidden h-[400px]">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.31795243015!2d78.24323209999999!3d17.412608499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1234567890123"
@@ -334,14 +381,14 @@ const Contact = () => {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Clinic Location - Hyderabad"
+                    title="Dr. Prasanna Boddupally Homeopathy Clinic Location - Hyderabad"
                   ></iframe>
                 </div>
               </Card>
             </div>
           </div>
         </section>
-      </div>
+      </main>
       <Footer />
     </>
   );

@@ -2,7 +2,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 
 const FAQ = () => {
   const faqs = [
@@ -43,8 +44,8 @@ const FAQ = () => {
           a: "Yes, homeopathic medicines can be taken alongside conventional medications. They don't interfere with other treatments. However, always inform your homeopath about all medications you're taking for optimal treatment planning."
         },
         {
-          q: "What is the Sanjiva Protocol?",
-          a: "The Sanjiva Protocol is Dr. Prasanna's specialized approach combining classical homeopathy with constitutional analysis. It involves detailed case-taking, individualized remedy selection, and systematic follow-ups for comprehensive healing."
+          q: "What is the ThyroCure Method?",
+          a: "The ThyroCure Method is Dr. Prasanna's specialized 4-phase approach combining classical homeopathy with constitutional analysis, nutrition support, lifestyle optimization, and emotional healing for comprehensive thyroid and hormonal wellness."
         }
       ]
     },
@@ -53,7 +54,7 @@ const FAQ = () => {
       questions: [
         {
           q: "What happens during the first consultation?",
-          a: "The initial consultation takes 45-60 minutes. Dr. Prasanna conducts a detailed case history covering physical symptoms, mental-emotional state, lifestyle, and family history. This helps identify your constitutional remedy for personalized treatment."
+          a: "The initial consultation takes 30-45 minutes. Dr. Prasanna conducts a detailed case history covering physical symptoms, mental-emotional state, lifestyle, and family history. This helps identify your constitutional remedy for personalized treatment."
         },
         {
           q: "Do you offer online consultations?",
@@ -70,32 +71,11 @@ const FAQ = () => {
       ]
     },
     {
-      category: "Pricing & Policies",
-      questions: [
-        {
-          q: "How do I schedule a consultation?",
-          a: "You can book through our website contact form, call us, or WhatsApp us. We typically respond within 2-4 hours during working hours and will confirm your appointment slot. Consultation fees will be discussed during booking."
-        },
-        {
-          q: "Do you accept insurance?",
-          a: "We provide detailed receipts and medical documentation that you can submit to your insurance provider for reimbursement. Check with your insurance company regarding homeopathy coverage under your policy."
-        },
-        {
-          q: "What is your cancellation policy?",
-          a: "Please inform us at least 24 hours in advance if you need to reschedule or cancel. This allows us to offer the slot to another patient. Emergency cancellations are understood and accommodated."
-        },
-        {
-          q: "How do I book an appointment?",
-          a: "You can book through our website contact form, call us at +91-9876543210, or WhatsApp us. We typically respond within 2-4 hours during working hours and will confirm your appointment slot."
-        }
-      ]
-    },
-    {
       category: "Conditions Treated",
       questions: [
         {
-          q: "What conditions do you treat?",
-          a: "We treat a wide range of acute and chronic conditions including respiratory disorders, skin diseases, digestive issues, women's health problems, mental health conditions, pediatric ailments, and lifestyle diseases. Contact us for specific conditions."
+          q: "What conditions do you specialize in?",
+          a: "Dr. Prasanna specializes in women's hormonal health including thyroid disorders (hypothyroidism, hyperthyroidism), PCOS/PCOD, infertility, menstrual problems, weight management, skin conditions, and chronic fatigue."
         },
         {
           q: "Can children take homeopathic medicine?",
@@ -113,14 +93,30 @@ const FAQ = () => {
     }
   ];
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.flatMap(category => 
+      category.questions.map(q => ({
+        "@type": "Question",
+        "name": q.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": q.a
+        }
+      }))
+    )
+  };
+
   return (
     <>
-      <Helmet>
-        <title>Frequently Asked Questions - Dr. Prasanna Boddupally | Homeopathy FAQs</title>
-        <meta name="description" content="Get answers to common questions about homeopathy treatment, consultation process, pricing, and conditions treated by Dr. Prasanna Boddupally in Hyderabad." />
-        <meta name="keywords" content="homeopathy faq, homeopathy questions, homeopathy answers, treatment process, consultation fees, Hyderabad" />
-        <link rel="canonical" href="https://drprasanna.lovable.app/faq" />
-      </Helmet>
+      <SEO 
+        title="Frequently Asked Questions | Homeopathy FAQs - Dr. Prasanna Boddupally"
+        description="Get answers to common questions about homeopathy treatment, consultation process, thyroid care, PCOS treatment, and conditions treated by Dr. Prasanna Boddupally."
+        keywords="homeopathy FAQ, homeopathy questions, thyroid treatment FAQ, PCOS questions, consultation process, Dr Prasanna FAQ, Hyderabad homeopathy"
+        canonicalUrl="https://drprasannaboddupally.in/faq"
+        structuredData={structuredData}
+      />
 
       <Navigation />
       
@@ -131,7 +127,7 @@ const FAQ = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-hero bg-clip-text text-transparent">
               Frequently Asked Questions
             </h1>
-            <p className="text-lg text-foreground/70">
+            <p className="text-lg text-foreground/80">
               Everything you need to know about homeopathy and our treatment approach
             </p>
           </div>
@@ -157,7 +153,7 @@ const FAQ = () => {
                       <AccordionTrigger className="text-left font-semibold hover:text-primary">
                         {faq.q}
                       </AccordionTrigger>
-                      <AccordionContent className="text-foreground/70 leading-relaxed">
+                      <AccordionContent className="text-foreground/80 leading-relaxed">
                         {faq.a}
                       </AccordionContent>
                     </AccordionItem>
@@ -177,7 +173,7 @@ const FAQ = () => {
                 Can't find the answer you're looking for? Feel free to reach out to us directly.
               </p>
               <Button asChild size="lg" variant="secondary">
-                <a href="/contact">Contact Us</a>
+                <Link to="/contact">Contact Us</Link>
               </Button>
             </div>
           </div>

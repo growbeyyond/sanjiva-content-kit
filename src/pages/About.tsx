@@ -3,13 +3,39 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Heart, Award, Users, Globe, Clock, Leaf } from "lucide-react";
+import SEO from "@/components/SEO";
 import doctorImage from "@/assets/doctor-prasanna.jpg";
 
 const About = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr. Prasanna Boddupally",
+    "image": doctorImage,
+    "description": "Expert homeopathy physician in Hyderabad specializing in women's hormonal health, PCOS, thyroid disorders, and natural healing with 10+ years experience.",
+    "medicalSpecialty": ["Homeopathy", "Women's Health", "Hormonal Disorders", "PCOS Treatment", "Thyroid Treatment"],
+    "knowsLanguage": ["English", "Telugu", "Hindi"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hyderabad",
+      "addressRegion": "Telangana",
+      "addressCountry": "IN"
+    },
+    "telephone": "+918179942297",
+    "email": "prasannaboddu@gmail.com"
+  };
+
   return (
     <>
+      <SEO 
+        title="About Dr. Prasanna Boddupally | Homeopathy Doctor Hyderabad - PCOS & Thyroid Specialist"
+        description="Dr. Prasanna Boddupally is a leading homeopathy physician in Hyderabad with 10+ years experience treating PCOS, thyroid disorders, and hormonal imbalances. Book consultation today."
+        keywords="Dr Prasanna Boddupally, homeopathy doctor Hyderabad, PCOS specialist, thyroid doctor, women's health expert, homeopathic physician Telangana"
+        canonicalUrl="https://drprasannaboddupally.in/about"
+        structuredData={structuredData}
+      />
       <Navigation />
-      <div className="min-h-screen">
+      <main className="min-h-screen">
         <section className="py-20 bg-gradient-subtle">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
@@ -29,13 +55,17 @@ const About = () => {
             <div className="max-w-6xl mx-auto">
               <div className="grid md:grid-cols-2 gap-12 items-start mb-12">
                 <div className="space-y-6">
-                  <img src={doctorImage} alt="Dr. Prasanna Boddupally" className="rounded-2xl shadow-card w-full" />
+                  <img 
+                    src={doctorImage} 
+                    alt="Dr. Prasanna Boddupally - Homeopathy Physician in Hyderabad specializing in PCOS and Thyroid treatment" 
+                    className="rounded-2xl shadow-card w-full" 
+                  />
                   
                   <div className="bg-white rounded-xl shadow-card p-6 space-y-4">
-                    <h3 className="text-xl font-bold text-primary flex items-center gap-2">
+                    <h2 className="text-xl font-bold text-primary flex items-center gap-2">
                       <Clock className="w-5 h-5" />
                       Consultation Timings
-                    </h3>
+                    </h2>
                     <div className="space-y-2 text-foreground/80">
                       <p className="flex justify-between">
                         <span className="font-semibold">Monday - Saturday (Morning)</span>
@@ -59,7 +89,7 @@ const About = () => {
                     <p className="text-foreground/80">
                       Dr. Prasanna's story began with a simple vision — to treat women not just for their symptoms, but for their emotions, cycles, and confidence.
                     </p>
-                    <p className="text-foreground/70 italic">
+                    <p className="text-foreground/80 italic">
                       "Homeopathy × Modern Hormone Science — I help women rebuild confidence through balanced health."
                     </p>
                   </div>
@@ -92,10 +122,10 @@ const About = () => {
                   
                   <div className="space-y-4">
                     <h2 className="text-2xl font-bold text-accent">The ThyroCure Philosophy</h2>
-                    <p className="text-foreground/70 italic text-lg">
+                    <p className="text-foreground/80 italic text-lg">
                       "Your body already knows how to heal. I just help you listen."
                     </p>
-                    <ul className="space-y-2 text-foreground/70">
+                    <ul className="space-y-2 text-foreground/80">
                       <li className="flex items-start gap-2">
                         <span className="text-accent font-bold">•</span>
                         <span>Holistic approach to hormonal balance</span>
@@ -113,7 +143,7 @@ const About = () => {
 
                   <div className="space-y-4">
                     <h2 className="text-2xl font-bold text-primary">Media & Milestones</h2>
-                    <p className="text-foreground/70">
+                    <p className="text-foreground/80">
                       Featured in <strong>HealthLine India</strong> | Panelist on <strong>Women's Hormone Summit 2024</strong>
                     </p>
                   </div>
@@ -142,7 +172,7 @@ const About = () => {
             </div>
           </div>
         </section>
-      </div>
+      </main>
       <Footer />
     </>
   );

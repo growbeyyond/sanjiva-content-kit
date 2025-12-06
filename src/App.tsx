@@ -45,19 +45,28 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
+            <Route path="/about-dr-prasanna-homeopathy-hyderabad" element={<About />} />
             <Route path="/treatments" element={<Treatments />} />
+            <Route path="/homeopathy-treatments-hyderabad" element={<Treatments />} />
             <Route path="/protocol" element={<Protocol />} />
+            <Route path="/thyroid-treatment-hyderabad" element={<Protocol />} />
             <Route path="/pcos-program" element={<PCOSProgram />} />
+            <Route path="/pcos-pcod-treatment-hyderabad" element={<PCOSProgram />} />
             <Route path="/thyrocure-program" element={<ThyroCureProgram />} />
             <Route path="/wellness-hub" element={<WellnessHub />} />
+            <Route path="/wellness-tools" element={<WellnessHub />} />
             <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/success-stories" element={<Testimonials />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/health-articles" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/book-appointment" element={<Contact />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsConditions />} />
             <Route path="/disclaimer" element={<Disclaimer />} />
             <Route path="/symptom-checker" element={<SymptomChecker />} />
+            <Route path="/hormone-health-test" element={<SymptomChecker />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/patient-portal" element={<PatientPortal />} />
             <Route path="/book" element={<BookingPage />} />

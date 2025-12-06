@@ -8,6 +8,7 @@ import { Star, Heart } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import SEO from "@/components/SEO";
 
 const Testimonials = () => {
   const { toast } = useToast();
@@ -55,21 +56,6 @@ const Testimonials = () => {
       setIsSubmitting(false);
     }
   };
-
-  const videoTestimonials = [
-    {
-      name: "Priya & Ramesh",
-      condition: "Infertility",
-      videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video IDs
-      thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg"
-    },
-    {
-      name: "Lakshmi R.",
-      condition: "Thyroid",
-      videoId: "dQw4w9WgXcQ",
-      thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg"
-    }
-  ];
 
   const testimonials = [
     {
@@ -124,19 +110,42 @@ const Testimonials = () => {
     }
   ];
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Patient Success Stories - Dr. Prasanna Boddupally",
+    "description": "Real patient testimonials and success stories from Dr. Prasanna Boddupally's homeopathy clinic in Hyderabad.",
+    "review": testimonials.map(t => ({
+      "@type": "Review",
+      "author": { "@type": "Person", "name": t.name },
+      "reviewBody": t.text,
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": t.rating,
+        "bestRating": 5
+      }
+    }))
+  };
+
   return (
     <>
+      <SEO 
+        title="Patient Success Stories & Testimonials | Dr. Prasanna Boddupally - Hyderabad"
+        description="Read real success stories from patients treated by Dr. Prasanna Boddupally. PCOS cured, thyroid normalized, infertility overcome through homeopathy. 5000+ women helped."
+        keywords="homeopathy testimonials, PCOS success stories, thyroid treatment reviews, Dr Prasanna reviews, patient testimonials Hyderabad, homeopathy success"
+        canonicalUrl="https://drprasannaboddupally.in/testimonials"
+        structuredData={structuredData}
+      />
       <Navigation />
-      <div className="min-h-screen">
+      <main className="min-h-screen">
         <section className="py-20 bg-gradient-subtle">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 <span className="text-gradient-bright">Healing Stories</span> That Inspire Hope
-                <br />Real Stories of Healing & Hope
               </h1>
-              <p className="text-xl text-foreground/70">
-                Discover how the Sanjiva Protocol transformed lives
+              <p className="text-xl text-foreground/80">
+                Real stories from women who found their path to hormonal balance
               </p>
             </div>
           </div>
@@ -144,44 +153,15 @@ const Testimonials = () => {
 
         <section className="py-16">
           <div className="container mx-auto px-4">
-            {/* Video Testimonials Section */}
-            <div className="max-w-6xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold text-center mb-8 text-foreground">
-                Watch Patient Success Stories
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {videoTestimonials.map((video, index) => (
-                  <Card key={index} className="overflow-hidden">
-                    <div className="relative aspect-video">
-                      <iframe
-                        width="100%"
-                        height="100%"
-                        src={`https://www.youtube.com/embed/${video.videoId}`}
-                        title={`${video.name} - ${video.condition} Testimonial`}
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="absolute inset-0"
-                      ></iframe>
-                    </div>
-                    <div className="p-4">
-                      <p className="font-semibold text-foreground">{video.name}</p>
-                      <p className="text-sm text-foreground/80 font-medium">{video.condition}</p>
-                    </div>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
             {/* Featured Testimonial */}
             <div className="max-w-4xl mx-auto mb-16">
               <Card className="p-8 bg-gradient-hero text-primary-foreground border-none shadow-glow">
                 <div className="flex items-center justify-center mb-4">
                   <Heart className="w-12 h-12 fill-current" />
                 </div>
-                <p className="text-2xl md:text-3xl text-center font-bold italic mb-6">
+                <blockquote className="text-2xl md:text-3xl text-center font-bold italic mb-6">
                   "For the first time, I felt seen as a woman, not a symptom."
-                </p>
+                </blockquote>
                 <div className="text-center">
                   <p className="font-semibold text-lg">— Sravani M.</p>
                   <p className="text-sm opacity-90">PCOS & Emotional Wellness</p>
@@ -201,23 +181,23 @@ const Testimonials = () => {
                       <Star key={i} className="w-4 h-4 fill-primary text-primary" />
                     ))}
                   </div>
-                  <p className="text-foreground mb-4 italic">"{testimonial.text}"</p>
+                  <blockquote className="text-foreground mb-4 italic">"{testimonial.text}"</blockquote>
                   <div className="border-t border-border pt-4">
                     <p className="font-semibold text-foreground">{testimonial.name}</p>
                     <p className="text-sm text-primary">{testimonial.condition}</p>
-                    <p className="text-xs text-muted-foreground mt-1">{testimonial.location}</p>
+                    <p className="text-xs text-foreground/60 mt-1">{testimonial.location}</p>
                   </div>
                 </Card>
               ))}
             </div>
 
             <div className="max-w-2xl mx-auto mt-16 p-8 bg-primary-light rounded-lg text-center">
-              <h2 className="text-2xl font-bold mb-4 text-primary">Success Rate</h2>
+              <h2 className="text-2xl font-bold mb-4 text-primary">Proven Results</h2>
               <p className="text-foreground text-lg">
                 <strong>90% success rate</strong> in treating thyroid disorders and infertility cases
               </p>
-              <p className="text-foreground/70 mt-2">
-                Based on 10+ years of clinical practice with thousands of patients
+              <p className="text-foreground/80 mt-2">
+                Based on 10+ years of clinical practice with 5000+ patients
               </p>
             </div>
 
@@ -227,7 +207,7 @@ const Testimonials = () => {
                 <h2 className="text-3xl font-bold text-center mb-4 text-foreground">
                   Share Your Journey
                 </h2>
-                <p className="text-center text-foreground/70 mb-8">
+                <p className="text-center text-foreground/80 mb-8">
                   Your story could inspire another woman on her healing journey. Share anonymously if you prefer.
                 </p>
 
@@ -250,6 +230,7 @@ const Testimonials = () => {
                         onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
                         placeholder="Enter your name"
                         required={!formData.anonymous}
+                        maxLength={100}
                       />
                     </div>
                     <div>
@@ -259,6 +240,7 @@ const Testimonials = () => {
                         onChange={(e) => setFormData(prev => ({ ...prev, condition: e.target.value }))}
                         placeholder="e.g., PCOS, Thyroid, Infertility"
                         required
+                        maxLength={100}
                       />
                     </div>
                     <div>
@@ -269,6 +251,7 @@ const Testimonials = () => {
                         placeholder="Share your healing journey, how treatment helped you, and what changed in your life..."
                         rows={6}
                         required
+                        maxLength={1000}
                       />
                     </div>
                     <div className="flex items-center gap-2">
@@ -279,7 +262,7 @@ const Testimonials = () => {
                         onChange={(e) => setFormData(prev => ({ ...prev, anonymous: e.target.checked }))}
                         className="w-4 h-4"
                       />
-                      <label htmlFor="anonymous" className="text-sm text-foreground/70">
+                      <label htmlFor="anonymous" className="text-sm text-foreground/80">
                         Post anonymously
                       </label>
                     </div>
@@ -306,7 +289,7 @@ const Testimonials = () => {
             </div>
           </div>
         </section>
-      </div>
+      </main>
       <Footer />
     </>
   );
