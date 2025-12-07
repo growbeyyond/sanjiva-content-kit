@@ -36,7 +36,7 @@ const Home = () => {
       title: "Overcome",
       highlight: "PCOS",
       subtitle: "Naturally",
-      description: "Regulate your periods, manage weight, and restore hormonal balance with personalized homeopathic treatment."
+      description: "Regulate your periods, restore energy, and balance hormones naturally with personalized homeopathic treatment."
     }
   ];
 
@@ -241,7 +241,7 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
-              Why <span className="bg-gradient-hero bg-clip-text text-transparent">ThyroCure</span> & <span className="bg-gradient-hero bg-clip-text text-transparent">PCOS Wellness?</span>
+              Why <span className="bg-gradient-hero bg-clip-text text-transparent">PCOS</span> & <span className="bg-gradient-hero bg-clip-text text-transparent">ThyroCure Homeopathy?</span>
             </h2>
             <p className="text-foreground/70 max-w-2xl mx-auto">
               The truth about hormonal disorders that every woman should know
@@ -301,7 +301,7 @@ const Home = () => {
               <p className="text-sm text-foreground/70 leading-relaxed mb-4">
                 PCOS is <strong>completely reversible</strong> with proper treatment. Our holistic protocol combines 
                 homeopathy, nutrition, and lifestyle changes to restore hormonal balance, regulate periods, 
-                and help with weight management naturally.
+                and improve overall wellness naturally.
               </p>
               <div className="bg-primary/10 rounded-lg p-3 border border-primary/20">
                 <p className="text-sm font-medium text-foreground">
@@ -371,8 +371,8 @@ const Home = () => {
               },
               { 
                 name: "PCOS / PCOD", 
-                description: "Irregular periods, Weight gain, Hormonal acne, Hair loss", 
-                link: "/pcos-program", 
+                description: "Irregular periods, Hormonal acne, Hair loss, Fertility issues", 
+                link: "/pcos-program",
                 icon: Heart,
                 gradient: "from-primary/20 to-primary/5"
               },
@@ -405,10 +405,10 @@ const Home = () => {
               </h3>
               <div className="flex flex-wrap justify-center gap-3">
                 {[
-                  "Weight Management",
                   "Hormonal Imbalance",
                   "Menstrual Disorders",
                   "Hair Fall",
+                  "Skin Problems",
                   "Skin Problems",
                   "Fatigue & Low Energy",
                   "Mood Swings",
