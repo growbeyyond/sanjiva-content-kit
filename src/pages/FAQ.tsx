@@ -65,7 +65,7 @@ const FAQ = () => {
       questions: [
         {
           q: "What conditions do you specialize in?",
-          a: "Dr. Prasanna specializes in women's hormonal health including thyroid disorders, PCOS/PCOD, infertility, menstrual problems, and weight management."
+          a: "Dr. Prasanna specializes in women's hormonal health including thyroid disorders, PCOS/PCOD, infertility, and menstrual problems."
         },
         {
           q: "Can children take homeopathic medicine?",

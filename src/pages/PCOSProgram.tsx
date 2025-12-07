@@ -220,9 +220,9 @@ const PCOSProgram = () => {
                   <h3 className="font-semibold text-primary mb-2">✓ Ideal For</h3>
                   <ul className="text-sm text-foreground/80 space-y-1">
                     <li>• Irregular or absent periods</li>
-                    <li>• Struggling with weight despite dieting</li>
                     <li>• Hormonal acne or hair loss</li>
                     <li>• Fertility concerns</li>
+                    <li>• Fatigue and mood swings</li>
                     <li>• Seeking natural alternatives</li>
                   </ul>
                 </div>
