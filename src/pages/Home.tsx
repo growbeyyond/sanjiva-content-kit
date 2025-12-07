@@ -405,16 +405,18 @@ const Home = () => {
               </h3>
               <div className="flex flex-wrap justify-center gap-3">
                 {[
-                  "Hormonal Imbalance",
-                  "Menstrual Disorders",
-                  "Hair Fall",
-                  "Skin Problems",
-                  "Skin Problems",
-                  "Fatigue & Low Energy",
-                  "Mood Swings",
-                  "Stress & Anxiety",
-                  "Pre-menopause",
-                  "Post-delivery Care"
+                  "Diabetes",
+                  "Skin & Hair",
+                  "Arthritis",
+                  "Spondylitis",
+                  "Infertility",
+                  "Kidney Disorders",
+                  "Allergies",
+                  "Psoriasis",
+                  "Migraine",
+                  "Asthma",
+                  "Digestive Issues",
+                  "Joint Pains"
                 ].map((condition, idx) => (
                   <span 
                     key={idx} 
