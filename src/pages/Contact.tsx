@@ -470,17 +470,20 @@ const Contact = () => {
             {/* Google Map */}
             <div className="mt-12 max-w-6xl mx-auto">
               <Card className="p-6">
-                <h2 className="text-xl font-bold text-foreground mb-4">Find Us</h2>
+                <h2 className="text-xl font-bold text-foreground mb-4">Find Us - Champapet, Hyderabad</h2>
+                <p className="text-sm text-foreground/70 mb-4">
+                  📍 17-1-382/P/4, Govt Press Colony, Champapet, Hyderabad - 500079
+                </p>
                 <div className="rounded-lg overflow-hidden h-[400px]">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.31795243015!2d78.24323209999999!3d17.412608499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1234567890123"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.5476!2d78.4783!3d17.3550!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb98e5f8dcb28f%3A0x9e5c5a2e5c5a2e5c!2sChampapet%2C%20Hyderabad%2C%20Telangana%20500079!5e0!3m2!1sen!2sin!4v1702400000000!5m2!1sen!2sin"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Dr. Prasanna Boddupally Homeopathy Clinic Location - Hyderabad"
+                    title="Dr. Prasanna Boddupally Homeopathy Clinic - Champapet, Hyderabad"
                   ></iframe>
                 </div>
               </Card>
