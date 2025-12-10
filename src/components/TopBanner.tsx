@@ -7,13 +7,13 @@ const TopBanner = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="bg-gradient-to-r from-red-600 via-green-600 to-red-600 text-white py-2.5 px-4 text-center relative overflow-hidden">
+    <div className="bg-gradient-to-r from-primary via-accent to-primary text-white py-2.5 px-4 text-center relative overflow-hidden">
       {/* Festive decorative elements */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 left-10 animate-pulse">❄️</div>
-        <div className="absolute top-0 right-20 animate-pulse delay-100">✨</div>
-        <div className="absolute bottom-0 left-1/4 animate-pulse delay-200">🎄</div>
-        <div className="absolute bottom-0 right-1/3 animate-pulse delay-300">⭐</div>
+        <div className="absolute top-0 left-10 animate-pulse">✨</div>
+        <div className="absolute top-0 right-20 animate-pulse delay-100">⭐</div>
+        <div className="absolute bottom-0 left-1/4 animate-pulse delay-200">🎁</div>
+        <div className="absolute bottom-0 right-1/3 animate-pulse delay-300">✨</div>
       </div>
       
       <div className="relative flex items-center justify-center gap-2 flex-wrap">
