@@ -136,8 +136,8 @@ const Contact = () => {
     "mainEntity": {
       "@type": "LocalBusiness",
       "name": "Dr. Prasanna Boddupally Homeopathy Clinic",
-      "telephone": "+918179942297",
-      "email": "prasannaboddu@gmail.com",
+      "telephone": "+916304633491",
+      "email": "pcosthyrocure@gmail.com",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Hyderabad",
@@ -316,7 +316,7 @@ const Contact = () => {
                       className="w-full border-primary text-primary hover:bg-primary-light"
                     >
                       <a 
-                        href="https://wa.me/918179942297?text=Hi%20Doctor,%20I%20want%20to%20book%20an%20appointment"
+                        href="https://wa.me/916304633491?text=Hi%20Doctor,%20I%20want%20to%20book%20an%20appointment"
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="flex items-center justify-center gap-2"
@@ -331,7 +331,7 @@ const Contact = () => {
                       className="w-full border-accent text-accent hover:bg-accent/10"
                     >
                       <a 
-                        href="tel:+918179942297"
+                        href="tel:+916304633491"
                         className="flex items-center justify-center gap-2"
                       >
                         <Phone className="w-4 h-4" />
@@ -352,7 +352,7 @@ const Contact = () => {
                       <div>
                         <p className="font-semibold text-foreground">Address</p>
                         <p className="text-foreground/80 text-sm">
-                          Hyderabad, Telangana | Online Consults Available Globally
+                          17-1-382/P/4, Govt Press Colony, Champapet, Hyderabad - 500079
                         </p>
                       </div>
                     </div>
@@ -361,10 +361,10 @@ const Contact = () => {
                       <div>
                         <p className="font-semibold text-foreground">Phone</p>
                         <a 
-                          href="tel:+918179942297" 
+                          href="tel:+916304633491" 
                           className="text-foreground/80 text-sm hover:text-primary transition-colors"
                         >
-                          +91 81799 42297
+                          +91 63046 33491
                         </a>
                       </div>
                     </div>
@@ -373,10 +373,10 @@ const Contact = () => {
                       <div>
                         <p className="font-semibold text-foreground">Email</p>
                         <a 
-                          href="mailto:prasannaboddu@gmail.com" 
+                          href="mailto:pcosthyrocure@gmail.com" 
                           className="text-foreground/80 text-sm hover:text-primary transition-colors"
                         >
-                          prasannaboddu@gmail.com
+                          pcosthyrocure@gmail.com
                         </a>
                       </div>
                     </div>
@@ -458,7 +458,7 @@ const Contact = () => {
                     If you're experiencing severe symptoms like difficulty breathing, severe chest pain, or thyroid storm symptoms:
                   </p>
                   <Button asChild variant="destructive" size="sm" className="w-full">
-                    <a href="tel:+918179942297">Call Immediately: +91 81799 42297</a>
+                    <a href="tel:+916304633491">Call Immediately: +91 63046 33491</a>
                   </Button>
                   <p className="text-xs text-foreground/60 mt-2 text-center">
                     For life-threatening emergencies, please visit the nearest hospital ER.

@@ -55,7 +55,7 @@ const ThyroCureProgram = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#20BA5A] text-white border-0 shadow-glow">
-                  <a href="https://wa.me/918179942297?text=Hi%20Doctor,%20I%20want%20to%20book%20a%20ThyroCure%20consultation" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/916304633491?text=Hi%20Doctor,%20I%20want%20to%20book%20a%20ThyroCure%20consultation" target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="mr-2 w-4 h-4" /> Book on WhatsApp
                   </a>
                 </Button>
@@ -280,7 +280,7 @@ const ThyroCureProgram = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#20BA5A] text-white border-0 shadow-glow">
-                  <a href="https://wa.me/918179942297?text=Hi%20Doctor,%20I%20want%20to%20start%20the%20ThyroCure%20program" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/916304633491?text=Hi%20Doctor,%20I%20want%20to%20start%20the%20ThyroCure%20program" target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="mr-2 w-5 h-5" /> Start on WhatsApp
                   </a>
                 </Button>

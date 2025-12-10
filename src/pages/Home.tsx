@@ -154,7 +154,7 @@ const Home = () => {
                   </Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="text-lg px-8 h-14 bg-background/60 backdrop-blur-sm border-border/50">
-                  <a href="https://wa.me/918179942297" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/916304633491" target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="mr-2 w-5 h-5" /> WhatsApp Us
                   </a>
                 </Button>
@@ -268,7 +268,7 @@ const Home = () => {
                 </div>
               </div>
               <p className="text-sm text-foreground/70 leading-relaxed mb-4">
-                Thyroid disorders are <strong>100% manageable</strong> with the right approach. Dr. Prasanna's homeopathic treatment 
+                Thyroid disorders are <strong>100% curable</strong> with the right approach. Dr. Prasanna's homeopathic treatment 
                 addresses the root cause — not just symptoms. We help normalize T3, T4, and TSH levels naturally, 
                 reducing dependency on lifelong medication.
               </p>
@@ -336,7 +336,7 @@ const Home = () => {
               </div>
               <div className="text-center">
                 <Button asChild size="lg" className="bg-gradient-hero">
-                  <a href="https://wa.me/918179942297?text=Hi%20Doctor,%20I%20want%20to%20know%20more%20about%20ThyroCure%20and%20PCOS%20treatment" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/916304633491?text=Hi%20Doctor,%20I%20want%20to%20know%20more%20about%20ThyroCure%20and%20PCOS%20treatment" target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="mr-2 w-5 h-5" /> Consult Dr. Prasanna on WhatsApp
                   </a>
                 </Button>
@@ -460,7 +460,7 @@ const Home = () => {
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold text-foreground">BHMS, MD (Homeopathy)</p>
+                    <p className="font-semibold text-foreground">BHMS (Homeopathy)</p>
                     <p className="text-sm text-foreground/70">Specialized in Women's Health</p>
                   </div>
                 </li>
@@ -618,13 +618,13 @@ const Home = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#20BA5A] text-white text-lg px-8 h-12 border-0">
-              <a href="https://wa.me/918179942297?text=Hi%20Doctor,%20I%20want%20to%20book%20a%20free%20consultation" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/916304633491?text=Hi%20Doctor,%20I%20want%20to%20book%20a%20free%20consultation" target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="mr-2 w-5 h-5" /> Book on WhatsApp
               </a>
             </Button>
             <Button asChild size="lg" variant="outline" className="text-lg px-8 h-12 border-white text-white hover:bg-white hover:text-primary">
-              <a href="tel:+918179942297">
-                <Phone className="mr-2 w-5 h-5" /> Call: +91 81799 42297
+              <a href="tel:+916304633491">
+                <Phone className="mr-2 w-5 h-5" /> Call: +91 63046 33491
               </a>
             </Button>
           </div>

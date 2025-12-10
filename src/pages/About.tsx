@@ -23,8 +23,8 @@ const About = () => {
       "addressRegion": "Telangana",
       "addressCountry": "IN"
     },
-    "telephone": "+918179942297",
-    "email": "prasannaboddu@gmail.com"
+    "telephone": "+916304633491",
+    "email": "pcosthyrocure@gmail.com"
   };
 
   const expertise = [
