@@ -106,7 +106,7 @@ const Treatments = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#20BA5A] text-white">
-                  <a href="https://wa.me/918179942297?text=Hi%20Doctor,%20I%20want%20to%20book%20a%20consultation" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/916304633491?text=Hi%20Doctor,%20I%20want%20to%20book%20a%20consultation" target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="mr-2 w-4 h-4" /> Book on WhatsApp
                   </a>
                 </Button>
@@ -163,7 +163,7 @@ const Treatments = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#20BA5A] text-white border-0">
-                <a href="https://wa.me/918179942297?text=Hi%20Doctor,%20I%20need%20help%20choosing%20the%20right%20treatment" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/916304633491?text=Hi%20Doctor,%20I%20need%20help%20choosing%20the%20right%20treatment" target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="mr-2 w-5 h-5" /> Chat on WhatsApp
                 </a>
               </Button>

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.jpg";
 
 const Footer = () => {
   return (
@@ -35,18 +35,18 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
-                <span className="text-foreground/70">Hyderabad, Telangana, India</span>
+                <span className="text-foreground/70">17-1-382/P/4, Govt Press Colony, Champapet, Hyderabad - 500079</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-accent flex-shrink-0" />
-                <a href="tel:+918179942297" className="text-foreground/70 hover:text-accent transition-colors">
-                  +91 81799 42297
+                <a href="tel:+916304633491" className="text-foreground/70 hover:text-accent transition-colors">
+                  +91 63046 33491
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary flex-shrink-0" />
-                <a href="mailto:prasannaboddu@gmail.com" className="text-foreground/70 hover:text-primary transition-colors">
-                  prasannaboddu@gmail.com
+                <a href="mailto:pcosthyrocure@gmail.com" className="text-foreground/70 hover:text-primary transition-colors">
+                  pcosthyrocure@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-2">

@@ -8,7 +8,7 @@ import { Helmet } from "react-helmet-async";
 import { MessageCircle, Phone, Clock, CheckCircle } from "lucide-react";
 
 const BookingPage = () => {
-  const whatsappNumber = "918179942297";
+  const whatsappNumber = "916304633491";
   const message = "Hi! I'd like to book a consultation with Dr. Prasanna for homeopathy treatment.";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
@@ -60,10 +60,10 @@ const BookingPage = () => {
                   </Button>
                 </a>
                 
-                <a href="tel:+918179942297" className="block">
+                <a href="tel:+916304633491" className="block">
                   <Button variant="outline" className="w-full text-lg py-6">
                     <Phone className="w-5 h-5 mr-2" />
-                    Call: +91 81799 42297
+                    Call: +91 63046 33491
                   </Button>
                 </a>
               </div>
