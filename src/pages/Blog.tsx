@@ -101,6 +101,78 @@ const Blog = () => {
       readTime: "4 min read",
       category: "Getting Started",
       slug: "first-homeopathy-consultation"
+    },
+    {
+      title: "Thyroid & Weight Gain: Breaking the Cycle Naturally",
+      excerpt: "Why thyroid imbalance leads to stubborn weight gain and how homeopathy restores your metabolism gently.",
+      date: "November 26, 2025",
+      readTime: "7 min read",
+      category: "Thyroid Health",
+      slug: "thyroid-weight-gain-cycle"
+    },
+    {
+      title: "PCOS & Fertility: Yes, You Can Conceive Naturally",
+      excerpt: "Real success stories and the science behind reversing PCOS to restore natural fertility.",
+      date: "November 20, 2025",
+      readTime: "8 min read",
+      category: "PCOS Care",
+      slug: "pcos-fertility-natural-conception"
+    },
+    {
+      title: "Irregular Periods? Here's What Your Body Is Telling You",
+      excerpt: "Understand the hormonal signals behind irregular cycles and how to bring them back in rhythm.",
+      date: "November 18, 2025",
+      readTime: "6 min read",
+      category: "Women's Health",
+      slug: "irregular-periods-hormonal-signals"
+    },
+    {
+      title: "Hypothyroidism in Women: Signs You Should Never Ignore",
+      excerpt: "From fatigue to hair fall — spot the early warning signs of an underactive thyroid.",
+      date: "November 12, 2025",
+      readTime: "6 min read",
+      category: "Thyroid Health",
+      slug: "hypothyroidism-women-warning-signs"
+    },
+    {
+      title: "Homeopathy for Skin & Hair: Beauty From Within",
+      excerpt: "How balancing hormones and gut health transforms acne, pigmentation and hair fall naturally.",
+      date: "November 8, 2025",
+      readTime: "5 min read",
+      category: "Skin & Hair",
+      slug: "homeopathy-skin-hair-beauty"
+    },
+    {
+      title: "Managing Diabetes with Homeopathy — What Works",
+      excerpt: "Evidence-based homeopathic support for type 2 diabetes alongside lifestyle changes.",
+      date: "November 6, 2025",
+      readTime: "7 min read",
+      category: "Chronic Care",
+      slug: "managing-diabetes-homeopathy"
+    },
+    {
+      title: "Migraine Relief: A Homeopathic Approach That Lasts",
+      excerpt: "Move beyond painkillers — discover how homeopathy addresses migraine triggers at their root.",
+      date: "November 4, 2025",
+      readTime: "5 min read",
+      category: "Pain Management",
+      slug: "migraine-relief-homeopathy"
+    },
+    {
+      title: "Arthritis & Joint Pain: Natural Care for Lasting Mobility",
+      excerpt: "Ease stiffness and inflammation with a gentle, side-effect-free homeopathic protocol.",
+      date: "November 2, 2025",
+      readTime: "6 min read",
+      category: "Joint Care",
+      slug: "arthritis-joint-pain-natural-care"
+    },
+    {
+      title: "Gut Health & Hormones: The Hidden Connection",
+      excerpt: "Why healing your gut is the first step to balancing thyroid, PCOS and overall wellness.",
+      date: "October 30, 2025",
+      readTime: "6 min read",
+      category: "Wellness",
+      slug: "gut-health-hormones-connection"
     }
   ];
 
