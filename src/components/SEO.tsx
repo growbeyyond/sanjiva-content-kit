@@ -12,8 +12,8 @@ interface SEOProps {
 
 const SEO = ({
   title = "Dr. Prasanna Boddupally - Homeopathy Physician | Natural Healing in Hyderabad",
-  description = "Expert homeopathy treatment by Dr. Prasanna Boddupally in Hyderabad. Specializing in chronic conditions, thyroid, PCOD, skin disorders. Book consultation today!",
-  keywords = "homeopathy doctor Hyderabad, Dr. Prasanna Boddupally, homeopathic treatment, chronic disease treatment, natural healing, alternative medicine",
+  description = "Best homeopathy clinic in Karmanghat & LB Nagar, Hyderabad. Dr. Prasanna Boddupally specializes in Thyroid, PCOS/PCOD, infertility & chronic conditions. Book consultation today!",
+  keywords = "homeopathy Karmanghat, homeopathy LB Nagar, best homeopathy doctor Hyderabad, thyroid treatment Karmanghat, PCOS treatment LB Nagar, PCOD homeopathy Hyderabad, infertility treatment Champapet, Dr Prasanna Boddupally, homeopathy clinic near me, thyroid specialist Hyderabad, women health homeopathy",
   canonicalUrl = "https://drprasanna.lovable.app",
   ogType = "website",
   ogImage = "https://drprasanna.lovable.app/og-image.jpg",
@@ -26,7 +26,17 @@ const SEO = ({
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <link rel="canonical" href={canonicalUrl} />
-      
+
+      {/* Geo / Local SEO */}
+      <meta name="geo.region" content="IN-TG" />
+      <meta name="geo.placename" content="Karmanghat, LB Nagar, Champapet, Hyderabad" />
+      <meta name="geo.position" content="17.3390;78.5410" />
+      <meta name="ICBM" content="17.3390, 78.5410" />
+
+      {/* AI Search / Google SGE hints */}
+      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+      <meta name="googlebot" content="index, follow" />
+
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={canonicalUrl} />
