@@ -27,6 +27,7 @@ import Gallery from "./pages/Gallery";
 import BookingPage from "./pages/BookingPage";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import OAuthConsent from "./pages/OAuthConsent";
 import Admin from "./pages/Admin";
 import AdminEnhanced from "./pages/AdminEnhanced";
 import NotFound from "./pages/NotFound";
@@ -72,6 +73,7 @@ const App = () => (
             <Route path="/book" element={<BookingPage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/.lovable/oauth/consent" element={<OAuthConsent />} />
             <Route path="/admin" element={
               <ProtectedRoute>
                 <Admin />
