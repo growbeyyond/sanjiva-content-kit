@@ -1,11 +1,66 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import logo from "@/assets/logo.jpg";
 
 const Footer = () => {
+  const { toast } = useToast();
+  const [email, setEmail] = useState("");
+  const [isSubscribing, setIsSubscribing] = useState(false);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    setIsSubscribing(true);
+    try {
+      const { error } = await supabase
+        .from("newsletter_subscribers")
+        .insert([{ email, active: true }]);
+      if (error) {
+        if (error.code === "23505") {
+          toast({ title: "Already Subscribed", description: "This email is already on our list." });
+        } else {
+          throw error;
+        }
+      } else {
+        toast({ title: "Subscribed!", description: "Thanks for subscribing to our health tips." });
+        setEmail("");
+      }
+    } catch (err) {
+      toast({ title: "Error", description: "Please try again later.", variant: "destructive" });
+    } finally {
+      setIsSubscribing(false);
+    }
+  };
+
   return (
     <footer className="bg-secondary border-t border-border mt-20">
       <div className="container mx-auto px-4 py-12">
+        {/* Newsletter */}
+        <div className="max-w-3xl mx-auto text-center mb-10 pb-10 border-b border-border">
+          <h3 className="text-2xl font-bold text-foreground mb-2">Get Free Health Tips</h3>
+          <p className="text-sm text-foreground/70 mb-4">
+            Subscribe to receive expert advice on Thyroid, PCOS & natural healing straight to your inbox.
+          </p>
+          <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              maxLength={255}
+              className="px-4 py-2 rounded-md border border-border bg-background text-foreground flex-1"
+            />
+            <Button type="submit" className="bg-gradient-hero shadow-soft" disabled={isSubscribing}>
+              {isSubscribing ? "Subscribing..." : "Subscribe"}
+            </Button>
+          </form>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About */}
           <div className="space-y-4">
