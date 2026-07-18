@@ -57,7 +57,7 @@ const Blog = () => {
     {
       title: "Is Homeopathy Really Slow? The Truth You Should Know",
       excerpt: "Debunking the most common myth about homeopathic treatment and understanding realistic healing timelines.",
-      date: "November 28, 2025",
+      date: "July 18, 2026",
       readTime: "5 min read",
       category: "Myths & Facts",
       slug: "is-homeopathy-slow-truth"
@@ -65,7 +65,7 @@ const Blog = () => {
     {
       title: "Foods That Help Balance Your Thyroid Naturally",
       excerpt: "Simple dietary changes that support thyroid function and complement homeopathic treatment.",
-      date: "November 22, 2025",
+      date: "July 17, 2026",
       readTime: "7 min read",
       category: "Thyroid Health",
       slug: "foods-balance-thyroid-naturally"
@@ -73,7 +73,7 @@ const Blog = () => {
     {
       title: "Understanding PCOD — A Homeopath's Perspective",
       excerpt: "What causes PCOD and how homeopathy addresses the root hormonal imbalances effectively.",
-      date: "November 15, 2025",
+      date: "July 16, 2026",
       readTime: "8 min read",
       category: "PCOS Care",
       slug: "understanding-pcod-homeopathy"
@@ -81,7 +81,7 @@ const Blog = () => {
     {
       title: "How to Manage Allergies Without Chemicals",
       excerpt: "Natural approaches to seasonal allergies that provide lasting relief without side effects.",
-      date: "November 10, 2025",
+      date: "July 15, 2026",
       readTime: "6 min read",
       category: "Respiratory Health",
       slug: "manage-allergies-naturally"
@@ -89,7 +89,7 @@ const Blog = () => {
     {
       title: "The Connection Between Stress and Chronic Pain",
       excerpt: "Exploring how emotional well-being impacts physical symptoms and the role of holistic healing.",
-      date: "November 5, 2025",
+      date: "July 14, 2026",
       readTime: "6 min read",
       category: "Pain Management",
       slug: "stress-chronic-pain-connection"
@@ -97,7 +97,7 @@ const Blog = () => {
     {
       title: "Preparing for Your First Homeopathy Consultation",
       excerpt: "What to expect during your visit and how to make the most of your appointment.",
-      date: "November 1, 2025",
+      date: "July 13, 2026",
       readTime: "4 min read",
       category: "Getting Started",
       slug: "first-homeopathy-consultation"
@@ -105,7 +105,7 @@ const Blog = () => {
     {
       title: "Thyroid & Weight Gain: Breaking the Cycle Naturally",
       excerpt: "Why thyroid imbalance leads to stubborn weight gain and how homeopathy restores your metabolism gently.",
-      date: "November 26, 2025",
+      date: "July 12, 2026",
       readTime: "7 min read",
       category: "Thyroid Health",
       slug: "thyroid-weight-gain-cycle"
@@ -113,7 +113,7 @@ const Blog = () => {
     {
       title: "PCOS & Fertility: Yes, You Can Conceive Naturally",
       excerpt: "Real success stories and the science behind reversing PCOS to restore natural fertility.",
-      date: "November 20, 2025",
+      date: "July 11, 2026",
       readTime: "8 min read",
       category: "PCOS Care",
       slug: "pcos-fertility-natural-conception"
@@ -121,7 +121,7 @@ const Blog = () => {
     {
       title: "Irregular Periods? Here's What Your Body Is Telling You",
       excerpt: "Understand the hormonal signals behind irregular cycles and how to bring them back in rhythm.",
-      date: "November 18, 2025",
+      date: "July 10, 2026",
       readTime: "6 min read",
       category: "Women's Health",
       slug: "irregular-periods-hormonal-signals"
@@ -129,7 +129,7 @@ const Blog = () => {
     {
       title: "Hypothyroidism in Women: Signs You Should Never Ignore",
       excerpt: "From fatigue to hair fall — spot the early warning signs of an underactive thyroid.",
-      date: "November 12, 2025",
+      date: "July 9, 2026",
       readTime: "6 min read",
       category: "Thyroid Health",
       slug: "hypothyroidism-women-warning-signs"
@@ -137,7 +137,7 @@ const Blog = () => {
     {
       title: "Homeopathy for Skin & Hair: Beauty From Within",
       excerpt: "How balancing hormones and gut health transforms acne, pigmentation and hair fall naturally.",
-      date: "November 8, 2025",
+      date: "July 8, 2026",
       readTime: "5 min read",
       category: "Skin & Hair",
       slug: "homeopathy-skin-hair-beauty"
@@ -145,7 +145,7 @@ const Blog = () => {
     {
       title: "Managing Diabetes with Homeopathy — What Works",
       excerpt: "Evidence-based homeopathic support for type 2 diabetes alongside lifestyle changes.",
-      date: "November 6, 2025",
+      date: "July 7, 2026",
       readTime: "7 min read",
       category: "Chronic Care",
       slug: "managing-diabetes-homeopathy"
@@ -153,7 +153,7 @@ const Blog = () => {
     {
       title: "Migraine Relief: A Homeopathic Approach That Lasts",
       excerpt: "Move beyond painkillers — discover how homeopathy addresses migraine triggers at their root.",
-      date: "November 4, 2025",
+      date: "July 6, 2026",
       readTime: "5 min read",
       category: "Pain Management",
       slug: "migraine-relief-homeopathy"
@@ -161,7 +161,7 @@ const Blog = () => {
     {
       title: "Arthritis & Joint Pain: Natural Care for Lasting Mobility",
       excerpt: "Ease stiffness and inflammation with a gentle, side-effect-free homeopathic protocol.",
-      date: "November 2, 2025",
+      date: "July 5, 2026",
       readTime: "6 min read",
       category: "Joint Care",
       slug: "arthritis-joint-pain-natural-care"
@@ -169,10 +169,34 @@ const Blog = () => {
     {
       title: "Gut Health & Hormones: The Hidden Connection",
       excerpt: "Why healing your gut is the first step to balancing thyroid, PCOS and overall wellness.",
-      date: "October 30, 2025",
+      date: "July 4, 2026",
       readTime: "6 min read",
       category: "Wellness",
       slug: "gut-health-hormones-connection"
+    },
+    {
+      title: "Thyroid in Monsoon: Why Symptoms Flare & How to Stay Balanced",
+      excerpt: "Humidity, infections and mood dips can worsen thyroid symptoms during the rainy season. Here's a gentle homeopathic plan.",
+      date: "July 3, 2026",
+      readTime: "6 min read",
+      category: "Thyroid Health",
+      slug: "thyroid-monsoon-symptoms"
+    },
+    {
+      title: "PCOS & Insulin Resistance: Reversing the Root Cause",
+      excerpt: "Why insulin resistance drives PCOS symptoms and the homeopathic + lifestyle protocol that truly reverses it.",
+      date: "July 2, 2026",
+      readTime: "7 min read",
+      category: "PCOS Care",
+      slug: "pcos-insulin-resistance-reversal"
+    },
+    {
+      title: "Homeopathy for Anxiety & Sleep: Calm Your Nervous System Naturally",
+      excerpt: "Learn how constitutional homeopathy quiets an overactive mind and restores deep, restorative sleep.",
+      date: "July 1, 2026",
+      readTime: "5 min read",
+      category: "Mental Wellness",
+      slug: "homeopathy-anxiety-sleep"
     }
   ];
 
