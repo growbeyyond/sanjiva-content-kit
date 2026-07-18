@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, useSearchParams, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import TopBanner from "@/components/TopBanner";
@@ -11,6 +11,9 @@ import { supabase } from "@/integrations/supabase/client";
 
 const Signup = () => {
   const navigate = useNavigate();
+  const [params] = useSearchParams();
+  const rawNext = params.get("next");
+  const nextPath = rawNext && rawNext.startsWith("/") && !rawNext.startsWith("//") ? rawNext : null;
   const { toast } = useToast();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -41,7 +44,7 @@ const Signup = () => {
     setIsLoading(true);
 
     try {
-      const redirectUrl = `${window.location.origin}/admin`;
+      const redirectUrl = `${window.location.origin}${nextPath ?? "/admin"}`;
       
       const { data, error } = await supabase.auth.signUp({
         email,
@@ -58,7 +61,7 @@ const Signup = () => {
         description: "Your admin account has been created successfully. You can now log in.",
       });
 
-      navigate("/login");
+      navigate(nextPath ? `/login?next=${encodeURIComponent(nextPath)}` : "/login");
     } catch (error: any) {
       toast({
         title: "Signup Failed",
@@ -128,7 +131,10 @@ const Signup = () => {
           </form>
           <div className="mt-4 text-center text-sm text-muted-foreground">
             Already have an account?{" "}
-            <Link to="/login" className="text-primary hover:underline">
+            <Link
+              to={nextPath ? `/login?next=${encodeURIComponent(nextPath)}` : "/login"}
+              className="text-primary hover:underline"
+            >
               Login here
             </Link>
           </div>
