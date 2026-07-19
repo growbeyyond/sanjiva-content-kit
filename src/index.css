@@ -240,3 +240,16 @@ All colors MUST be HSL.
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Hide Lovable badge widget entirely (container + inner text + close X) */
+#lovable-badge,
+#lovable-badge *,
+a[href*="lovable.dev"][target="_blank"],
+[id^="lovable-badge"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+}
