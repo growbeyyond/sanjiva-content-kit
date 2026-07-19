@@ -17,6 +17,7 @@ interface AppointmentEmailRequest {
   preferred_date?: string;
   preferred_time?: string;
   message?: string;
+  website?: string; // honeypot
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -28,9 +29,38 @@ const handler = async (req: Request): Promise<Response> => {
 
   try {
     const appointmentData: AppointmentEmailRequest = await req.json();
-    console.log("Received appointment data:", appointmentData);
+
+    // Honeypot: bots often fill hidden fields
+    if (appointmentData.website && appointmentData.website.trim() !== "") {
+      return new Response(JSON.stringify({ success: true }), {
+        status: 200,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
+    }
 
     const { name, phone, email, condition, preferred_date, preferred_time, message } = appointmentData;
+
+    // Basic input validation
+    const isStr = (v: unknown, min = 1, max = 500) =>
+      typeof v === "string" && v.trim().length >= min && v.trim().length <= max;
+    if (!isStr(name, 2, 100) || !isStr(phone, 7, 20) || !isStr(condition, 2, 200)) {
+      return new Response(JSON.stringify({ error: "Invalid input" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
+    }
+    if (email && (typeof email !== "string" || email.length > 200 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))) {
+      return new Response(JSON.stringify({ error: "Invalid email" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
+    }
+    if (message && (typeof message !== "string" || message.length > 2000)) {
+      return new Response(JSON.stringify({ error: "Invalid message" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
+    }
 
     // Send notification to doctor
     const doctorEmailResponse = await resend.emails.send({
