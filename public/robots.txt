@@ -11,7 +11,8 @@ Disallow: /admin
 Disallow: /admin/
 Disallow: /login
 Disallow: /signup
-Disallow: /patient-portal
+Disallow: /book
+Disallow: /.lovable/
 
 # Allow major search engine crawlers
 User-agent: Googlebot
