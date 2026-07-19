@@ -54,7 +54,7 @@ export const blogPosts: BlogPost[] = [
     slug: "is-homeopathy-slow-truth",
     title: "Is Homeopathy Really Slow? The Truth You Should Know",
     excerpt: "Debunking the most common myth about homeopathic treatment and understanding realistic healing timelines.",
-    date: "July 18, 2026",
+    date: "July 17, 2026",
     readTime: "5 min read",
     category: "Myths & Facts",
     location: "Hyderabad",
