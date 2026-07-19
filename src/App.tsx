@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -6,37 +7,45 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { getErrorMessage, logError } from "./lib/errors";
 import { toast } from "sonner";
-import WhatsAppWidget from "./components/WhatsAppWidget";
-import LiveChat from "./components/LiveChat";
 import GoogleAnalytics from "./components/GoogleAnalytics";
-import MiraChat from "./components/MiraChat";
 import Index from "./pages/Index";
-import About from "./pages/About";
-import Treatments from "./pages/Treatments";
-import Protocol from "./pages/Protocol";
-import PCOSProgram from "./pages/PCOSProgram";
-import ThyroCureProgram from "./pages/ThyroCureProgram";
-import WellnessHub from "./pages/WellnessHub";
-import Testimonials from "./pages/Testimonials";
-import Blog from "./pages/Blog";
-import BlogPost from "./pages/BlogPost";
-import Contact from "./pages/Contact";
-import FAQ from "./pages/FAQ";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import TermsConditions from "./pages/TermsConditions";
-import Disclaimer from "./pages/Disclaimer";
-import SymptomChecker from "./pages/SymptomChecker";
-import Gallery from "./pages/Gallery";
-
-import BookingPage from "./pages/BookingPage";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import OAuthConsent from "./pages/OAuthConsent";
-import Admin from "./pages/Admin";
-import AdminEnhanced from "./pages/AdminEnhanced";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { HelmetProvider } from "react-helmet-async";
+
+// Lazy-loaded routes (code-split for faster initial load)
+const About = lazy(() => import("./pages/About"));
+const Treatments = lazy(() => import("./pages/Treatments"));
+const Protocol = lazy(() => import("./pages/Protocol"));
+const PCOSProgram = lazy(() => import("./pages/PCOSProgram"));
+const ThyroCureProgram = lazy(() => import("./pages/ThyroCureProgram"));
+const WellnessHub = lazy(() => import("./pages/WellnessHub"));
+const Testimonials = lazy(() => import("./pages/Testimonials"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogPost = lazy(() => import("./pages/BlogPost"));
+const Contact = lazy(() => import("./pages/Contact"));
+const FAQ = lazy(() => import("./pages/FAQ"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const TermsConditions = lazy(() => import("./pages/TermsConditions"));
+const Disclaimer = lazy(() => import("./pages/Disclaimer"));
+const SymptomChecker = lazy(() => import("./pages/SymptomChecker"));
+const Gallery = lazy(() => import("./pages/Gallery"));
+const BookingPage = lazy(() => import("./pages/BookingPage"));
+const Login = lazy(() => import("./pages/Login"));
+const Signup = lazy(() => import("./pages/Signup"));
+const OAuthConsent = lazy(() => import("./pages/OAuthConsent"));
+const Admin = lazy(() => import("./pages/Admin"));
+const AdminEnhanced = lazy(() => import("./pages/AdminEnhanced"));
+
+// Deferred floating widgets — not needed for LCP
+const WhatsAppWidget = lazy(() => import("./components/WhatsAppWidget"));
+const MiraChat = lazy(() => import("./components/MiraChat"));
+
+const RouteFallback = () => (
+  <div className="min-h-[60vh] flex items-center justify-center">
+    <div className="w-10 h-10 rounded-full border-2 border-primary/30 border-t-primary animate-spin" aria-label="Loading" />
+  </div>
+);
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -74,6 +83,7 @@ const App = () => (
           <Sonner />
           <BrowserRouter>
             <ErrorBoundary>
+              <Suspense fallback={<RouteFallback />}>
               <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
@@ -119,14 +129,19 @@ const App = () => (
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
               </Routes>
+              </Suspense>
             </ErrorBoundary>
             <GoogleAnalytics />
           </BrowserRouter>
           <ErrorBoundary fallback={() => null}>
-            <WhatsAppWidget />
+            <Suspense fallback={null}>
+              <WhatsAppWidget />
+            </Suspense>
           </ErrorBoundary>
           <ErrorBoundary fallback={() => null}>
-            <MiraChat />
+            <Suspense fallback={null}>
+              <MiraChat />
+            </Suspense>
           </ErrorBoundary>
         </TooltipProvider>
       </QueryClientProvider>
