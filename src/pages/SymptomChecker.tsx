@@ -129,7 +129,7 @@ const SymptomChecker = () => {
       <Helmet>
         <title>Symptom Checker - Dr. Prasanna Boddupally | Find Right Treatment</title>
         <meta name="description" content="Check your symptoms and get personalized homeopathic treatment recommendations from Dr. Prasanna Boddupally in Hyderabad." />
-        <link rel="canonical" href="https://drprasanna.lovable.app/symptom-checker" />
+        <link rel="canonical" href="https://drprasannaboddupally.in/symptom-checker" />
       </Helmet>
 
       <Navigation />

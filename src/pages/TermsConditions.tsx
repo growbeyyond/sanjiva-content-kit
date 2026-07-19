@@ -10,7 +10,7 @@ const TermsConditions = () => {
       <Helmet>
         <title>Terms & Conditions - Dr. Prasanna Boddupally | Service Agreement</title>
         <meta name="description" content="Read the terms and conditions for using Dr. Prasanna Boddupally's homeopathy services and website." />
-        <link rel="canonical" href="https://drprasanna.lovable.app/terms" />
+        <link rel="canonical" href="https://drprasannaboddupally.in/terms" />
       </Helmet>
 
       <Navigation />

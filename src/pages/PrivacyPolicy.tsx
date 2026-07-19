@@ -10,7 +10,7 @@ const PrivacyPolicy = () => {
       <Helmet>
         <title>Privacy Policy - Dr. Prasanna Boddupally | Patient Data Protection</title>
         <meta name="description" content="Read our privacy policy to understand how we collect, use, and protect your personal and medical information at Dr. Prasanna's homeopathy clinic." />
-        <link rel="canonical" href="https://drprasanna.lovable.app/privacy-policy" />
+        <link rel="canonical" href="https://drprasannaboddupally.in/privacy-policy" />
       </Helmet>
 
       <Navigation />

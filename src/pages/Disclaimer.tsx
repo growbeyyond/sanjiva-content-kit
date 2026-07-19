@@ -11,7 +11,7 @@ const Disclaimer = () => {
       <Helmet>
         <title>Medical Disclaimer - Dr. Prasanna Boddupally | Important Information</title>
         <meta name="description" content="Important medical disclaimer and information about homeopathy services provided by Dr. Prasanna Boddupally." />
-        <link rel="canonical" href="https://drprasanna.lovable.app/disclaimer" />
+        <link rel="canonical" href="https://drprasannaboddupally.in/disclaimer" />
       </Helmet>
 
       <Navigation />
