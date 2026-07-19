@@ -16,6 +16,7 @@ import ThyroCureProgram from "./pages/ThyroCureProgram";
 import WellnessHub from "./pages/WellnessHub";
 import Testimonials from "./pages/Testimonials";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -60,6 +61,7 @@ const App = () => (
             <Route path="/success-stories" element={<Testimonials />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/health-articles" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/book-appointment" element={<Contact />} />
             <Route path="/faq" element={<FAQ />} />
