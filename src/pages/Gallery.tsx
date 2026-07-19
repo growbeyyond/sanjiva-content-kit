@@ -38,7 +38,7 @@ const Gallery = () => {
       <Helmet>
         <title>Clinic Gallery - Dr. Prasanna Boddupally | Our Facilities</title>
         <meta name="description" content="View photos of Dr. Prasanna's homeopathy clinic in Hyderabad. See our consultation rooms, treatment facilities, and welcoming environment." />
-        <link rel="canonical" href="https://drprasanna.lovable.app/gallery" />
+        <link rel="canonical" href="https://drprasannaboddupally.in/gallery" />
       </Helmet>
 
       <Navigation />

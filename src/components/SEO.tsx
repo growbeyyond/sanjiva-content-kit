@@ -14,9 +14,9 @@ const SEO = ({
   title = "Dr. Prasanna Boddupally - Homeopathy Physician | Natural Healing in Hyderabad",
   description = "Best homeopathy clinic in Karmanghat & LB Nagar, Hyderabad. Dr. Prasanna Boddupally specializes in Thyroid, PCOS/PCOD, infertility & chronic conditions. Book consultation today!",
   keywords = "homeopathy Karmanghat, homeopathy LB Nagar, best homeopathy doctor Hyderabad, thyroid treatment Karmanghat, PCOS treatment LB Nagar, PCOD homeopathy Hyderabad, infertility treatment Champapet, Dr Prasanna Boddupally, homeopathy clinic near me, thyroid specialist Hyderabad, women health homeopathy",
-  canonicalUrl = "https://drprasanna.lovable.app",
+  canonicalUrl = "https://drprasannaboddupally.in",
   ogType = "website",
-  ogImage = "https://drprasanna.lovable.app/og-image.jpg",
+  ogImage = "https://drprasannaboddupally.in/og-image.jpg",
   structuredData
 }: SEOProps) => {
   return (
